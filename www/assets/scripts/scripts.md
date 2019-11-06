@@ -1,0 +1,1 @@
+Ce répertoire contient le code JavaScript de notre site.
