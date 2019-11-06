@@ -1,0 +1,1 @@
+Ce répertoire contient toutes images de notre site.
