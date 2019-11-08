@@ -26,4 +26,8 @@ class PagesController extends Controller
     public function Evenements(){
         return view('pages.Evenements');
     }
+
+    public function Mentions(){
+        return view('pages.mentions');
+    }
 }
