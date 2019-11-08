@@ -63,7 +63,7 @@
 
 
 <footer>
-    <a href="#MentionsLégales">Mentions Légales</a>
+    <a href="mentions">Mentions Légales</a>
     <a href="#Confidentialités">Politique de Confidentialité</a>
 </footer>
 

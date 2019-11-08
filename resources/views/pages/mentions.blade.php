@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="cadre">
-    <h1>Mention Légales</h1>
+    <h1 classe = masterTitle>Mention Légales</h1>
     <p>Ce site est publié par :</p>
 	<section>
 		<p>
@@ -32,7 +32,6 @@
 	<p>Mentions légales supplémentaires</p>
 	<section>
 <br><p style="text-align: center;">&nbsp;</p>
-<br><p style="text-align: center;"><strong>MENTIONS LÉGALES</strong></p>
 <br><p></p>
 <br><p><strong>E D I T I O N &nbsp;  D U &nbsp;  S I T E &nbsp;  I N T E R N E T</strong></p>
 <br><p>Le site bdecesilarochelle.fr (ci-après "le Site"), accessible à l’adresse  https://www.bdecesilarochelle.fr est édité par le Groupe2 (ci-après  "l’éditeur"), Groupe au capital de 0 euros, dont le siège  social est situé 8 Rue Isabelle Autissier, 17000 Lagord, France, (sacha.garnier@viacesi.fr).</p>
