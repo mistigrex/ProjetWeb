@@ -11395,6 +11395,7 @@ body {
   }
 }
 
+<<<<<<< HEAD
 #top3 {
   padding: 150px 40px 0px 280px;
 }
@@ -11402,6 +11403,17 @@ body {
 @media screen and (max-width: 865px) {
   #top3 {
     padding: 80px 0px 0px 20px;
+=======
+.cadre {
+  padding-top: 5em;
+  padding-left: 18em;
+  padding: 5em 2em 3em 18em;
+}
+
+@media screen and (max-width: 865px) {
+  .cadre {
+    padding: 80px 13px 10px 20px;
+>>>>>>> master
   }
 }
 
