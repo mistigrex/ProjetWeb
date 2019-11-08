@@ -64,7 +64,7 @@
 
 <footer>
     <a href="mentions">Mentions Légales</a>
-    <a href="#Confidentialités">Politique de Confidentialité</a>
+    <a href="confidentialité">Politique de Confidentialité</a>
 </footer>
 
 

@@ -30,4 +30,7 @@ class PagesController extends Controller
     public function Mentions(){
         return view('pages.mentions');
     }
+    public function Confidentialité(){
+        return view('pages.confidentialité');
+    }
 }
