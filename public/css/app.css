@@ -11169,7 +11169,7 @@ a.text-dark:focus {
 
   .top-nav.responsive a.icon {
     position: absolute;
-    right: 15px;
+    right: 22px;
     top: 0;
   }
 
@@ -11187,7 +11187,7 @@ a.text-dark:focus {
   -webkit-box-direction: normal;
           flex-direction: column;
   z-index: 2;
-  background-color: rgba(0, 0, 0, 0.99);
+  background-color: black;
   position: fixed;
   width: 230px;
   height: 100%;
@@ -11209,8 +11209,8 @@ a.text-dark:focus {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
             flex-direction: row;
-    width: 90%;
-    height: 72px;
+    width: 80%;
+    height: 77.6px;
     box-shadow: 3px 3px 28px -14px rgba(0, 0, 0, 0.75);
   }
 
@@ -11395,25 +11395,43 @@ body {
   }
 }
 
-<<<<<<< HEAD
 #top3 {
-  padding: 150px 40px 0px 280px;
+  padding: 100px 0px 0px 240px;
 }
 
 @media screen and (max-width: 865px) {
   #top3 {
     padding: 80px 0px 0px 20px;
-=======
+  }
+
+  .presentation {
+    display: none;
+  }
+}
+
+.presentation {
+  margin-bottom: 30px;
+}
+
+.intro {
+  margin-bottom: 45px;
+}
+
+.features {
+  margin-bottom: 30px;
+}
+
+.Product .container {
+  margin-bottom: 50px;
+}
+
 .cadre {
-  padding-top: 5em;
-  padding-left: 18em;
   padding: 5em 2em 3em 18em;
 }
 
 @media screen and (max-width: 865px) {
   .cadre {
     padding: 80px 13px 10px 20px;
->>>>>>> master
   }
 }
 

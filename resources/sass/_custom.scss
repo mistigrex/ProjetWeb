@@ -64,7 +64,7 @@
     }
     .top-nav.responsive a.icon {
         position: absolute;
-        right: 15px;
+        right: 22px;
         top: 0;
     }
     .top-nav.responsive a {
@@ -78,7 +78,7 @@
     display: flex;
     flex-direction: column;
     z-index: 2;
-    background-color: rgba(0, 0, 0, 0.990);
+    background-color: black;
     position: fixed;
     width: 230px;
     height: 100%;
@@ -96,8 +96,8 @@
     }
     #aside-nav {
         flex-direction: row;
-        width: 90%;
-        height: 72px;
+        width: 80%;
+        height: 77.6px;
         box-shadow: 3px 3px 28px -14px rgba(0, 0, 0, 0.75);
     }
     .Social {
