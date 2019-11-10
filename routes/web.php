@@ -20,3 +20,4 @@ Route::get('/Contact', 'PagesController@Contact');
 Route::get('/Evenements', 'PagesController@Evenements');
 Route::get('/mentions', 'PagesController@Mentions');
 Route::get('/confidentialité', 'PagesController@confidentialité');
+Route::get('/Inscription', 'PagesController@Inscription');
