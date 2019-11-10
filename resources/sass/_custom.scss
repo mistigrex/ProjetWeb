@@ -124,7 +124,7 @@
     margin: 0px 0px 0px 0px;
 }
 
-.Connect a {
+.Connect #connectBtn {
     border: 2px hsla(39, 100%, 66%, 1) solid;
     border-radius: 5px;
     font-size: 22px;
@@ -133,7 +133,7 @@
     padding: 3px;
 }
 
-.Connect a:hover {
+.Connect #connectBtn:hover {
     background-color: hsla(39, 100%, 66%, 1);
     color: black;
     transition: color .6s ease-in, border-color .3s ease-in, background-color .3s ease-in;
@@ -205,5 +205,31 @@ footer {
 
 footer a {
     color: white;
+    opacity: 0.6;
     font-size: 13px;
+}
+
+footer a:hover {
+    color: white;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+footer span {
+    color: white;
+    opacity: 0.6;
+}
+
+// Connexion / Incsription Modal
+#modalLRInput {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: rgb(185, 185, 185) 1px solid;
+}
+
+#textModal {
+    margin-right: 30px;
+    margin-bottom: 0px;
+    margin-top: 2px;
 }
