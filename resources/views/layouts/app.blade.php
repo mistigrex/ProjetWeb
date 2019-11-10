@@ -35,10 +35,6 @@
                     <a href="https://ecole-ingenieurs.cesi.fr/"><img class="logoCESI" src="{{asset('images/logoCESI.png')}}" alt="Logo du CESI"></a>
                 </div>
 
-
-
-
-
                 <div class="Connect">
 
   <div class="text-center">
@@ -79,9 +75,9 @@
     <a href="confidentialité">Politique de Confidentialité</a>
 </footer>
 
+<form>
 
-
-                <!--Modal: Login / Register Form-->
+<!--Modal: Login / Register Form-->
                 <div class="modal fade" id="modalLRForm" tabindex="1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                         <div class="modal-dialog cascading-modal" role="document">
                     
@@ -112,17 +108,17 @@
                                   <div class="modal-body mb-1">
                                     <div class="md-form form-sm mb-5">
                                       <i class="fas fa-envelope prefix"></i>
-                                      <input type="email" id="modalLRInput" placeholder="Votre Adresse Mail"class="form-control form-control-sm validate">
+                                      <input type="email" id="modalLRInput" placeholder="Votre Adresse Mail"class="form-control form-control-sm validate" required>
 
                                     </div>
                       
                                     <div class="md-form form-sm mb-4">
                                       <i class="fas fa-lock prefix"></i>
-                                      <input type="password" id="modalLRInput" placeholder="Votre mot de passe"class="form-control form-control-sm validate">
+                                      <input type="password" id="modalLRInput" placeholder="Votre mot de passe"class="form-control form-control-sm validate" required>
 
                                     </div>
                                     <div class="text-center mt-2">
-                                      <button class="btn btn-warning">Connexion<i class="fas fa-sign-in ml-1"></i></button>
+                                      <button class="btn btn-warning" type="submit" >Connexion<i class="fas fa-sign-in ml-1"></i></button>
                                     </div>
                                   </div>
                                   <!--Footer-->
@@ -142,25 +138,61 @@
                       
                                   <!--Body-->
                                   <div class="modal-body">
+
+                                      <div class="md-form form-sm mb-5">
+                                          <i class="fas fa-school"></i>
+                                          <label for="centre_cesi">Centre CESI</label>
+                                          <select class="custom-select" name="Centre CESI">  
+                                              <option value="1">La Rochelle</option>
+                                              <option value="19">Aix-en-provence</option>
+                                              <option value="14">Angoulême</option>
+                                              <option value="5">Arras</option>
+                                              <option value="2">Bordeaux</option>
+                                              <option value="12">Brest</option>
+                                              <option value="3">Caen</option>
+                                              <option value="15">Châteauroux</option>
+                                              <option value="16">Dijon</option>
+                                              <option value="17">Grenoble</option>
+                                              <option value="11">Le mans</option>
+                                              <option value="4">Lille</option>
+                                              <option value="25">Lyon</option>
+                                              <option value="20">Momptelier</option>
+                                              <option value="8">Nancy</option>
+                                              <option value="24">Nantes</option>
+                                              <option value="18">Nice</option>
+                                              <option value="23">Orléans</option>
+                                              <option value="10">Paris-Nanterre</option>
+                                              <option value="22">Pau</option>
+                                              <option value="7">Reims</option>
+                                              <option value="6">Rouen</option>
+                                              <option value="13">Saint-Nazaire</option>
+                                              <option value="9">Strasbourg</option>
+                                              <option value="21">Toulouse</option>
+                                            </select>
+                                        </div>
+
                                     <div class="md-form form-sm mb-5">
                                       <i class="fas fa-envelope prefix"></i>
-                                      <input type="email" id="modalLRInput"placeholder="Adresse Mail" class="form-control form-control-sm validate">
+                                      <input type="email" id="modalLRInput"placeholder="Adresse Mail" class="form-control form-control-sm validate" required>
                                     </div>
                       
                                     <div class="md-form form-sm mb-5">
                                       <i class="fas fa-lock prefix"></i>
-                                      <input type="password" id="modalLRInput" placeholder="Mot de passe" class="form-control form-control-sm validate">
+                                      <input type="password" id="modalLRInput" placeholder="Mot de passe" class="form-control form-control-sm validate" required>
 
                                     </div>
                       
                                     <div class="md-form form-sm mb-4">
                                       <i class="fas fa-lock prefix"></i>
-                                      <input type="password" id="modalLRInput" placeholder="Confirmer le mot de passe"class="form-control form-control-sm validate">
- 
+                                      <input type="password" id="modalLRInput" placeholder="Confirmer le mot de passe" class="form-control" id="validationCustom01" required>
                                     </div>
-                      
+
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                        <label class="custom-control-label" for="customCheck1">J'accepte les conditions d'utilisation</label>
+                                      </div>
                                     <div class="text-center form-sm mt-2">
-                                      <button class="btn btn-warning">Inscription <i class="fas fa-sign-in"></i></button>
+                                      <button class="btn btn-warning" type="submit">Inscription <i class="fas fa-sign-in"></i></button>
                                     </div>
                       
                                   </div>
@@ -181,13 +213,11 @@
                         </div>
                       </div>
                       <!--Modal: Login / Register Form-->
-                      
+                    </form>
 
 </body>
 
 </html>
-
-<!-- Scripts -->
 
 {{-- Script for responsive top nav --}}
 <script>
@@ -200,10 +230,3 @@
         }
     }
 </script>
-
-
-
-
-{{-- <script src="/js/jquery.min.js"></script>
-<script src="/js/popper.min.js"></script>
-<script src="/js/bootstrap.min.js"></script> --}}
