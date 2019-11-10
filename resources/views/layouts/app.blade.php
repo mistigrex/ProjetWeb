@@ -4,8 +4,9 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="{{ asset('js/app.js') }}"></script>
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.1.0/css/all.css">
 
     <title>BDE Cesi La Rochelle</title>
 </head>
@@ -33,7 +34,18 @@
                 <div class="logoCESI">
                     <a href="https://ecole-ingenieurs.cesi.fr/"><img class="logoCESI" src="{{asset('images/logoCESI.png')}}" alt="Logo du CESI"></a>
                 </div>
-                <div class="Connect"><a href="#connect">Espace Personnel</a></div>
+
+
+
+
+
+                <div class="Connect">
+
+  <div class="text-center">
+    <a href="" id="connectBtn" data-toggle="modal" data-target="#modalLRForm">Espace Personnel</a>
+  </div>
+
+                </div>
                 <div class="Social">
                     <span id="findUs">Retrouver nous sur</span>
                     <ul class="socialList">
@@ -61,7 +73,6 @@
 
 @yield('content')
 
-
 <footer>
     <a href="mentions">Mentions Légales</a>
     <span>-</span>
@@ -69,11 +80,116 @@
 </footer>
 
 
+
+                <!--Modal: Login / Register Form-->
+                <div class="modal fade" id="modalLRForm" tabindex="1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog cascading-modal" role="document">
+                    
+                          <!--Content-->
+                          <div class="modal-content">
+                      
+                            <!--Modal cascading tabs-->
+                            <div class="modal-c-tabs">
+                      
+                              <!-- Nav tabs -->
+                              <ul class="nav nav-tabs md-tabs tabs-2 light-blue darken-3" id="CI" role="tablist">
+                                <li class="nav-item">
+                                  <a class="nav-link active" data-toggle="tab" href="#panel7" role="tab"><i class="fas fa-user mr-1"></i>
+                                    Connexion</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" data-toggle="tab" href="#panel8" role="tab"><i class="fas fa-user-plus mr-1"></i>
+                                    Inscription</a>
+                                </li>
+                              </ul>
+                      
+                              <!-- Tab panels -->
+                              <div class="tab-content">
+                                <!--Panel 7-->
+                                <div class="tab-pane fade in show active" id="panel7" role="tabpanel">
+                      
+                                  <!--Body-->
+                                  <div class="modal-body mb-1">
+                                    <div class="md-form form-sm mb-5">
+                                      <i class="fas fa-envelope prefix"></i>
+                                      <input type="email" id="modalLRInput" placeholder="Votre Adresse Mail"class="form-control form-control-sm validate">
+
+                                    </div>
+                      
+                                    <div class="md-form form-sm mb-4">
+                                      <i class="fas fa-lock prefix"></i>
+                                      <input type="password" id="modalLRInput" placeholder="Votre mot de passe"class="form-control form-control-sm validate">
+
+                                    </div>
+                                    <div class="text-center mt-2">
+                                      <button class="btn btn-warning">Connexion<i class="fas fa-sign-in ml-1"></i></button>
+                                    </div>
+                                  </div>
+                                  <!--Footer-->
+                                  <div class="modal-footer">
+                                    <div class="options text-center text-md-right mt-1">
+                                      <p id="textModal">Pas inscris ? <a href="#panel8" class="blue-text">Inscription</a></p>
+                                     
+                                    </div>
+                                    <button type="button" class="btn btn-outline-danger waves-effect ml-auto" data-dismiss="modal">Fermer</button>
+                                  </div>
+                      
+                                </div>
+                                <!--/.Panel 7-->
+                      
+                                <!--Panel 8-->
+                                <div class="tab-pane fade" id="panel8" role="tabpanel">
+                      
+                                  <!--Body-->
+                                  <div class="modal-body">
+                                    <div class="md-form form-sm mb-5">
+                                      <i class="fas fa-envelope prefix"></i>
+                                      <input type="email" id="modalLRInput"placeholder="Adresse Mail" class="form-control form-control-sm validate">
+                                    </div>
+                      
+                                    <div class="md-form form-sm mb-5">
+                                      <i class="fas fa-lock prefix"></i>
+                                      <input type="password" id="modalLRInput" placeholder="Mot de passe" class="form-control form-control-sm validate">
+
+                                    </div>
+                      
+                                    <div class="md-form form-sm mb-4">
+                                      <i class="fas fa-lock prefix"></i>
+                                      <input type="password" id="modalLRInput" placeholder="Confirmer le mot de passe"class="form-control form-control-sm validate">
+ 
+                                    </div>
+                      
+                                    <div class="text-center form-sm mt-2">
+                                      <button class="btn btn-warning">Inscription <i class="fas fa-sign-in"></i></button>
+                                    </div>
+                      
+                                  </div>
+                                  <!--Footer-->
+                                  <div class="modal-footer">
+                                    <div class="options text-left">
+                                      <p  id="textModal">Vous avez déjà un compte ? <a href="#panel7" class="blue-text">Se connecter</a></p>
+                                    </div>
+                                    <button type="button" class="btn btn-outline-danger waves-effect ml-auto" data-dismiss="modal">Fermer</button>
+                                  </div>
+                                </div>
+                                <!--/.Panel 8-->
+                              </div>
+                      
+                            </div>
+                          </div>
+                          <!--/.Content-->
+                        </div>
+                      </div>
+                      <!--Modal: Login / Register Form-->
+                      
+
 </body>
 
 </html>
 
+<!-- Scripts -->
 
+{{-- Script for responsive top nav --}}
 <script>
     function myFunction() {
         var x = document.getElementById("myTopnav");
@@ -84,3 +200,10 @@
         }
     }
 </script>
+
+
+
+
+{{-- <script src="/js/jquery.min.js"></script>
+<script src="/js/popper.min.js"></script>
+<script src="/js/bootstrap.min.js"></script> --}}
