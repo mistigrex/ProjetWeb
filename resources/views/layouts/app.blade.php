@@ -20,7 +20,7 @@
             <ul class="top-nav" id="myTopnav">
                 <li><a class="active" href="/">Accueil</a></li>
                 <li><a href="/Evenements">Événements</a></li>
-                <li><a href="/Activités">Activités</a></li>
+                <li><a href="http://localhost:81/ProjetWeb/public/Activités.blade.php">Activités</a></li>
                 <li><a href="/Boutique">Boutique</a></li>
                 <li><a href="/Contact">Contact</a></li>
                 <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -34,6 +34,9 @@
                 <div class="logoCESI">
                     <a href="https://ecole-ingenieurs.cesi.fr/"><img class="logoCESI" src="{{asset('images/logoCESI.png')}}" alt="Logo du CESI"></a>
                 </div>
+<<<<<<< HEAD
+                <div class="Connect"><a href="http://localhost:81/ProjetWeb/resources/views/pages/Inscription.blade.php">Espace Personnel</a></div>
+=======
 
                 <div class="Connect">
 
@@ -42,6 +45,7 @@
   </div>
 
                 </div>
+>>>>>>> master
                 <div class="Social">
                     <span id="findUs">Retrouver nous sur</span>
                     <ul class="socialList">
