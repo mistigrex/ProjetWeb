@@ -34,9 +34,6 @@
                 <div class="logoCESI">
                     <a href="https://ecole-ingenieurs.cesi.fr/"><img class="logoCESI" src="{{asset('images/logoCESI.png')}}" alt="Logo du CESI"></a>
                 </div>
-<<<<<<< HEAD
-                <div class="Connect"><a href="http://localhost:81/ProjetWeb/resources/views/pages/Inscription.blade.php">Espace Personnel</a></div>
-=======
 
                 <div class="Connect">
 
@@ -45,7 +42,6 @@
   </div>
 
                 </div>
->>>>>>> master
                 <div class="Social">
                     <span id="findUs">Retrouver nous sur</span>
                     <ul class="socialList">
@@ -143,7 +139,7 @@
                                   <!--Body-->
                                   <div class="modal-body">
 
-                                      <div class="md-form form-sm mb-5">
+                                    
                                           <i class="fas fa-school"></i>
                                           <label for="centre_cesi">Centre CESI</label>
                                           <select class="custom-select" name="Centre CESI">  
@@ -173,18 +169,31 @@
                                               <option value="9">Strasbourg</option>
                                               <option value="21">Toulouse</option>
                                             </select>
-                                        </div>
+                                    
 
                                     <div class="md-form form-sm mb-5">
                                       <i class="fas fa-envelope prefix"></i>
                                       <input type="email" id="modalLRInput"placeholder="Adresse Mail" class="form-control form-control-sm validate" required>
                                     </div>
-                      
-                                    <div class="md-form form-sm mb-5">
-                                      <i class="fas fa-lock prefix"></i>
-                                      <input type="password" id="modalLRInput" placeholder="Mot de passe" class="form-control form-control-sm validate" required>
+                                    <i class="fas fa-user-graduate"></i>
+                                    <div class="row">
+                                   
+                                        <div class="col-xs-6 col-sm-6 col-md-6">
+                                          <div class="form-group">
+                                            <input type="text" name="first_name" id="modalLRInput"class="form-control input-sm" placeholder="Nom" required>
+                                          </div>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6 col-md-6">
+                                          <div class="form-group">
+                                            <input type="text" name="last_name" id="modalLRInput" class="form-control input-sm" placeholder="Prénom" required>
+                                          </div>
+                                        </div>
+                                      </div>
 
-                                    </div>
+                                    <div class="md-form form-sm mb-5">
+                                        <i class="fas fa-lock prefix"></i>
+                                        <input type="" id="modalLRInput" placeholder="Mot de passe" class="form-control form-control-sm validate" required>
+                                      </div>
                       
                                     <div class="md-form form-sm mb-4">
                                       <i class="fas fa-lock prefix"></i>

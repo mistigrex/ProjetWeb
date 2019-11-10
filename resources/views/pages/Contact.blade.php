@@ -2,7 +2,7 @@
 
 @section('content')
 
-<form action="action_page.php">
+<form id="contactForm"action="action_page.php">
 
         <label for="fname">Nom</label>
         <input type="text" id="nom" name="nom" placeholder="Votre nom de famille..">

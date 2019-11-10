@@ -11405,10 +11405,9 @@ input[type=Envoyer]:hover {
 
 /* Add a background color and some padding around the form */
 
-form {
-  padding: 150px 40px 0px 280px;
+#contactForm {
+  padding: 100px 40px 30px 280px;
   border-radius: 5px;
-  margin-bottom: 219px;
 }
 
 body {
@@ -11416,8 +11415,8 @@ body {
 }
 
 @media screen and (max-width: 865px) {
-  form {
-    padding: 80px 0px 0px 20px;
+  #contactForm {
+    padding: 80px 10px 30px 10px;
   }
 }
 
@@ -11449,6 +11448,16 @@ body {
 
 .Product .container {
   margin-bottom: 50px;
+}
+
+.cadre {
+  padding: 5em 2em 3em 18em;
+}
+
+@media screen and (max-width: 865px) {
+  .cadre {
+    padding: 80px 13px 10px 20px;
+  }
 }
 
 .cadre {
