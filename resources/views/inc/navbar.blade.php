@@ -1,21 +1,4 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="{{ asset('js/app.js') }}"></script>
-    <link rel="stylesheet" href="{{asset('css/app.css')}}">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.1.0/css/all.css">
-
-    <title>BDE Cesi La Rochelle</title>
-</head>
-
-<body>
-
-<<<<<<< HEAD
-
-    <header>
+<header>
         <nav>
 
             <ul class="top-nav" id="myTopnav">
@@ -24,7 +7,7 @@
                 <li><a href="http://localhost:81/ProjetWeb/public/Activités.blade.php">Activités</a></li>
                 <li><a href="/Boutique">Boutique</a></li>
                 <li><a href="/Contact">Contact</a></li>
-                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <a href="javascript:void(0);" class="icon" onclick="expandLinks()">
                     <i class="fa fa-bars"></i>
                 </a>
             </ul>
@@ -35,19 +18,12 @@
                 <div class="logoCESI">
                     <a href="https://ecole-ingenieurs.cesi.fr/"><img class="logoCESI" src="{{asset('images/logoCESI.png')}}" alt="Logo du CESI"></a>
                 </div>
-               <!-- <div class="Connect"><a href="http://localhost:81/ProjetWeb/resources/views/pages/Inscription.blade.php">Espace Personnel</a></div>-->
-
-
-
-
-
 
                 <div class="Connect">
 
   <div class="text-center">
     <a href="" id="connectBtn" data-toggle="modal" data-target="#modalLRForm">Espace Personnel</a>
   </div>
-
                 </div>
                 <div class="Social">
                     <span id="findUs">Retrouver nous sur</span>
@@ -73,32 +49,3 @@
             </div>
         </nav>
     </header>
-=======
-@include('inc.navbar')
->>>>>>> master
-
-@yield('content')
-
-<footer>
-    <a href="mentions">Mentions Légales</a>
-    <span>-</span>
-    <a href="confidentialité">Politique de Confidentialité</a>
-</footer>
-
-
-@include('inc.logReg')
-</body>
-
-</html>
-
-{{-- Script for responsive top nav --}}
-<script>
-    function expandLinks() {
-        var x = document.getElementById("myTopnav");
-        if (x.className === "top-nav") {
-            x.className += " responsive";
-        } else {
-            x.className = "top-nav";
-        }
-    }
-</script>
