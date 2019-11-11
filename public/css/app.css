@@ -11169,7 +11169,7 @@ a.text-dark:focus {
 
   .top-nav.responsive a.icon {
     position: absolute;
-    right: 15px;
+    right: 22px;
     top: 0;
   }
 
@@ -11187,7 +11187,7 @@ a.text-dark:focus {
   -webkit-box-direction: normal;
           flex-direction: column;
   z-index: 2;
-  background-color: rgba(0, 0, 0, 0.99);
+  background-color: black;
   position: fixed;
   width: 230px;
   height: 100%;
@@ -11209,8 +11209,8 @@ a.text-dark:focus {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
             flex-direction: row;
-    width: 90%;
-    height: 72px;
+    width: 80%;
+    height: 77.6px;
     box-shadow: 3px 3px 28px -14px rgba(0, 0, 0, 0.75);
   }
 
@@ -11240,7 +11240,7 @@ a.text-dark:focus {
   margin: 0px 0px 0px 0px;
 }
 
-.Connect a {
+.Connect #connectBtn {
   border: 2px #ffc252 solid;
   border-radius: 5px;
   font-size: 22px;
@@ -11249,7 +11249,7 @@ a.text-dark:focus {
   padding: 3px;
 }
 
-.Connect a:hover {
+.Connect #connectBtn:hover {
   background-color: #ffc252;
   color: black;
   -webkit-transition: color 0.6s ease-in, border-color 0.3s ease-in, background-color 0.3s ease-in;
@@ -11331,7 +11331,33 @@ footer {
 
 footer a {
   color: white;
+  opacity: 0.6;
   font-size: 13px;
+}
+
+footer a:hover {
+  color: white;
+  opacity: 0.8;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+footer span {
+  color: white;
+  opacity: 0.6;
+}
+
+#modalLRInput {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: #b9b9b9 1px solid;
+}
+
+#textModal {
+  margin-right: 30px;
+  margin-bottom: 0px;
+  margin-top: 2px;
 }
 
 /* Style inputs with type="text", select elements and textareas */
@@ -11379,10 +11405,9 @@ input[type=Envoyer]:hover {
 
 /* Add a background color and some padding around the form */
 
-form {
-  padding: 150px 40px 0px 280px;
+#contactForm {
+  padding: 100px 40px 30px 280px;
   border-radius: 5px;
-  margin-bottom: 219px;
 }
 
 body {
@@ -11390,30 +11415,58 @@ body {
 }
 
 @media screen and (max-width: 865px) {
-  form {
-    padding: 80px 0px 0px 20px;
+  #contactForm {
+    padding: 80px 10px 30px 10px;
   }
 }
 
-<<<<<<< HEAD
 #top3 {
-  padding: 150px 40px 0px 280px;
+  padding: 100px 0px 0px 240px;
 }
 
 @media screen and (max-width: 865px) {
   #top3 {
     padding: 80px 0px 0px 20px;
-=======
+  }
+
+  .presentation {
+    display: none;
+  }
+}
+
+.presentation {
+  margin-bottom: 30px;
+}
+
+.intro {
+  margin-bottom: 45px;
+}
+
+.features {
+  margin-bottom: 30px;
+}
+
+.Product .container {
+  margin-bottom: 50px;
+}
+
 .cadre {
-  padding-top: 5em;
-  padding-left: 18em;
   padding: 5em 2em 3em 18em;
 }
 
 @media screen and (max-width: 865px) {
   .cadre {
     padding: 80px 13px 10px 20px;
->>>>>>> master
+  }
+}
+
+.cadre {
+  padding: 5em 2em 3em 18em;
+}
+
+@media screen and (max-width: 865px) {
+  .cadre {
+    padding: 80px 13px 10px 20px;
   }
 }
 
