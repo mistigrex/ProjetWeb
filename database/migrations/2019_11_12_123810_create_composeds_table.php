@@ -13,14 +13,14 @@ class CreateComposedsTable extends Migration
      */
     public function up()
     {
-        Schema::create('composeds', function (Blueprint $table) {
+        Schema::create('composed', function (Blueprint $table) {
             $table->increments('id');
-            //foreign key of Oders
+            //foreign key of Oder
             $table->integer('Order_id')->unsigned();
-            $table->foreign('Order_id')->references('id')->on('orders')->onDelete('cascade')->onUpdate('cascade');
-        // foreign key of Products
+            $table->foreign('Order_id')->references('id')->on('order')->onDelete('cascade')->onUpdate('cascade');
+        // foreign key of Product
             $table->integer('Product_id')->unsigned();
-            $table->foreign('Product_id')->references('id')->on('products')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('Product_id')->references('id')->on('product')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
@@ -31,6 +31,6 @@ class CreateComposedsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('composeds');
+        Schema::dropIfExists('composed');
     }
 }

@@ -13,16 +13,20 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::connection('mysql2')->create('users', function (Blueprint $table) {
+        Schema::connection('mysql2')->create('user', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('cesi_center');
             $table->string('firstname');
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->integer('Role_id')->default(0);
             $table->rememberToken();
             $table->timestamps();
+            //Foreign key of Role
+            $table->integer('Role_id')->unsigned();
+            $table->foreign('Role_id')->references('id')->on('roles')->onDelete('cascade')->onUpdate('cascade');
+            //Foreign key of Cesi
+            $table->integer('Cesi_id')->unsigned();
+            $table->foreign('Cesi_id')->references('id')->on('Cesis')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
@@ -33,6 +37,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::connection('mysql2')->dropIfExists('users');
+        Schema::connection('mysql2')->dropIfExists('user');
     }
 }
