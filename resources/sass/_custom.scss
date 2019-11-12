@@ -221,15 +221,28 @@ footer span {
 }
 
 // Connexion / Incsription Modal
-#modalLRInput {
+.modalLRInput {
     border-top: none;
     border-left: none;
     border-right: none;
     border-bottom: rgb(185, 185, 185) 1px solid;
+    width: 100%;
 }
 
 #textModal {
     margin-right: 30px;
     margin-bottom: 0px;
     margin-top: 2px;
+}
+
+#navbarDropdown {
+    color: white;
+    font-size: 17px;
+}
+
+#navbarDropdown:hover {
+    color: white;
+    text-decoration: underline;
+    color: hsla(39, 100%, 66%, 1);
+    transition: 0.3s;
 }

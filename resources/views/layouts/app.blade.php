@@ -17,8 +17,6 @@
 
 @yield('content')
 
-
-
 <footer>
     <a href="mentions">Mentions Légales</a>
     <span>-</span>
