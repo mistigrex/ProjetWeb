@@ -21,10 +21,3 @@ Route::get('/Evenements', 'PagesController@Evenements');
 Route::get('/mentions', 'PagesController@Mentions');
 Route::get('/confidentialité', 'PagesController@Confidentialité');
 Route::get('/manifestations', 'PagesController@Manifestations');
-<<<<<<< HEAD
-Route::get('/confidentialité', 'PagesController@Confidentialité');
-Route::get('/manifestations', 'PagesController@Manifestations');
-=======
-Route::get('/confidentialité', 'PagesController@confidentialité');
-
->>>>>>> master
