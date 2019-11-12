@@ -3,10 +3,10 @@
 
             <ul class="top-nav" id="myTopnav">
                 <li><a class="active" href="/">Accueil</a></li>
-                <li><a href="/Evenements">Événements</a></li>
-                <li><a href="http://localhost:81/ProjetWeb/public/Activités.blade.php">Activités</a></li>
-                <li><a href="/Boutique">Boutique</a></li>
-                <li><a href="/Contact">Contact</a></li>
+                <li><a href="/evenements">Événements</a></li>
+                <li><a href="/activités">Activités</a></li>
+                <li><a href="/boutique">Boutique</a></li>
+                <li><a href="/contact">Contact</a></li>
                 <a href="javascript:void(0);" class="icon" onclick="expandLinks()">
                     <i class="fa fa-bars"></i>
                 </a>

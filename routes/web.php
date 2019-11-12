@@ -14,24 +14,14 @@
 use App\Http\Controllers\PagesController;
 
 Route::get('/', 'PagesController@Acceuil');
-Route::get('/Activités', 'PagesController@Activités');
-Route::get('/Boutique', 'PagesController@Boutique');
-Route::get('/Contact', 'PagesController@Contact');
-Route::get('/Evenements', 'PagesController@Evenements');
+Route::get('/activités', 'PagesController@Activités');
+Route::get('/boutique', 'PagesController@Boutique');
+Route::get('/contact', 'PagesController@Contact');
+Route::get('/evenements', 'PagesController@Evenements');
 Route::get('/mentions', 'PagesController@Mentions');
-Route::get('/confidentialité', 'PagesController@Confidentialité');
 Route::get('/manifestations', 'PagesController@Manifestations');
-<<<<<<< HEAD
 Route::get('/confidentialité', 'PagesController@Confidentialité');
-Route::get('/manifestations', 'PagesController@Manifestations');
-=======
-Route::get('/confidentialité', 'PagesController@confidentialité');
 
->>>>>>> master
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 

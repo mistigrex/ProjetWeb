@@ -8,23 +8,23 @@ use Illuminate\Http\Request;
 class PagesController extends Controller
 {
     public function Acceuil(){
-        return view('pages.Acceuil');
+        return view('pages.acceuil');
     }
 
     public function Activités(){
-        return view('pages.Activités');
+        return view('pages.activités');
     }
 
     public function Boutique(){
-        return view('pages.Boutique');
+        return view('pages.boutique');
     }
 
     public function Contact(){
-        return view('pages.Contact');
+        return view('pages.contact');
     }
 
     public function Evenements(){
-        return view('pages.Evenements');
+        return view('pages.evenements');
     }
 
     public function Mentions(){
