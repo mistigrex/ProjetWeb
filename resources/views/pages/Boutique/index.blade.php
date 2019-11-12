@@ -47,7 +47,7 @@
           <div class="col-md-6 feature">
             <div class="icon"><i class="icon-shirt-and-tie"></i></div>
             <div class="text">
-              <h4>Des Design unique</h4>
+              <h4>Des Design uniques</h4>
               <p>Je te jure personne d'autres à les mêmes</p>
             </div>
           </div>
@@ -77,6 +77,54 @@
   </div>
 </section>
 <!-- End Features Section-->
+
+
+@if(count($products) > 0)
+@foreach($products as $product)
+
+<div class="container" id="Produit">
+  <div class="row">
+    <div class="col-md-4 product"><img src="{{$product->image}}" alt="t-shirt" class="img-fluid"></div>
+    <div class="col-md-8 info">
+      <div class="info-wrapper">
+      <h2>{{$product->name}}</h2>
+        <p class="lead">
+          {{$product->description}}
+        </p>
+        <ul class="product-info list-unstyled">
+          <li class="size">
+            <select title="Choisi ta taille" class="selectpicker">
+              <option value="small">Small</option>
+              <option value="medium">Medium</option>
+              <option value="large">Large</option>
+              <option value="x-large">X-Large</option>
+            </select>
+          </li>
+          <li class="Taille">
+            <div class="product-quantity">
+              <div class="minus-btn"><i class="icon-android-remove"></i></div>
+              <input type="text" placeholder="T'en veux combien frère ?" class="quantity">
+              <div class="plus-btn"><i class="icon-android-add"></i></div>
+            </div>
+          </li>
+          <li class="price">{{$product->price}} €</li>
+        </ul>
+      </div><a href="#" class="add-to-cart btn btn-primary">Ajouter au panier <i class="icon-cart-1"></i></a>
+    </div>
+  </div>
+</div>
+
+@endforeach
+@else
+<h1>Aucun produits disponible</h1>
+@endif
+
+
+
+
+
+
+{{-- 
 
 <!-- Product Section-->
 <section class="Product">
@@ -312,7 +360,7 @@
 
 <!-- End Product Section-->
 
-</section>
+</section> --}}
 
 
 </article>

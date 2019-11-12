@@ -11435,20 +11435,12 @@ body {
 }
 
 .cadre {
-<<<<<<< HEAD
   padding: 6em 2em 3em 18em;
-=======
-  padding: 5em 2em 3em 18em;
->>>>>>> Devflo
 }
 
 @media screen and (max-width: 865px) {
   .cadre {
-<<<<<<< HEAD
     padding: 90px 13px 10px 20px;
-=======
-    padding: 80px 13px 10px 20px;
->>>>>>> Devflo
   }
 }
 
@@ -11478,7 +11470,7 @@ body {
   margin-bottom: 30px;
 }
 
-.Product .container {
+#Produit {
   margin-bottom: 50px;
 }
 

@@ -5,7 +5,7 @@
                 <li><a class="active" href="/">Accueil</a></li>
                 <li><a href="/evenements">Événements</a></li>
                 <li><a href="/activités">Activités</a></li>
-                <li><a href="/boutique">Boutique</a></li>
+                <li><a href="/products">Boutique</a></li>
                 <li><a href="/contact">Contact</a></li>
                 <a href="javascript:void(0);" class="icon" onclick="expandLinks()">
                     <i class="fa fa-bars"></i>
