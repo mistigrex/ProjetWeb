@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBasketsTable extends Migration
+class CreateCesisTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateBasketsTable extends Migration
      */
     public function up()
     {
-        Schema::create('basket', function (Blueprint $table) {
+        Schema::connection('mysql2')->create('cesi', function (Blueprint $table) {
             $table->increments('id');
-            //Foreign key of User
-            $table->integer('User_id')->unsigned();
-            $table->foreign('User_id')->references('id')->on('user')->onDelete('cascade')->onUpdate('cascade');
+            $table->string('Location');
         });
     }
 
@@ -28,6 +26,6 @@ class CreateBasketsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('basket');
+        Schema::connection('mysql2')->dropIfExists('cesi');
     }
 }

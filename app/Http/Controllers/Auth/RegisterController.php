@@ -48,7 +48,7 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        return Validator::make($data, [
+        return Validator::connection('mysql2')->make($data, [
             'cesi_center' => ['required', 'string', 'max:255'],
             'firstname' => ['required', 'string', 'max:255'],
             'name' => ['required', 'string', 'max:255'],
@@ -65,7 +65,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        return User::connection('mysql2')->create([
             'cesi_center' => $data['cesi_center'],
             'firstname' => $data['firstname'],
             'name' => $data['name'],
