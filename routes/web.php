@@ -21,3 +21,11 @@ Route::get('/Evenements', 'PagesController@Evenements');
 Route::get('/mentions', 'PagesController@Mentions');
 Route::get('/confidentialité', 'PagesController@confidentialité');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
