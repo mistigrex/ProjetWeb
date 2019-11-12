@@ -405,6 +405,8 @@ class ComposerStaticInitb186aeb3e3e0de480aef6bf6c14a9f8c
     );
 
     public static $classMap = array (
+        'App\\BaseModel' => __DIR__ . '/../..' . '/app/BaseModel.php',
+        'App\\BaseModel2' => __DIR__ . '/../..' . '/app/BaseModel2.php',
         'App\\Basket' => __DIR__ . '/../..' . '/app/Basket.php',
         'App\\Category' => __DIR__ . '/../..' . '/app/Category.php',
         'App\\Comment' => __DIR__ . '/../..' . '/app/Comment.php',
@@ -419,10 +421,9 @@ class ComposerStaticInitb186aeb3e3e0de480aef6bf6c14a9f8c
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
-        'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
+        'App\\Http\\Controllers\\DashboardController' => __DIR__ . '/../..' . '/app/Http/Controllers/DashboardController.php',
         'App\\Http\\Controllers\\ManifestationsController' => __DIR__ . '/../..' . '/app/Http/Controllers/ManifestationsController.php',
         'App\\Http\\Controllers\\PagesController' => __DIR__ . '/../..' . '/app/Http/Controllers/PagesController.php',
-        'App\\Http\\Controllers\\postController' => __DIR__ . '/../..' . '/app/Http/Controllers/postController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\CheckForMaintenanceMode' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckForMaintenanceMode.php',

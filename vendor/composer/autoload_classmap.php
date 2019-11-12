@@ -6,6 +6,8 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\BaseModel' => $baseDir . '/app/BaseModel.php',
+    'App\\BaseModel2' => $baseDir . '/app/BaseModel2.php',
     'App\\Basket' => $baseDir . '/app/Basket.php',
     'App\\Category' => $baseDir . '/app/Category.php',
     'App\\Comment' => $baseDir . '/app/Comment.php',
@@ -20,10 +22,9 @@ return array(
     'App\\Http\\Controllers\\Auth\\ResetPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ResetPasswordController.php',
     'App\\Http\\Controllers\\Auth\\VerificationController' => $baseDir . '/app/Http/Controllers/Auth/VerificationController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
-    'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
+    'App\\Http\\Controllers\\DashboardController' => $baseDir . '/app/Http/Controllers/DashboardController.php',
     'App\\Http\\Controllers\\ManifestationsController' => $baseDir . '/app/Http/Controllers/ManifestationsController.php',
     'App\\Http\\Controllers\\PagesController' => $baseDir . '/app/Http/Controllers/PagesController.php',
-    'App\\Http\\Controllers\\postController' => $baseDir . '/app/Http/Controllers/postController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',
     'App\\Http\\Middleware\\CheckForMaintenanceMode' => $baseDir . '/app/Http/Middleware/CheckForMaintenanceMode.php',

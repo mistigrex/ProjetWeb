@@ -14,13 +14,13 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::connection('mysql2')->create('users', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->string('cesi_center');
             $table->string('firstname');
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->id('Role_id')->default(0);
+            $table->integer('Role_id')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });
