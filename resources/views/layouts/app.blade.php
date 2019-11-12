@@ -20,7 +20,7 @@
             <ul class="top-nav" id="myTopnav">
                 <li><a class="active" href="/">Accueil</a></li>
                 <li><a href="/Evenements">Événements</a></li>
-                <li><a href="/Activités">Activités</a></li>
+                <li><a href="/Activites">Activités</a></li>
                 <li><a href="/Boutique">Boutique</a></li>
                 <li><a href="/Contact">Contact</a></li>
                 <a href="javascript:void(0);" class="icon" onclick="myFunction()">

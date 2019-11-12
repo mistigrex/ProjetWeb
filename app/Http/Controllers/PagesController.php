@@ -11,8 +11,8 @@ class PagesController extends Controller
         return view('pages.acceuil');
     }
 
-    public function Activités(){
-        return view('pages.activités');
+    public function Activites(){
+        return view('pages.activites');
     }
 
     public function Boutique(){
