@@ -11420,43 +11420,13 @@ body {
   }
 }
 
-#top3 {
-  padding: 100px 0px 0px 240px;
-}
-
-@media screen and (max-width: 865px) {
-  #top3 {
-    padding: 80px 0px 0px 20px;
-  }
-
-  .presentation {
-    display: none;
-  }
-}
-
-.presentation {
-  margin-bottom: 30px;
-}
-
-.intro {
-  margin-bottom: 45px;
-}
-
-.features {
-  margin-bottom: 30px;
-}
-
-.Product .container {
-  margin-bottom: 50px;
-}
-
 .cadre {
-  padding: 5em 2em 3em 18em;
+  padding: 6em 2em 3em 18em;
 }
 
 @media screen and (max-width: 865px) {
   .cadre {
-    padding: 80px 13px 10px 20px;
+    padding: 90px 13px 10px 20px;
   }
 }
 
