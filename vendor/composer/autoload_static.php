@@ -405,6 +405,9 @@ class ComposerStaticInitb186aeb3e3e0de480aef6bf6c14a9f8c
     );
 
     public static $classMap = array (
+        'App\\Basket' => __DIR__ . '/../..' . '/app/Basket.php',
+        'App\\Category' => __DIR__ . '/../..' . '/app/Category.php',
+        'App\\Composed' => __DIR__ . '/../..' . '/app/Composed.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
@@ -433,6 +436,7 @@ class ComposerStaticInitb186aeb3e3e0de480aef6bf6c14a9f8c
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
+        'App\\Saves' => __DIR__ . '/../..' . '/app/Saves.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
         'Carbon\\CarbonImmutable' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonImmutable.php',
