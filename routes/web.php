@@ -28,3 +28,11 @@ Route::get('/manifestations', 'PagesController@Manifestations');
 Route::get('/confidentialité', 'PagesController@confidentialité');
 
 >>>>>>> master
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
