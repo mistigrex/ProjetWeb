@@ -11347,17 +11347,31 @@ footer span {
   opacity: 0.6;
 }
 
-#modalLRInput {
+.modalLRInput {
   border-top: none;
   border-left: none;
   border-right: none;
   border-bottom: #b9b9b9 1px solid;
+  width: 100%;
 }
 
 #textModal {
   margin-right: 30px;
   margin-bottom: 0px;
   margin-top: 2px;
+}
+
+#navbarDropdown {
+  color: white;
+  font-size: 17px;
+}
+
+#navbarDropdown:hover {
+  color: white;
+  text-decoration: underline;
+  color: #ffc252;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 /* Style inputs with type="text", select elements and textareas */
@@ -11421,12 +11435,42 @@ body {
 }
 
 .cadre {
-  padding: 6em 2em 3em 18em;
+  padding: 5em 2em 3em 18em;
 }
 
 @media screen and (max-width: 865px) {
   .cadre {
-    padding: 90px 13px 10px 20px;
+    padding: 80px 13px 10px 20px;
   }
+}
+
+#top3 {
+  padding: 100px 0px 0px 240px;
+}
+
+@media screen and (max-width: 865px) {
+  #top3 {
+    padding: 80px 0px 0px 20px;
+  }
+
+  .presentation {
+    display: none;
+  }
+}
+
+.presentation {
+  margin-bottom: 30px;
+}
+
+.intro {
+  margin-bottom: 45px;
+}
+
+.features {
+  margin-bottom: 30px;
+}
+
+.Product .container {
+  margin-bottom: 50px;
 }
 

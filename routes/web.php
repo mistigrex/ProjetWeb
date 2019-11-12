@@ -25,5 +25,4 @@ Route::get('/confidentialité', 'PagesController@Confidentialité');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('manifestations', 'ManifestationsController');
+Route::get('/dashboard', 'DashboardController@index');
