@@ -14,12 +14,15 @@
             <textarea name="description" rows="4" cols="45">
             </textarea>
 
-            <label for="fréquence">La manifestation sera-t'elle Récurente ?</label>
+            <label for="fréquence">Fréquence de la manifestation</label>
             <select name="fréquence">
                 <option value="0">Ponctuelle</option>
                 <option value="1">Récurente</option>
             </select>
-            <label for="userId">User ID</label>
+
+            <label for="image">Image</label>
+            <input type="hidden" name="MAX_FILE_SIZE" value="5000000">
+            <input type="file" name="image">
             <input type="submit" value="Valider" />
         </p>
 
