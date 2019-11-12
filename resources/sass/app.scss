@@ -1,10 +1,12 @@
-// BootStrap
-@import "node_modules/bootstrap/scss/bootstrap.scss";
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+// Variables
+@import 'variables';
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
 // Custom CSS
 @import "custom";
 // Contact Page CSS
 @import "contact";
 // mentions page CSS
 @import "mentions";
-// Boutique Page CSS
-@import "boutique";
