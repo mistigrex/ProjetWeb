@@ -21,7 +21,7 @@ class CreateProductsTable extends Migration
             $table->string('image');
             //Foreign key of Categories
             $table->integer('Category_id')->unsigned();
-            $table->foreign('Category_id')->references('id')->on('categories');
+            $table->foreign('Category_id')->references('id')->on('categories')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

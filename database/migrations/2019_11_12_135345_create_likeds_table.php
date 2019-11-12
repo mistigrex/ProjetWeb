@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBasketsTable extends Migration
+class CreateLikedsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,16 @@ class CreateBasketsTable extends Migration
      */
     public function up()
     {
-        Schema::create('baskets', function (Blueprint $table) {
+        Schema::create('likeds', function (Blueprint $table) {
             $table->increments('id');
             //Foreign key of Users
             $table->integer('User_id')->unsigned();
             $table->foreign('User_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            //Foreign key of Comments
+            $table->integer('Comment_id')->unsigned();
+            $table->foreign('Comment_id')->references('id')->on('comments')->onDelete('cascade')->onUpdate('cascade');
+
+            
         });
     }
 
@@ -28,6 +33,6 @@ class CreateBasketsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('baskets');
+        Schema::dropIfExists('likeds');
     }
 }

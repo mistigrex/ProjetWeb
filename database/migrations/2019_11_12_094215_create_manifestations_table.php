@@ -17,11 +17,10 @@ class CreateManifestationsTable extends Migration
             $table->increments('id');
             $table->string('nom');
             $table->mediumText('description');
-            $table->integer('frequence');
-            $table->date('dateManifestation');
+            $table->boolean('frequence');
+            $table->date('date');
             $table->float('prix');
             $table->string('image');
-            $table->timestamps();
         });
     }
 
