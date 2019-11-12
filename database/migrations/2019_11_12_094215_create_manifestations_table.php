@@ -32,6 +32,6 @@ class CreateManifestationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('manifestations');
+        Schema::dropIfExists('activity');
     }
 }
