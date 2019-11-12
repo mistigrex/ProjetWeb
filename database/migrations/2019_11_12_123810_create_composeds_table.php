@@ -17,10 +17,10 @@ class CreateComposedsTable extends Migration
             $table->increments('id');
             //foreign key of Oders
             $table->integer('Order_id')->unsigned();
-            $table->foreign('Order_id')->references('id')->on('orders');
+            $table->foreign('Order_id')->references('id')->on('orders')->onDelete('cascade')->onUpdate('cascade');
         // foreign key of Products
             $table->integer('Product_id')->unsigned();
-            $table->foreign('Product_id')->references('id')->on('products');
+            $table->foreign('Product_id')->references('id')->on('products')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
