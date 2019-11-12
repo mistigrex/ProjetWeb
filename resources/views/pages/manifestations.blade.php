@@ -5,24 +5,26 @@
     <br>
     <h2>Créer une manifestation</h2>
     <form method="post" action="cible.php">
- 
-        <p>
-            <p>Nom de la manifestation :</p>
-            <input type="text" name="Nom" />
 
-            <p>Description :</p>
+        <p>
+            <label for="nom">Nom de la manifestation</label>
+            <input type="text" name="nom" />
+
+            <label for="description">Description</label>
             <textarea name="description" rows="4" cols="45">
             </textarea>
-            <p>Fréquence :</p>
+
+            <label for="fréquence">La manifestation sera-t'elle Récurente ?</label>
             <select name="fréquence">
                 <option value="0">Ponctuelle</option>
                 <option value="1">Récurente</option>
             </select>
+            <label for="userId">User ID</label>
             <input type="submit" value="Valider" />
         </p>
-     
+
     </form>
 </div>
 
-    
+
 @endsection

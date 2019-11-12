@@ -22,6 +22,7 @@ Route::get('/mentions', 'PagesController@Mentions');
 Route::get('/confidentialité', 'PagesController@Confidentialité');
 Route::get('/manifestations', 'PagesController@Manifestations');
 <<<<<<< HEAD
+<<<<<<< HEAD
 Route::get('/confidentialité', 'PagesController@Confidentialité');
 Route::get('/manifestations', 'PagesController@Manifestations');
 =======
@@ -36,3 +37,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+=======
+>>>>>>> master
