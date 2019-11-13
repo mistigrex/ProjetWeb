@@ -1,7 +1,7 @@
-@extends('layouts.app')
+{{-- @extends('layouts.app')
 
 @section('content')
-<section class="cadre">
+<section class="cadre"> --}}
 
     <div class="card">
             <h3 id="dash"class="card-title">Dashboard de {{ Auth::user()->firstname }} {{ Auth::user()->name }}</h3>
@@ -54,48 +54,10 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>
-                                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
-                                        <a href="#" class="user-link">Flotov</a>
-                                    </td>
-                                    <td>
-                                        2013/08/08
-                                    </td>
-                                    <td class="text-center">
-                                        <span class="label label-default">Bilboqueur professionel</span>
-                                    </td>
-                                    <td>
-                                        <a href="#">flotov@lepasbo.com</a>
-                                    </td>
-                                    <td style="width: 20%;">
-                                            <a href="#" class="table-link">
-                                                    <span class="fa-stack">
-                                                        <i class="fa fa-square fa-stack-2x"></i>
-                                                        <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
-                                                    </span>
-                                                </a>
-                                        <a href="#" class="table-link danger">
-                                            <span class="fa-stack">
-                                                <i class="fa fa-square fa-stack-2x"></i>
-                                                <i class="fas fa-trash"></i>
-                                            </span>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div>
-
-
+                              
 @endif
 
 @endauth
-
+{{-- 
 </section>
-@endsection
+@endsection --}}

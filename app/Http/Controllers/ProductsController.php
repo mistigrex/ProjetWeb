@@ -26,7 +26,6 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        // $products = Product::orderBy('price', 'desc')->take(1)->get();
         $products = Product::orderBy('price', 'desc')->paginate(5);
        return view('Pages.Boutique.index')->with('products', $products);
     }
