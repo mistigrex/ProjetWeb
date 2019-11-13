@@ -15,8 +15,8 @@ class ManifestationsController extends Controller
     public function index()
     {
         //
-        return Manifestation::all();
-        return view('manifestations');
+        //return Manifestation::all();
+        //return view('manifestations');
     }
 
     /**
