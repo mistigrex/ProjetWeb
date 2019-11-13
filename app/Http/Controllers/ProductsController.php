@@ -8,6 +8,17 @@ use App\Product;
 
 class ProductsController extends Controller
 {
+
+ /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => ['index', 'show' ]]);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -44,7 +55,6 @@ class ProductsController extends Controller
             'price' => 'required'
         ]);
        
-
         // Create Post
         $product = new Product;
         $product->name = $request->input('name');

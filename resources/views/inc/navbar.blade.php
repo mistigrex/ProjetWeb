@@ -50,7 +50,6 @@
   </div>
 </div>
 
-
                 <div class="Social">
                     <span id="findUs">Retrouver nous sur</span>
                     <ul class="socialList">

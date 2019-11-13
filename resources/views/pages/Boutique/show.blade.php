@@ -11,7 +11,7 @@
           <p class="lead">
             {{$product->description}}
           </p>
-          <ul class="product-info list-unstyled">
+          <ul class="product-info list-unstyled" >
             <li class="size">
               <select title="Choisi ta taille" class="selectpicker">
                 <option value="small">Small</option>
@@ -26,8 +26,8 @@
               </div>
             </li>
             <li class="price">{{$product->price}} €</li>
-            <li><div><a href="/products/{{$product->id}}/edit" class="btn btn-success">Modifier le produit <i class="far fa-edit"></i></a></div></li>
-            <li>
+            <li class="boutonAdmin"><div><a href="/products/{{$product->id}}/edit" class="btn btn-success">Modifier le produit <i class="far fa-edit"></i></a></div></li>
+            <li class="boutonAdmin">
               <div>
                        {!!Form::open(['action' => ['ProductsController@destroy', $product->id], 'method' => 'POST', 'class' => 'pull-right'])!!}
                       {{Form::hidden('_method', 'DELETE')}}
