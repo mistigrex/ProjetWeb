@@ -17,6 +17,14 @@ class CreateRolesTable extends Migration
             $table->increments('id');
             $table->string('name');
         });
+
+        DB::connection('mysql2')->table('roles')->insert(
+            [
+                ['name' => 'Etudiant'],
+                ['name' => 'Membre du BDE'],
+                ['name' => 'Personnel CESI'],
+            ]
+            );
     }
 
     /**
