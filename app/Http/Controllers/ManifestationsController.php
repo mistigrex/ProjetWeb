@@ -14,8 +14,17 @@ class ManifestationsController extends Controller
      */
     public function index()
     {
+<<<<<<< Updated upstream
         $manifestations = Manifestation::all();
         return view('manifestations.index')->with('manifestations', $manifestations);
+=======
+        //
+        
+        $activity = Manisfestation::all();
+        return view('activity.index');
+        //return Manifestation::all();
+        //return view('manifestations');
+>>>>>>> Stashed changes
     }
 
     /**
