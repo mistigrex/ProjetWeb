@@ -23,7 +23,7 @@
     {{Form::text('price', '', ['class' => 'form-control', 'placeholder' => 'Prix du Produit'])}}
 </div>
 
-{{Form::submit('Ajouter le produit', ['class' => 'btn btn-warning'])}}
+{{Form::submit('Ajouter le produit +', ['class' => 'btn btn-warning'])}}
 
 
 {!! Form::close() !!}

@@ -26,7 +26,7 @@
               </div>
             </li>
             <li class="price">{{$product->price}} €</li>
-            <li><div><a href="/products/{{$product->id}}/edit" class="btn btn-success">Modifier le produit <i class="icon-cart-1"></i></a></div></li>
+            <li><div><a href="/products/{{$product->id}}/edit" class="btn btn-success">Modifier le produit <i class="far fa-edit"></i></a></div></li>
             <li>
               <div>
                        {!!Form::open(['action' => ['ProductsController@destroy', $product->id], 'method' => 'POST', 'class' => 'pull-right'])!!}
@@ -37,7 +37,7 @@
         </li>
           </ul>
      
-        </div><a href="#" class="add-to-cart btn btn-primary">Ajouter au panier <i class="icon-cart-1"></i></a>
+        </div><a href="#" class="add-to-cart btn btn-primary">Ajouter au panier <i class="fas fa-shopping-cart"></i></a>
      
 
 

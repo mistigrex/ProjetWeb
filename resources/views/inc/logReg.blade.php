@@ -103,7 +103,7 @@
                     <div class="modal-body">
                         {{-- INSCRIPTION CESI CENTER --}}
                             <i class="fas fa-school"></i>
-                            <label for="centre_cesi">Centre CESI</label>
+                            <label for="Cesi_id">Centre CESI</label>
                            @include('inc.centerSelect')
                     
                            {{-- INSCRIPTION EMAIL --}}

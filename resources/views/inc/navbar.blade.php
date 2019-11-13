@@ -22,15 +22,13 @@
                 <div class="Connect">
 
   <div class="text-center">
-    <a href="" id="connectBtn" data-toggle="modal" data-target="#modalLRForm">Espace Personnel</a>
     
-   @guest
+@guest
+ <a href="" id="connectBtn" data-toggle="modal" data-target="#modalLRForm">Espace Personnel</a>
+@endguest
 
-   @if (Route::has('register'))
-
-   @endif
-@else
-   <li class="nav-item dropdown">
+@auth
+      <li class="nav-item dropdown">
        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
             {{ Auth::user()->firstname }} {{ Auth::user()->name }} <span class="caret"></span>
        </a>
@@ -48,9 +46,11 @@
            </form>
        </div>
    </li>
-@endguest
+@endauth
   </div>
-                </div>
+</div>
+
+
                 <div class="Social">
                     <span id="findUs">Retrouver nous sur</span>
                     <ul class="socialList">

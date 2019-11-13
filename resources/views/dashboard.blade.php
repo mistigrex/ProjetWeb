@@ -37,7 +37,7 @@
                         </div>
                         <div class="row">
                                 <i class="fas fa-school"></i>
-                                <span>{{ Auth::user()->cesi_center }} </span>
+                                <span>{{ Auth::user()->Cesi_id }} </span>
                         </div>
                         <div class="row">
                                 <i class="fas fa-calendar-day"></i>
