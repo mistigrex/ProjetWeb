@@ -73,10 +73,13 @@
         </nav>
     </header>
 
+
+
 @yield('content')
 
-
-
+<div class="container">
+    @include('inc.messages')
+</div>
 <footer>
     <a href="mentions">Mentions Légales</a>
     <span>-</span>
@@ -85,6 +88,7 @@
 
 
 @include('inc.logReg')
+<button onclick='window.scrollTo({top: 0, behavior: "smooth"});' id="BoutonTop" title="Retour en Haut"><img src="http://www.w3.org/2000/svg" id="top">&#8593</span> <br>Top</button>
 </body>
 
 </html>
@@ -97,6 +101,23 @@
             x.className += " responsive";
         } else {
             x.className = "top-nav";
+        }
+    }
+</script>
+
+ <!-- Script du Bouton top -->
+
+ <script>
+    // When the user scrolls down 70px from the top of the document, show the button
+    window.onscroll = function() {
+        scrollFunction()
+    };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 200) {
+            document.getElementById("BoutonTop").style.display = "block";
+        } else {
+            document.getElementById("BoutonTop").style.display = "none";
         }
     }
 </script>

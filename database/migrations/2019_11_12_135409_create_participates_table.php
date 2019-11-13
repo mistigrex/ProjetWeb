@@ -15,12 +15,13 @@ class CreateParticipatesTable extends Migration
     {
         Schema::create('participates', function (Blueprint $table) {
             $table->increments('id');
-            //Foreign key of Users
+            //Foreign key of User
             $table->integer('Participant_id')->unsigned();
             $table->foreign('Participant_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             //Foreign key of Activity
             $table->integer('Activity_id')->unsigned();
-            $table->foreign('Activity_id')->references('id')->on('activity')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('Activity_id')->references('id')->on('manifestations')->onDelete('cascade')->onUpdate('cascade');
+            $table->timestamps();
         });
     }
 

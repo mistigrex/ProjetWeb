@@ -1,5 +1,5 @@
 
-<form>
+
     <div class="modal fade" id="modalLRForm" tabindex="1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog cascading-modal" role="document">
     
@@ -25,29 +25,68 @@
                 <div class="tab-content">
                 <!--Panel 7-->
                 <div class="tab-pane fade in show active" id="panel7" role="tabpanel">
-        
-                    <!--Body-->
+
+                        <form method="POST" action="{{ route('login') }}">
+                                @csrf
+          {{-- INPUT CONNEXION / MAIL --}}
                     <div class="modal-body mb-1">
                     <div class="md-form form-sm mb-5">
                         <i class="fas fa-envelope prefix"></i>
-                        <input type="email" id="modalLRInput" placeholder="Votre Adresse Mail"class="form-control form-control-sm validate" required>
+                        <div class="form-group row">
+                                <input id="email" class="modalLRInput" type="email" placeholder="Votre Adresse Mail" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
-                    </div>
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
         
+                        {{-- INPUT CONNEXION / MOT DE PASSE --}}
                     <div class="md-form form-sm mb-4">
                         <i class="fas fa-lock prefix"></i>
-                        <input type="password" id="modalLRInput" placeholder="Votre mot de passe"class="form-control form-control-sm validate" required>
+                            <input id="password" type="password" class="modalLRInput" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Votre Mot de Passe"required autocomplete="current-password">
 
+                            @error('password')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                     </div>
+
+                    <div class="form-group row">
+                            <div class="form-check">
+                                <input  class="custom-control-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+
+                                <label class="custom-control-label" for="remember">
+                                    {{ __('Se souvenir de moi') }}
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+
+               {{-- BUTTON CONNEXION  --}}
                     <div class="text-center mt-2">
-                        <button class="btn btn-warning" type="submit" >Connexion<i class="fas fa-sign-in ml-1"></i></button>
+                        <button class="btn btn-warning" type="submit" >   {{ __('Login') }}<i class="fas fa-sign-in ml-1"></i></button>
                     </div>
                     </div>
-                    <!--Footer-->
+
+              {{-- PAS ENCORE INSCRIS --}}
                     <div class="modal-footer">
                     <div class="options text-center text-md-right mt-1">
                         <p id="textModal">Pas encore inscris ? <a href="#panel8" data-toggle="tab" class="blue-text">Inscription</a></p>
                         
+                        {{-- FORGOT PASSWORD --}}
+                        {{-- <div class="options text-center text-md-right mt-1">
+                        @if (Route::has('password.request'))
+                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                        {{ __('Forgot Your Password?') }}
+                                    </a>
+                                @endif
+                        </div> --}}
+
+            {{-- BUTTON FERMER --}}
                     </div>
                     <button type="button" class="btn btn-outline-danger waves-effect ml-auto" data-dismiss="modal">Fermer</button>
                     </div>
@@ -55,50 +94,83 @@
                 </div>
                 <!--/.Panel 7-->
         
-                <!--Panel 8-->
+
+                <!--Panel 8 INSCRIPTION-->
                 <div class="tab-pane fade" id="panel8" role="tabpanel">
-        
+                        <form method="POST" action="{{ route('register') }}">
+                                @csrf
                     <!--Body-->
                     <div class="modal-body">
-
+                        {{-- INSCRIPTION CESI CENTER --}}
                             <i class="fas fa-school"></i>
                             <label for="centre_cesi">Centre CESI</label>
                            @include('inc.centerSelect')
                     
+                           {{-- INSCRIPTION EMAIL --}}
                     <div class="md-form form-sm mb-5">
                         <i class="fas fa-envelope prefix"></i>
-                        <input type="email" id="modalLRInput"placeholder="Adresse Mail" class="form-control form-control-sm validate" required>
+                        <input id="email"  placeholder="Adresse Mail"  class="modalLRInput" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+
+                        @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
+
                     <i class="fas fa-user-graduate"></i>
+
+
                     <div class="row">
                         <div class="col-xs-6 col-sm-6 col-md-6">
                             <div class="form-group">
-                            <input type="text" name="first_name" id="modalLRInput"class="form-control input-sm" placeholder="Nom" required>
-                            </div>
+                            <input id="firstname" type="text" class="modalLRInput" placeholder="Prénom"class="form-control @error('firstname') is-invalid @enderror" name="firstname" value="{{ old('firstname') }}" required autocomplete="given-name" autofocus>
+
+                            @error('firstname')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror    
+                        </div>
                         </div>
                         <div class="col-xs-6 col-sm-6 col-md-6">
                             <div class="form-group">
-                            <input type="text" name="last_name" id="modalLRInput" class="form-control input-sm" placeholder="Prénom" required>
-                            </div>
+                            <input id="name" type="text" class="modalLRInput" placeholder="Nom"class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="family-name" autofocus>
+
+                            @error('name')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror    
+                        </div>
                         </div>
                         </div>
 
+                        {{-- MOT DE PASSE / INSCRIPTION --}}
                     <div class="md-form form-sm mb-5">
-                        <i class="fas fa-lock prefix"></i>
-                        <input type="" id="modalLRInput" placeholder="Mot de passe" class="form-control form-control-sm validate" required>
+                            <i class="fas fa-lock prefix"></i>
+                            <input id="password" class="modalLRInput" placeholder="Mot de passe"  type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+    
+                            @error('password')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
         
+                     {{-- CONFIRM MOT DE PASSE / INSCRIPTION --}}
                     <div class="md-form form-sm mb-4">
                         <i class="fas fa-lock prefix"></i>
-                        <input type="password" id="modalLRInput" placeholder="Confirmer le mot de passe" class="form-control" id="validationCustom01" required>
+                            <input id="password-confirm" type="password" class="modalLRInput"  class="form-control" placeholder="Confirmer le mot de passe" name="password_confirmation" required autocomplete="new-password">
                     </div>
+
 
                     <div class="custom-control custom-checkbox">
                         <input type="checkbox" class="custom-control-input" id="customCheck1">
                         <label class="custom-control-label" for="customCheck1">J'accepte les conditions d'utilisation</label>
                         </div>
                     <div class="text-center form-sm mt-2">
-                        <button class="btn btn-warning" type="submit">Inscription <i class="fas fa-sign-in"></i></button>
+                        <button class="btn btn-warning" type="submit"> {{ __('Register') }} <i class="fas fa-sign-in"></i></button>
                     </div>
         
                     </div>
@@ -111,6 +183,7 @@
                     </div>
                 </div>
                 <!--/.Panel 8-->
+            </form>
                 </div>
         
             </div>
@@ -119,4 +192,4 @@
         </div>
         </div>
         <!--Modal: Login / Register Form-->
-    </form>
+ 
