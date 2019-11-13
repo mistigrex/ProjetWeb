@@ -13,7 +13,7 @@ class CreateCesisTable extends Migration
      */
     public function up()
     {
-        Schema::connection('mysql2')->create('cesi', function (Blueprint $table) {
+        Schema::connection('mysql2')->create('cesis', function (Blueprint $table) {
             $table->increments('id');
             $table->string('Location');
         });
@@ -26,6 +26,6 @@ class CreateCesisTable extends Migration
      */
     public function down()
     {
-        Schema::connection('mysql2')->dropIfExists('cesi');
+        Schema::connection('mysql2')->dropIfExists('cesis');
     }
 }

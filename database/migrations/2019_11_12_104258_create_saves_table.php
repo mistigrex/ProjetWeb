@@ -13,14 +13,14 @@ class CreateSavesTable extends Migration
      */
     public function up()
     {
-        Schema::create('save', function (Blueprint $table) {
+        Schema::create('saves', function (Blueprint $table) {
             $table->increments('id');
             //Foreign key of Basket
             $table->integer('Basket_id')->unsigned();
-            $table->foreign('Basket_id')->references('id')->on('basket')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('Basket_id')->references('id')->on('baskets')->onDelete('cascade')->onUpdate('cascade');
             //Foreign key of Product
             $table->integer('Product_id')->unsigned();
-            $table->foreign('Product_id')->references('id')->on('product')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('Product_id')->references('id')->on('products')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
@@ -31,6 +31,6 @@ class CreateSavesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('save');
+        Schema::dropIfExists('saves');
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+use Carbon\Traits\Timestamp;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,14 +14,15 @@ class CreateManifestationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('activity', function (Blueprint $table) {
+        Schema::create('manifestations', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nom');
-            $table->mediumText('description');
-            $table->boolean('frequence');
-            $table->date('date');
-            $table->float('prix');
-            $table->string('image');
+            $table->longText('description')->nullable();
+            $table->boolean('frequence')->nullable();
+            $table->date('date')->nullable();
+            $table->float('prix')->nullable();
+            $table->string('image')->nullable();
+            $table->timestamps();
         });
     }
 
@@ -31,6 +33,6 @@ class CreateManifestationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('activity');
+        Schema::dropIfExists('manifestations');
     }
 }
