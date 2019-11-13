@@ -29,7 +29,7 @@ class RegisterController extends Controller
      * @var string
      */
     protected $redirectTo = '/dashboard';
-
+    protected $connection = 'mysql2';
     /**
      * Create a new controller instance.
      *
