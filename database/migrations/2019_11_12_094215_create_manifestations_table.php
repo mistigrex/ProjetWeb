@@ -18,10 +18,10 @@ class CreateManifestationsTable extends Migration
             $table->increments('id');
             $table->string('nom');
             $table->longText('description')->nullable();
-            $table->boolean('frequence')->nullable();
+            $table->boolean('recurent')->nullable();
             $table->date('date')->nullable();
             $table->float('prix')->nullable();
-            //$table->string('image')->nullable();
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

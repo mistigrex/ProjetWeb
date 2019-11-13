@@ -25,7 +25,7 @@ class ManifestationsController extends Controller
      */
     public function create()
     {
-        //return('manifestations.create');
+        return view('manifestations.create');
     }
 
     /**
@@ -36,7 +36,15 @@ class ManifestationsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'nom' => 'required',
+            'description' => 'required',
+            'date' => 'required',
+            'recurent' => 'required',
+            'prix'  => 'required',
+            'image'
+        ]);
+        return 123;
     }
 
     /**
