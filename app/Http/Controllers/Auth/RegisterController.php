@@ -29,7 +29,7 @@ class RegisterController extends Controller
      * @var string
      */
     protected $redirectTo = '/dashboard';
-    protected $connection = 'mysql2';
+
     /**
      * Create a new controller instance.
      *
@@ -48,8 +48,8 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        return Validator::connection('mysql2')->make($data, [
-            'cesi_center' => ['required', 'string', 'max:255'],
+        return Validator::make($data, [
+            'Cesi_id' => ['required', 'string', 'max:255'],
             'firstname' => ['required', 'string', 'max:255'],
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
@@ -65,8 +65,8 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::connection('mysql2')->create([
-            'cesi_center' => $data['cesi_center'],
+        return User::create([
+            'Cesi_id' => $data['Cesi_id'],
             'firstname' => $data['firstname'],
             'name' => $data['name'],
             'email' => $data['email'],

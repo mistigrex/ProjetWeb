@@ -15,7 +15,7 @@
         <div class="content">
           <h1>BDE CESI</h1>
           <p class="hero-text">La Rochelle</p>
-          <p class="hero-text"><strong>Plusieurs produits uniques</strong> pour avoir un max de<strong> flow</strong></p><a href=".big-product" class="buy btn btn-primary">Acheter <i class="icon-shopping-bag"></i></a>
+          <p class="hero-text"><strong>Plusieurs produits uniques</strong> pour avoir un max de<strong> flow</strong></p><a href=".big-product" class="buy btn btn-primary">Acheter <i class="fas fa-shopping-basket"></i></a> <a href="/products/create" class="buy btn btn-success">Ajouter un produit +</a>
         </div>
       </div>
       <div class="col-lg-6">               

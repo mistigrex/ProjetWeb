@@ -19,7 +19,7 @@ class LoginController extends Controller
     */
 
     use AuthenticatesUsers;
-    protected $connection = 'mysql2';
+
     /**
      * Where to redirect users after login.
      *
