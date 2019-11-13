@@ -21,6 +21,7 @@ class CreateSavesTable extends Migration
             //Foreign key of Product
             $table->integer('Product_id')->unsigned();
             $table->foreign('Product_id')->references('id')->on('products')->onDelete('cascade')->onUpdate('cascade');
+            $table->timestamps();
         });
     }
 

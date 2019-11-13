@@ -20,13 +20,14 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->rememberToken();
-            $table->timestamps();
+            
             //Foreign key of Role
             $table->integer('Role_id')->unsigned();
             $table->foreign('Role_id')->references('id')->on('roles')->onDelete('cascade')->onUpdate('cascade');
             //Foreign key of Cesi
             $table->integer('Cesi_id')->unsigned();
             $table->foreign('Cesi_id')->references('id')->on('Cesis')->onDelete('cascade')->onUpdate('cascade');
+            $table->timestamps();
         });
     }
 

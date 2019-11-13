@@ -21,6 +21,7 @@ class CreateLikedsTable extends Migration
             //Foreign key of Comment
             $table->integer('Comment_id')->unsigned();
             $table->foreign('Comment_id')->references('id')->on('comments')->onDelete('cascade')->onUpdate('cascade');
+            $table->timestamps();
 
             
         });

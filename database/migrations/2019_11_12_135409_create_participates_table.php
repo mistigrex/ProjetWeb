@@ -21,6 +21,7 @@ class CreateParticipatesTable extends Migration
             //Foreign key of Activity
             $table->integer('Activity_id')->unsigned();
             $table->foreign('Activity_id')->references('id')->on('manifestations')->onDelete('cascade')->onUpdate('cascade');
+            $table->timestamps();
         });
     }
 
