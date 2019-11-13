@@ -14,9 +14,8 @@ class ManifestationsController extends Controller
      */
     public function index()
     {
-        //
-        //return Manifestation::all();
-        //return view('manifestations');
+        $manifestations = Manifestation::all();
+        return view('manifestations.index')->with('manifestations', $manifestations);
     }
 
     /**
@@ -26,7 +25,7 @@ class ManifestationsController extends Controller
      */
     public function create()
     {
-        //
+        //return('manifestations.create');
     }
 
     /**
@@ -48,8 +47,8 @@ class ManifestationsController extends Controller
      */
     public function show($id)
     {
-        $manif = Manif::find(id);
-        return view('manifestation.show')->with('manif', $manif);
+        //$manifestation = Manifestation::find($id);
+        //return view('manifestations.show')->with('manifestation', $manifestation);
     }
 
     /**
@@ -60,7 +59,8 @@ class ManifestationsController extends Controller
      */
     public function edit($id)
     {
-        //
+        //$manifestation = Manifestation::findOrFail($id);
+        //return view('manifestations.edit', compact('manifestation'));
     }
 
     /**
