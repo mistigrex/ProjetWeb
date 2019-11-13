@@ -87,7 +87,7 @@
     <div class="col-md-4 product"><img src="{{$product->image}}" alt="t-shirt" class="img-fluid"></div>
     <div class="col-md-8 info">
       <div class="info-wrapper">
-      <h2>{{$product->name}}</h2>
+      <h2 ><a href="/products/{{$product->id}}">{{$product->name}}</a></h2>
         <p class="lead">
           {{$product->description}}
         </p>
@@ -115,6 +115,7 @@
 </div>
 
 @endforeach
+{{$products->links()}}
 @else
 <h1>Aucun produits disponible</h1>
 @endif

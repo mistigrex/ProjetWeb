@@ -124,7 +124,7 @@
                     <div class="row">
                         <div class="col-xs-6 col-sm-6 col-md-6">
                             <div class="form-group">
-                            <input id="firstname" type="text" class="modalLRInput" placeholder="Prénom"class="form-control @error('firstname') is-invalid @enderror" name="firstname" value="{{ old('firstname') }}" required autocomplete="firstname" autofocus>
+                            <input id="firstname" type="text" class="modalLRInput" placeholder="Prénom"class="form-control @error('firstname') is-invalid @enderror" name="firstname" value="{{ old('firstname') }}" required autocomplete="given-name" autofocus>
 
                             @error('firstname')
                                 <span class="invalid-feedback" role="alert">
@@ -135,7 +135,7 @@
                         </div>
                         <div class="col-xs-6 col-sm-6 col-md-6">
                             <div class="form-group">
-                            <input id="name" type="text" class="modalLRInput" placeholder="Nom"class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                            <input id="name" type="text" class="modalLRInput" placeholder="Nom"class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="family-name" autofocus>
 
                             @error('name')
                                 <span class="invalid-feedback" role="alert">

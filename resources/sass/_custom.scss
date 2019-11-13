@@ -246,3 +246,23 @@ footer span {
     color: hsla(39, 100%, 66%, 1);
     transition: 0.3s;
 }
+
+#BoutonTop {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 15px;
+    border: none;
+    color: black;
+    background-color: #ffffff00;
+    cursor: pointer;
+    padding: 7px;
+    transition: 0.4s;
+    background-image: url("http://www.w3.org/2000/svg")
+}
+
+#BoutonTop:hover {
+    color: #ff7b00;
+}

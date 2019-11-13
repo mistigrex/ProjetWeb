@@ -15,7 +15,8 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
+        // $products = Product::orderBy('price', 'desc')->take(1)->get();
+        $products = Product::orderBy('price', 'desc')->paginate(5);
        return view('Pages.Boutique.index')->with('products', $products);
     }
 
@@ -26,7 +27,7 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.boutique.create');
     }
 
     /**
@@ -37,7 +38,21 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this ->validate($request, [
+            'name' => 'required',
+            'description' => 'required',
+            'price' => 'required'
+        ]);
+       
+
+        // Create Post
+        $product = new Product;
+        $product->name = $request->input('name');
+        $product->description = $request->input('description');
+        $product->price = $request->input('price');
+        $product->save();
+
+        return redirect('/products')->with('success', 'Produit Ajouté');
     }
 
     /**
@@ -48,7 +63,8 @@ class ProductsController extends Controller
      */
     public function show($id)
     {
-        //
+      $product = Product::find($id);
+        return view('pages.boutique.show')->with('product', $product);
     }
 
     /**
