@@ -48,7 +48,8 @@ class ManifestationsController extends Controller
      */
     public function show($id)
     {
-        //
+        $manif = Manif::find(id);
+        return view('manifestation.show')->with('manif', $manif);
     }
 
     /**
