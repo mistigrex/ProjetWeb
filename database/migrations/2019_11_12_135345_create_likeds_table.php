@@ -13,14 +13,15 @@ class CreateLikedsTable extends Migration
      */
     public function up()
     {
-        Schema::create('liked', function (Blueprint $table) {
+        Schema::create('likeds', function (Blueprint $table) {
             $table->increments('id');
             //Foreign key of User
             $table->integer('User_id')->unsigned();
-            $table->foreign('User_id')->references('id')->on('user')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('User_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             //Foreign key of Comment
             $table->integer('Comment_id')->unsigned();
-            $table->foreign('Comment_id')->references('id')->on('comment')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('Comment_id')->references('id')->on('comments')->onDelete('cascade')->onUpdate('cascade');
+            $table->timestamps();
 
             
         });
@@ -33,6 +34,6 @@ class CreateLikedsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('liked');
+        Schema::dropIfExists('likeds');
     }
 }

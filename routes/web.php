@@ -14,7 +14,7 @@
 use App\Http\Controllers\PagesController;
 
 Route::get('/', 'PagesController@Acceuil');
-Route::get('/activités', 'PagesController@Activités');
+Route::get('/activites', 'PagesController@Activites');
 Route::get('/boutique', 'PagesController@Boutique');
 Route::get('/contact', 'PagesController@Contact');
 Route::get('/evenements', 'PagesController@Evenements');
@@ -27,4 +27,6 @@ Route::resource('products', 'ProductsController');
 
 Auth::routes();
 
+Route::get('/home', 'HomeController@index')->name('home');
+//Route::resource('manifestations', 'ManifestationsController');
 

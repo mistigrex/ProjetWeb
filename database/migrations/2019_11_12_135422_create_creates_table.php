@@ -13,14 +13,15 @@ class CreateCreatesTable extends Migration
      */
     public function up()
     {
-        Schema::create('create', function (Blueprint $table) {
+        Schema::create('creates', function (Blueprint $table) {
             $table->increments('id');
             //Foreign key of User
             $table->integer('Creator_id')->unsigned();
-            $table->foreign('Creator_id')->references('id')->on('user')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('Creator_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             //Foreign key of Activity
             $table->integer('Activity_id')->unsigned();
-            $table->foreign('Activity_id')->references('id')->on('activity')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('Activity_id')->references('id')->on('manifestations')->onDelete('cascade')->onUpdate('cascade');
+            $table->timestamps();
         });
     }
 
@@ -31,6 +32,6 @@ class CreateCreatesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('create');
+        Schema::dropIfExists('creates');
     }
 }
