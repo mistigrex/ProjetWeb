@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="Cadre">
+<div class="cadre">
 
 <tr>
     <td>
@@ -27,8 +27,10 @@
                 </a>
         <a href="#" class="table-link danger">
             <span class="fa-stack">
-                <i class="fa fa-square fa-stack-2x"></i>
-                <i class="fas fa-trash"></i>
+                    {!!Form::open(['action' => ['AdministrationsController@destroy', $administration->id], 'method' => 'POST', 'class' => 'pull-right'])!!}
+                   {{Form::hidden('_method', 'DELETE')}}
+                   {{Form::submit('Supprimer', ['class' => 'btn btn-danger'])}}
+                   {!!Form::close()!!}
             </span>
         </a>
     </td>

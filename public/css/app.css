@@ -11210,7 +11210,7 @@ a.text-dark:focus {
     -webkit-box-direction: normal;
             flex-direction: row;
     width: 80%;
-    height: 77.6px;
+    height: 80px;
     box-shadow: 3px 3px 28px -14px rgba(0, 0, 0, 0.75);
   }
 
@@ -11388,11 +11388,19 @@ footer span {
   padding: 7px;
   -webkit-transition: 0.4s;
   transition: 0.4s;
-  background-image: url("http://www.w3.org/2000/svg");
 }
 
 #BoutonTop:hover {
   color: #ff7b00;
+  font-weight: bold;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+#ConnectedDisplay {
+  position: relative;
+  top: 0px;
+  list-style: none;
 }
 
 /* Style inputs with type="text", select elements and textareas */
