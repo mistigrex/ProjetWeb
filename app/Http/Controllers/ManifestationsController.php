@@ -42,9 +42,35 @@ class ManifestationsController extends Controller
             'date' => 'required',
             'recurent' => 'required',
             'prix'  => 'required',
-            'image'
+            'image' => 'image|nullable|max:1999'
         ]);
-        return 123;
+        //Handle File Upload
+        if ($request->hasFile('image')) {
+            //Get filename with the extension
+            $filenameWithExt = $request->file('image')->getClientOriginalName();
+            //get filename
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            //get just extension
+            $extension = $request->file('image')->getClientOriginalExtension();
+            //filename to store
+            $fileNameToStore = $filename.'_'.time().'.'.$extension;
+            //Upload Image
+            $path = $request->file('image')->storeAs('public/images', $fileNameToStore);
+        }
+        else {
+            $fileNameToStore = 'noimage.jpg';
+        }
+        //create Manifestation
+        $manifestation = new Manifestation;
+        $manifestation->nom = $request->input('nom');
+        $manifestation->description = $request->input('description');
+        $manifestation->date = $request->input('date');
+        $manifestation->recurent = $request->input('recurent');
+        $manifestation->prix = $request->input('prix');
+        $manifestation->image = $fileNameToStore;
+        $manifestation->save();
+
+        return redirect('/manifestations')->with('success', 'Manifestation créée');
     }
 
     /**

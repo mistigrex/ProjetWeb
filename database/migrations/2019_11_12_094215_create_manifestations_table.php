@@ -21,7 +21,7 @@ class CreateManifestationsTable extends Migration
             $table->boolean('recurent')->nullable();
             $table->date('date')->nullable();
             $table->float('prix')->nullable();
-            $table->string('image')->nullable();
+            //$table->string('image')->nullable();
             $table->timestamps();
         });
     }

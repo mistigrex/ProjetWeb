@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<div class = cadre>
+<div class = "cadre">
     <h1>Créer une manifestation</h1>
-    {!! Form::open(['action' => 'ManifestationsController@store', 'method' => 'MANIFESTATION']) !!}
+    {!! Form::open(['action' => 'ManifestationsController@store', 'method' => 'MANIFESTATION', 'enctype' => 'multipart/form-data']) !!}
     <div class="form-group">
         {{Form::label('nom','Nom')}}
         {{Form::text('nom', '', ['class' => 'form-control', 'placeholder' => 'Nom'])}}
@@ -24,7 +24,13 @@
         {{Form::label('prix','Prix')}}
         {{Form::number('prix', '0', ['class' => 'form-control', 'placeholder' => 'Prix'])}}
     </div>
-    {{ Form::submit('Bon Toutou', ['class' => 'btn btn-primary'])}}
+    <div class="form-group">
+        {{Form::label('image','Image')}}
+        {{Form::file('image')}}
+    </div>
+
+
+    {{ Form::submit('Poster', ['class' => 'btn btn-primary'])}}
     {!! Form::close() !!}
 </div>
 
