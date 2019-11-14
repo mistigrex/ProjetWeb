@@ -11,12 +11,10 @@
             {{$manifestation->date}}
             {{$manifestation->prix}}
             <textarea name="commentaire" id="" cols="30" rows="10"></textarea>
-            <button>like</button>
+            <button><img class = 'like' src="{{asset('images/like.png')}}"alt="like"></button>
         
         </div>
            
             
 </div>
-
-
 @endsection
