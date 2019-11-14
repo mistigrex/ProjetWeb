@@ -58,6 +58,4 @@
 @endif
 
 @endauth
-{{-- 
-</section>
-@endsection --}}
+

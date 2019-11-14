@@ -5,19 +5,20 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Product;
+Use App\Basket;
+use Session;
 
 class ProductsController extends Controller
 {
-
  /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth', ['except' => ['index', 'show' ]]);
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth', ['except' => ['index', 'show' ]]);
+    // }
 
     /**
      * Display a listing of the resource.
@@ -29,6 +30,41 @@ class ProductsController extends Controller
         $products = Product::orderBy('price', 'desc')->paginate(5);
        return view('Pages.Boutique.index')->with('products', $products);
     }
+
+
+public function getAddToCart(Request $request, $id)
+    {
+        $product = Product::find($id);
+        $cart = Session::has('cart') ? Session::get('cart') : null;
+        if(!$cart)
+        {
+            $cart = new Basket($cart);
+        }
+        $cart->add($product, $product->id);
+        Session::put('cart', $cart);
+        // dd($request->session()->get('cart'));
+        return redirect()->route('products.index');
+    }
+
+
+    public function deleteProduct()
+    {
+        Session::flush(); // removes all session data
+        return redirect()->route('products.index');
+    }
+
+public function getCart()
+{
+        if (!Session::has('cart')){
+            return view('pages.Boutique.shopping-cart');
+        }
+        $oldCart = Session::get('cart');
+        $cart = new Basket($oldCart);
+        return view('pages.Boutique.shopping-cart', ['products' => $cart->items, 'totalPrice' => $cart->totalPrice ]);
+}
+
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -111,7 +147,7 @@ class ProductsController extends Controller
         $product->price = $request->input('price');
         $product->save();
 
-        return redirect('/administrations')->with('success', 'Produit Mis A Jour');
+        return redirect('/products')->with('success', 'Produit Mis A Jour');
     }
 
     /**
@@ -122,9 +158,9 @@ class ProductsController extends Controller
      */
     public function destroy($id)
     {
-        $administration = User::find($id);
-        $administration->delete();
+        $product = Product::find($id);
+        $product->delete();
 
-        return redirect('/administrations')->with('success', 'Utilisateur supprimé');
+        return redirect('/products')->with('success', 'Produit supprimé');
     }
 }

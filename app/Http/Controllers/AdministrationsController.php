@@ -83,12 +83,12 @@ class AdministrationsController extends Controller
        
 
         // Update Post
-        $administration = Administration::find($id);
+        $administration = User::find($id);
         $administration->firstname = $request->input('firstname');
         $administration->name = $request->input('name');
         $administration->email = $request->input('email');
         $administration->Role_id = $request->input('Role_id');
-        $administration->Role_id = $request->input('Cesi_id');
+        $administration->Cesi_id = $request->input('Cesi_id');
         $administration->save();
 
         return redirect('/administrations')->with('success', 'Utilisateur Mis A Jour');
