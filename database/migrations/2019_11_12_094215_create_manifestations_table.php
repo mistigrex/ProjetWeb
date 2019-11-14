@@ -18,7 +18,7 @@ class CreateManifestationsTable extends Migration
             $table->increments('id');
             $table->string('nom');
             $table->longText('description')->nullable();
-            $table->boolean('recurent')->nullable();
+            $table->text('recurent')->nullable();
             $table->date('date')->nullable();
             $table->float('prix')->nullable();
             //$table->string('image')->nullable();

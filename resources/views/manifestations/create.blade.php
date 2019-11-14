@@ -18,7 +18,7 @@
     </div>
     <div class="form-group">
         {{Form::label('recurent','Recurent')}}
-        {{Form::select('recurent', [true => 'oui', false => 'non'], false)}}
+        {{Form::select('recurent', ['Cette évenement est ponctuel' => 'Ponctuel', 'Cette évenement aura lieu une fois par semaine' => 'Une fois par semaine', 'Cette évenement aura lieu fois toutes les deux semaines' => 'Une fois toutes les deux semaines', 'Cette évenement aura lieu fois par mois' => 'Une fois par mois'], 'Ponctuel')}}
     </div>
     <div class="form-group">
         {{Form::label('prix','Prix')}}

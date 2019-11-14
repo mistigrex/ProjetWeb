@@ -1,5 +1,27 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
 
+.styleButton1 {
+  border-radius: 20px 0 20px 0;
+  background: #467adb;
+  border: none;
+  color: #fff;
+  font: bold 30px Verdana;
+  padding: 50px 50px 50px 50px;
+  margin: 10px 10px 10px 10px;
+}
+
+@media screen and (max-width: 865px) {
+  .styleButton1 {
+    border-radius: 10px 0 10px 0;
+    background: #467adb;
+    border: none;
+    color: #fff;
+    font: bold 30px Verdana;
+    padding: 10px 10px 10px 10px;
+    margin: 5px 5px 5px 5px;
+  }
+}
+
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
@@ -11751,5 +11773,27 @@ ul {
 
 .table-stats .table-line-plus .status-social-icon {
   color: #a75d54;
+}
+
+.titre1 {
+  color: #1173ce;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 4em;
+  text-align: center;
+}
+
+@media screen and (max-width: 865px) {
+  .titre1 {
+    color: #1173ce;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2em;
+  }
+}
+
+.image1 {
+  display: block;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
 }
 

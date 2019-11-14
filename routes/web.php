@@ -28,5 +28,6 @@ Route::resource('products', 'ProductsController');
 Route::resource('administrations', 'AdministrationsController');
 
 Route::resource('manifestations', 'ManifestationsController');
+Route::resource('comments', 'CommentsController');
 
 Auth::routes();
