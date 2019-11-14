@@ -12,7 +12,7 @@
       <tr>
             <td>
                 <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
-                <a href="#" class="user-link">{{$administration->firstname}} {{$administration->name}}</a>
+                <a href="/administrations/{{$administration->id}} "class="user-link">{{$administration->firstname}} {{$administration->name}}</a>
             </td>
             <td>
                     {{$administration->created_at}}
@@ -31,10 +31,13 @@
                             </span>
                         </a>
                 <a href="#" class="table-link danger">
-                    <span class="fa-stack">
-                        <i class="fa fa-square fa-stack-2x"></i>
-                        <i class="fas fa-trash"></i>
-                    </span>
+                        <div>
+                                {!!Form::open(['action' => ['AdministrationsController@destroy', $administration->id], 'method' => 'POST', 'class' => 'pull-right'])!!}
+                               {{Form::hidden('_method', 'DELETE')}}
+                               {{Form::submit('Supprimer', ['class' => 'btn btn-danger'])}}
+                               {!!Form::close()!!}
+                     </div>
+                    
                 </a>
             </td>
         </tr>
