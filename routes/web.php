@@ -43,4 +43,10 @@ Route::get('/deleteProduct', [
         'as' => 'product.deleteProduct'
 ]);
 
+Route::get('/sendMail', [
+        'uses' => 'MailsController@sendemail',
+        'as' => 'Mails.sendemail'
+]);
+
+
 Auth::routes();
