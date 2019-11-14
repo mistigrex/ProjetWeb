@@ -31,13 +31,14 @@
                             </span>
                         </a>
                 <a href="#" class="table-link danger">
+                        <span class="fa-stack">
                         <div>
                                 {!!Form::open(['action' => ['AdministrationsController@destroy', $administration->id], 'method' => 'POST', 'class' => 'pull-right'])!!}
                                {{Form::hidden('_method', 'DELETE')}}
                                {{Form::submit('Supprimer', ['class' => 'btn btn-danger'])}}
                                {!!Form::close()!!}
                      </div>
-                    
+                    </span>
                 </a>
             </td>
         </tr>
