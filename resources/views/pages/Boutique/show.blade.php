@@ -11,7 +11,7 @@
           <p class="lead">
             {{$product->description}}
           </p>
-          <ul class="product-info list-unstyled">
+          <ul class="product-info list-unstyled" >
             <li class="size">
               <select title="Choisi ta taille" class="selectpicker">
                 <option value="small">Small</option>
@@ -22,17 +22,25 @@
             </li>
             <li class="Taille">
               <div class="product-quantity">
-                <div class="minus-btn"><i class="icon-android-remove"></i></div>
                 <input type="text" placeholder="T'en veux combien frère ?" class="quantity">
-                <div class="plus-btn"><i class="icon-android-add"></i></div>
               </div>
             </li>
             <li class="price">{{$product->price}} €</li>
-            
+            <li class="boutonAdmin"><div><a href="/products/{{$product->id}}/edit" class="btn btn-success">Modifier le produit <i class="far fa-edit"></i></a></div></li>
+            <li class="boutonAdmin">
+              <div>
+                       {!!Form::open(['action' => ['ProductsController@destroy', $product->id], 'method' => 'POST', 'class' => 'pull-right'])!!}
+                      {{Form::hidden('_method', 'DELETE')}}
+                      {{Form::submit('Supprimer', ['class' => 'btn btn-danger'])}}
+                      {!!Form::close()!!}
+            </div>
+        </li>
           </ul>
      
-        </div><a href="#" class="add-to-cart btn btn-primary">Ajouter au panier <i class="icon-cart-1"></i></a>
-      </div>
+        </div><a href="#" class="add-to-cart btn btn-primary">Ajouter au panier <i class="fas fa-shopping-cart"></i></a>
+     
+
+
     </div>
   </div>
   <div class="taille" class="col-md-4 product"><img src="{{asset('Images/guide-taille.png')}}" alt="guide des tailles"  class="img-fluid" ></div>

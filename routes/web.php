@@ -24,8 +24,8 @@ Route::get('/dashboard', 'DashboardController@index');
 
 Route::resource('products', 'ProductsController');
 
-Auth::routes();
+Route::resource('administrations', 'AdministrationsController');
 
-Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('manifestations', 'ManifestationsController');
 
+Auth::routes();

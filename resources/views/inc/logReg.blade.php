@@ -68,7 +68,7 @@
 
                {{-- BUTTON CONNEXION  --}}
                     <div class="text-center mt-2">
-                        <button class="btn btn-warning" type="submit" >   {{ __('Login') }}<i class="fas fa-sign-in ml-1"></i></button>
+                        <button class="btn btn-warning" type="submit" >   {{ __('Connexion') }}<i class="fas fa-sign-in ml-1"></i></button>
                     </div>
                     </div>
 
@@ -76,15 +76,7 @@
                     <div class="modal-footer">
                     <div class="options text-center text-md-right mt-1">
                         <p id="textModal">Pas encore inscris ? <a href="#panel8" data-toggle="tab" class="blue-text">Inscription</a></p>
-                        
-                        {{-- FORGOT PASSWORD --}}
-                        {{-- <div class="options text-center text-md-right mt-1">
-                        @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                        </div> --}}
+                      
 
             {{-- BUTTON FERMER --}}
                     </div>
@@ -103,7 +95,7 @@
                     <div class="modal-body">
                         {{-- INSCRIPTION CESI CENTER --}}
                             <i class="fas fa-school"></i>
-                            <label for="centre_cesi">Centre CESI</label>
+                            <label for="Cesi_id">Centre CESI</label>
                            @include('inc.centerSelect')
                     
                            {{-- INSCRIPTION EMAIL --}}
@@ -170,7 +162,7 @@
                         <label class="custom-control-label" for="customCheck1">J'accepte les conditions d'utilisation</label>
                         </div>
                     <div class="text-center form-sm mt-2">
-                        <button class="btn btn-warning" type="submit"> {{ __('Register') }} <i class="fas fa-sign-in"></i></button>
+                        <button class="btn btn-warning" type="submit"> {{ __('Inscription') }} <i class="fas fa-sign-in"></i></button>
                     </div>
         
                     </div>

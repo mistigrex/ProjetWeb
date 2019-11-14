@@ -15,7 +15,7 @@
         <div class="content">
           <h1>BDE CESI</h1>
           <p class="hero-text">La Rochelle</p>
-          <p class="hero-text"><strong>Plusieurs produits uniques</strong> pour avoir un max de<strong> flow</strong></p><a href=".big-product" class="buy btn btn-primary">Acheter <i class="icon-shopping-bag"></i></a>
+          <p class="hero-text"><strong>Plusieurs produits uniques</strong> pour avoir un max de<strong> flow</strong></p><a href=".big-product" class="buy btn btn-primary">Acheter <i class="fas fa-shopping-basket"></i></a> <a href="/products/create" class="buy btn btn-success">Ajouter un produit +</a>
         </div>
       </div>
       <div class="col-lg-6">               
@@ -102,14 +102,12 @@
           </li>
           <li class="Taille">
             <div class="product-quantity">
-              <div class="minus-btn"><i class="icon-android-remove"></i></div>
               <input type="text" placeholder="T'en veux combien frère ?" class="quantity">
-              <div class="plus-btn"><i class="icon-android-add"></i></div>
             </div>
           </li>
           <li class="price">{{$product->price}} €</li>
         </ul>
-      </div><a href="#" class="add-to-cart btn btn-primary">Ajouter au panier <i class="icon-cart-1"></i></a>
+      </div><a href="#" class="add-to-cart btn btn-primary">Ajouter au panier <i class="fas fa-shopping-cart"></i></a>
     </div>
   </div>
 </div>

@@ -11,7 +11,6 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
-     protected $connection = 'mysql2';
     use Notifiable;
     /**
      * The attributes that are mass assignable.
@@ -19,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'cesi_center','firstname','name', 'email', 'password',
+        'Cesi_id','firstname','name', 'email', 'password',
     ];
 
     /**

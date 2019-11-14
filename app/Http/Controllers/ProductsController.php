@@ -8,6 +8,17 @@ use App\Product;
 
 class ProductsController extends Controller
 {
+
+ /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => ['index', 'show' ]]);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +26,6 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        // $products = Product::orderBy('price', 'desc')->take(1)->get();
         $products = Product::orderBy('price', 'desc')->paginate(5);
        return view('Pages.Boutique.index')->with('products', $products);
     }
@@ -44,7 +54,6 @@ class ProductsController extends Controller
             'price' => 'required'
         ]);
        
-
         // Create Post
         $product = new Product;
         $product->name = $request->input('name');
@@ -75,7 +84,8 @@ class ProductsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product = Product::find($id);
+        return view('pages.boutique.edit')->with('product', $product);
     }
 
     /**
@@ -87,7 +97,21 @@ class ProductsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this ->validate($request, [
+            'name' => 'required',
+            'description' => 'required',
+            'price' => 'required'
+        ]);
+       
+
+        // Update Post
+        $product = Product::find($id);
+        $product->name = $request->input('name');
+        $product->description = $request->input('description');
+        $product->price = $request->input('price');
+        $product->save();
+
+        return redirect('/products')->with('success', 'Produit Mis A Jour');
     }
 
     /**
@@ -98,6 +122,9 @@ class ProductsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product = Product::find($id);
+        $product->delete();
+
+        return redirect('/products')->with('success', 'Produit supprimé');
     }
 }
