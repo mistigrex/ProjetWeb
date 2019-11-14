@@ -15,14 +15,14 @@ class CreateRolesTable extends Migration
     {
         Schema::/*connection('mysql2')->*/create('roles', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->string('Role_name');
         });
 
         DB::/*connection('mysql2')->*/table('roles')->insert(
             [
-                ['name' => 'Etudiant'],
-                ['name' => 'Membre du BDE'],
-                ['name' => 'Personnel CESI'],
+                ['Role_name' => 'Etudiant'],
+                ['Role_name' => 'BDE'],
+                ['Role_name' => 'Personnel'],
             ]
             );
     }

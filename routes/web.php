@@ -16,7 +16,12 @@ use App\Http\Controllers\PagesController;
 Route::get('/', 'PagesController@Acceuil');
 Route::get('/activites', 'PagesController@Activites');
 Route::get('/boutique', 'PagesController@Boutique');
-Route::get('/contact', 'PagesController@Contact');
+Route::get('/contact', [
+    'uses'=>'PagesController@Contact',
+    'as' => 'contact',
+    'middleware' => 'roles',
+    'roles' => ['Etudiant']
+]);
 Route::get('/evenements', 'PagesController@Evenements');
 Route::get('/mentions', 'PagesController@Mentions');
 Route::get('/confidentialité', 'PagesController@Confidentialité');
