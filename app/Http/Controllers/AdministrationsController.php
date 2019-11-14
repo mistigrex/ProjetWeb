@@ -48,7 +48,8 @@ class AdministrationsController extends Controller
      */
     public function show($id)
     {
-        //
+        $administration = User::find($id);
+        return view('pages.Admin.show')->with('administration', $administration);
     }
 
     /**
@@ -59,7 +60,7 @@ class AdministrationsController extends Controller
      */
     public function edit($id)
     {
-        $administration = Administration::find($id);
+        $administration = User::find($id);
         return view('pages.admin.edit')->with('administration', $administration);
     }
 
@@ -82,15 +83,15 @@ class AdministrationsController extends Controller
        
 
         // Update Post
-        $administration = Administration::find($id);
+        $administration = User::find($id);
         $administration->firstname = $request->input('firstname');
         $administration->name = $request->input('name');
         $administration->email = $request->input('email');
         $administration->Role_id = $request->input('Role_id');
-        $administration->Role_id = $request->input('Cesi_id');
+        $administration->Cesi_id = $request->input('Cesi_id');
         $administration->save();
 
-        return redirect('/dashboard')->with('success', 'Utilisateur Mis A Jour');
+        return redirect('/administrations')->with('success', 'Utilisateur Mis A Jour');
     }
 
     /**
@@ -101,9 +102,9 @@ class AdministrationsController extends Controller
      */
     public function destroy($id)
     {
-        $administration = Administration::find($id);
+        $administration = User::find($id);
         $administration->delete();
 
-        return redirect('/dashboard')->with('success', 'Utilisateur supprimé');
+        return redirect('/administrations')->with('success', 'Utilisateur supprimé');
     }
 }
