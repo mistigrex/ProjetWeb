@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             
             //Foreign key of Role
-            $table->integer('Role_id')->unsigned();
+            $table->integer('Role_id')->unsigned()->default("1");
             $table->foreign('Role_id')->references('id')->on('roles')->onDelete('cascade')->onUpdate('cascade');
             //Foreign key of Cesi
             $table->integer('Cesi_id')->unsigned();
