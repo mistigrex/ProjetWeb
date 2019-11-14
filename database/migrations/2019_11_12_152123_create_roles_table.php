@@ -13,12 +13,12 @@ class CreateRolesTable extends Migration
      */
     public function up()
     {
-        Schema::connection('mysql2')->create('roles', function (Blueprint $table) {
+        Schema::/*connection('mysql2')->*/create('roles', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
         });
 
-        DB::connection('mysql2')->table('roles')->insert(
+        DB::/*connection('mysql2')->*/table('roles')->insert(
             [
                 ['name' => 'Etudiant'],
                 ['name' => 'Membre du BDE'],
@@ -34,6 +34,6 @@ class CreateRolesTable extends Migration
      */
     public function down()
     {
-        Schema::connection('mysql2')->dropIfExists('roles');
+        Schema::/*connection('mysql2')->*/dropIfExists('roles');
     }
 }
