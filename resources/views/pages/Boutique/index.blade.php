@@ -33,6 +33,7 @@
   </div>
 </section>
 <!-- End Intro Section-->
+
 <!-- Features Section-->
 <section class="features">
   <div class="container">
@@ -81,7 +82,39 @@
 
 @if(count($products) > 0)
 @foreach($products as $product)
+<!-- Carousel produits les plus vendus-->
+<p>Nos produits les plus vendus</p>
+<div  id="myCarousel" class="carousel slide" data-ride="carousel">
 
+  <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img src="{{$product->image}}" alt="{{$product->name}}" width="560px" height="200px" >
+      <div class="carousel-caption">
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="{{$product->image}}" alt="{{$product->name}}" width="560px" height="200px" >
+      <div class="carousel-caption">
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="{{$product->image}}" alt="{{$product->name}}" width="560px" height="200px"  >
+      <div class="carousel-caption">
+      </div>
+    </div>
+ 
+    </div>
+</div>
+</div>
+<!-- End Carousel produits-->
 <div class="container" id="Produit">
   <div class="row">
     <div class="col-md-4 product"><img src="{{$product->image}}" alt="t-shirt" class="img-fluid"></div>
