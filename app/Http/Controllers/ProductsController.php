@@ -111,7 +111,7 @@ class ProductsController extends Controller
         $product->price = $request->input('price');
         $product->save();
 
-        return redirect('/products')->with('success', 'Produit Mis A Jour');
+        return redirect('/administrations')->with('success', 'Produit Mis A Jour');
     }
 
     /**
@@ -122,9 +122,9 @@ class ProductsController extends Controller
      */
     public function destroy($id)
     {
-        $product = Product::find($id);
-        $product->delete();
+        $administration = User::find($id);
+        $administration->delete();
 
-        return redirect('/products')->with('success', 'Produit supprimé');
+        return redirect('/administrations')->with('success', 'Utilisateur supprimé');
     }
 }
