@@ -15,7 +15,7 @@
         <div class="content">
           <h1>BDE CESI</h1>
           <p class="hero-text">La Rochelle</p>
-          <p class="hero-text"><strong>Plusieurs produits uniques</strong> pour avoir un max de<strong> flow</strong></p><a href=".big-product" class="buy btn btn-primary">Acheter <i class="icon-shopping-bag"></i></a>
+          <p class="hero-text"><strong>Plusieurs produits uniques</strong> pour avoir un max de<strong> flow</strong></p><a href=".big-product" class="buy btn btn-primary">Acheter <i class="fas fa-shopping-basket"></i></a> <a href="/products/create" class="buy btn btn-success">Ajouter un produit +</a>
         </div>
       </div>
       <div class="col-lg-6">               
@@ -47,7 +47,7 @@
           <div class="col-md-6 feature">
             <div class="icon"><i class="icon-shirt-and-tie"></i></div>
             <div class="text">
-              <h4>Des Design unique</h4>
+              <h4>Des Design uniques</h4>
               <p>Je te jure personne d'autres à les mêmes</p>
             </div>
           </div>
@@ -77,6 +77,53 @@
   </div>
 </section>
 <!-- End Features Section-->
+
+
+@if(count($products) > 0)
+@foreach($products as $product)
+
+<div class="container" id="Produit">
+  <div class="row">
+    <div class="col-md-4 product"><img src="{{$product->image}}" alt="t-shirt" class="img-fluid"></div>
+    <div class="col-md-8 info">
+      <div class="info-wrapper">
+      <h2 ><a href="/products/{{$product->id}}">{{$product->name}}</a></h2>
+        <p class="lead">
+          {{$product->description}}
+        </p>
+        <ul class="product-info list-unstyled">
+          <li class="size">
+            <select title="Choisi ta taille" class="selectpicker">
+              <option value="small">Small</option>
+              <option value="medium">Medium</option>
+              <option value="large">Large</option>
+              <option value="x-large">X-Large</option>
+            </select>
+          </li>
+          <li class="Taille">
+            <div class="product-quantity">
+              <input type="text" placeholder="T'en veux combien frère ?" class="quantity">
+            </div>
+          </li>
+          <li class="price">{{$product->price}} €</li>
+        </ul>
+      </div><a href="#" class="add-to-cart btn btn-primary">Ajouter au panier <i class="fas fa-shopping-cart"></i></a>
+    </div>
+  </div>
+</div>
+
+@endforeach
+{{$products->links()}}
+@else
+<h1>Aucun produits disponible</h1>
+@endif
+
+
+
+
+
+
+{{-- 
 
 <!-- Product Section-->
 <section class="Product">
@@ -312,7 +359,7 @@
 
 <!-- End Product Section-->
 
-</section>
+</section> --}}
 
 
 </article>

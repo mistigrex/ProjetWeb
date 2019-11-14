@@ -17,12 +17,13 @@ class CreateCommentsTable extends Migration
             $table->increments('id');
             $table->string('text');
             $table->string('image');
-            //Foreign key of Users
+            //Foreign key of User
             $table->integer('Author_id')->unsigned();
             $table->foreign('Author_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             //Foreign key of Activity
             $table->integer('Activity_id')->unsigned();
-            $table->foreign('Activity_id')->references('id')->on('activity')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('Activity_id')->references('id')->on('manifestations')->onDelete('cascade')->onUpdate('cascade');
+            $table->timestamps();
         });
     }
 

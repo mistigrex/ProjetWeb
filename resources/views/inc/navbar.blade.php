@@ -5,7 +5,7 @@
                 <li><a class="active" href="/">Accueil</a></li>
                 <li><a href="/evenements">Événements</a></li>
                 <li><a href="/activités">Activités</a></li>
-                <li><a href="/boutique">Boutique</a></li>
+                <li><a href="/products">Boutique</a></li>
                 <li><a href="/contact">Contact</a></li>
                 <a href="javascript:void(0);" class="icon" onclick="expandLinks()">
                     <i class="fa fa-bars"></i>
@@ -22,28 +22,23 @@
                 <div class="Connect">
 
   <div class="text-center">
-    <a href="" id="connectBtn" data-toggle="modal" data-target="#modalLRForm">Espace Personnel</a>
     
-   @guest
-   <li class="nav-item">
-       <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-   </li>
-   @if (Route::has('register'))
-       <li class="nav-item">
-           <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-       </li>
-   @endif
-@else
-   <li class="nav-item dropdown">
+@guest
+ <a href="" id="connectBtn" data-toggle="modal" data-target="#modalLRForm">Espace Personnel</a>
+@endguest
+
+@auth
+      <li class="nav-item dropdown">
        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-           {{ Auth::user()->name }} <span class="caret"></span>
+            {{ Auth::user()->firstname }} {{ Auth::user()->name }} <span class="caret"></span>
        </a>
 
        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-           <a class="dropdown-item" href="{{ route('logout') }}"
+            <a class="dropdown-item" href="/dashboard">Dashboard</a>
+        <a class="dropdown-item" href="{{ route('logout') }}"
               onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">
-               {{ __('Logout') }}
+              Déconnexion
            </a>
 
            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -51,9 +46,10 @@
            </form>
        </div>
    </li>
-@endguest
+@endauth
   </div>
-                </div>
+</div>
+
                 <div class="Social">
                     <span id="findUs">Retrouver nous sur</span>
                     <ul class="socialList">

@@ -15,9 +15,10 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->increments('id');
-            //Foreign key of Users
+            //Foreign key of User
             $table->integer('User_id')->unsigned();
             $table->foreign('User_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->timestamps();
         });
     }
 

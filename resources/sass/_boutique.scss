@@ -23,6 +23,47 @@
     margin-bottom: 30px;
 }
 
-.Product .container {
+#Produit {
     margin-bottom: 50px;
+}
+
+#ProduitShow {
+    padding-top: 140px;
+    padding-bottom: 20px;
+}
+
+.taille {
+    width: 60%;
+    margin-top: 30px;
+    // margin-left: 20%;
+    margin-bottom: 30px;
+}
+
+@media screen and (max-width: 865px) {
+    .taille {
+        width: 70%;
+        margin-left: 15%;
+        margin-bottom: 30px;
+    }
+}
+
+.page-item {
+    margin: 0px;
+}
+
+.page-item disabled {
+    margin: 0px;
+}
+
+.pagination {
+    position: relative;
+    left: 45%;
+}
+
+ul {
+    margin-bottom: 0px;
+}
+
+.boutonAdmin {
+    margin-bottom: 5px;
 }
