@@ -102,14 +102,12 @@
           </li>
           <li class="Taille">
             <div class="product-quantity">
-              <div class="minus-btn"><i class="icon-android-remove"></i></div>
               <input type="text" placeholder="T'en veux combien frère ?" class="quantity">
-              <div class="plus-btn"><i class="icon-android-add"></i></div>
             </div>
           </li>
           <li class="price">{{$product->price}} €</li>
         </ul>
-      </div><a href="#" class="add-to-cart btn btn-primary">Ajouter au panier <i class="icon-cart-1"></i></a>
+      </div><a href="#" class="add-to-cart btn btn-primary">Ajouter au panier <i class="fas fa-shopping-cart"></i></a>
     </div>
   </div>
 </div>

@@ -25,7 +25,7 @@
 
 {{Form::hidden('_method', 'PUT')}}
 
-{{Form::submit('Ajouter le produit', ['class' => 'btn btn-warning'])}}
+{{Form::submit('Modifier le produit', ['class' => 'btn btn-warning'])}}
 
 
 {!! Form::close() !!}

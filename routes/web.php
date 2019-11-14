@@ -25,7 +25,8 @@ Route::get('/dashboard', 'DashboardController@index');
 
 Route::resource('products', 'ProductsController');
 
-Auth::routes();
+Route::resource('administrations', 'AdministrationsController');
 
 Route::resource('manifestations', 'ManifestationsController');
 
+Auth::routes();
