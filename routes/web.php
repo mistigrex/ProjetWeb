@@ -23,9 +23,24 @@ Route::get('/manifestations', 'PagesController@Manifestations');
 Route::get('/confidentialité', 'PagesController@Confidentialité');
 Route::get('/dashboard', 'DashboardController@index');
 
+
 Route::resource('products', 'ProductsController');
 
 Route::resource('administrations', 'AdministrationsController');
 
+Route::get('/add-to-cart/{id}', [
+        'uses' => 'ProductsController@getAddToCart',
+        'as' => 'product.addToCart'
+]);
+
+Route::get('/shopping-cart', [
+        'uses' => 'ProductsController@getCart',
+        'as' => 'product.getCart'
+]);
+
+Route::get('/deleteProduct', [
+        'uses' => 'ProductsController@deleteProduct',
+        'as' => 'product.deleteProduct'
+]);
 
 Auth::routes();
