@@ -80,15 +80,25 @@
 <!-- End Features Section-->
 <!-- barre de recherche produits-->
 <div class="cadre">
-<input id="searchBar" type="text" name="Search" onkeyup="myFunction()">
+  <h3>Recherche</h3>
+<input id="searchBar" type="text" name="Search" onkeyup="myFunction()" list="products">
+<datalist id="products">
+
+@foreach($products as $product)
+<option>
+{{$product->name}}
+</option>
+@endforeach
+</datalist>
 <div id="Produit" style="display : block"></div>
 <script>
 function myFunction(){
   var search = document.getElementById("searchBar");
-  var products = document.getElementsByClassName(" Productcontainer");
+  var products = document.getElementsByClassName(" Productaffichage");
  
-  Array.prototype.forEach.call(products, function(product){
-
+  
+    Array.prototype.forEach.call(products, function(product){
+      
       if(product.id.includes(search.value)){
          product.style.display = "block";
        }else{
@@ -98,8 +108,10 @@ function myFunction(){
         
           product.style.display ="block";
       });
+   
 }
 </script>
+
 </div>
 
 <!-- End barre de recherche produits-->
@@ -109,7 +121,7 @@ function myFunction(){
 @foreach($products as $product)
 
 
-<div class="container Productcontainer" id="{{$product->name}}">
+<div class="container Productaffichage" id="{{$product->name}} Produit">
   <div class="row">
     <div class="col-md-4 product"><img src="{{$product->image}}" alt="t-shirt" class="img-fluid"></div>
     <div class="col-md-8 info">
@@ -138,7 +150,7 @@ function myFunction(){
     </div>
   </div>
 </div>
-
+<br>
 @endforeach
 {{$products->links()}}
 @else
@@ -391,4 +403,9 @@ function myFunction(){
 
 </article>
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js%22%3E"> </script>
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<!-- jQuery UI -->
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 @endsection
