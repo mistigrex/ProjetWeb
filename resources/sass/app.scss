@@ -1,5 +1,7 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
+// Button style CSS
+@import 'button';
 // Variables
 @import 'variables';
 // Bootstrap
@@ -16,3 +18,5 @@
 @import "activites";
 // dashboard page CSS
 @import "dashboard";
+//show page css
+@import "show"

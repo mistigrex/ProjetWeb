@@ -13,7 +13,7 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::connection('mysql2')->create('users', function (Blueprint $table) {
+        Schema::/*connection('mysql2')->*/create('users', function (Blueprint $table) {
             $table->increments('id');
             $table->string('firstname');
             $table->string('name');
@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             
             //Foreign key of Role
-            $table->integer('Role_id')->unsigned();
+            $table->integer('Role_id')->unsigned()->default("1");
             $table->foreign('Role_id')->references('id')->on('roles')->onDelete('cascade')->onUpdate('cascade');
             //Foreign key of Cesi
             $table->integer('Cesi_id')->unsigned();
@@ -38,6 +38,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::connection('mysql2')->dropIfExists('users');
+        Schema::/*connection('mysql2')->*/dropIfExists('users');
     }
 }

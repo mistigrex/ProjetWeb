@@ -11,15 +11,21 @@
 |
 */
 
+use App\Http\Controllers\Manifestations\CommentsController;
 use App\Http\Controllers\PagesController;
+use Symfony\Component\HttpKernel\HttpCache\Store;
 
 Route::get('/', 'PagesController@Acceuil');
 Route::get('/activites', 'PagesController@Activites');
 Route::get('/boutique', 'PagesController@Boutique');
-Route::get('/contact', 'PagesController@Contact');
+Route::get('/contact', [
+    'uses'=>'PagesController@Contact',
+    'as' => 'contact',
+    'middleware' => 'roles',
+    'roles' => ['Etudiant']
+]);
 Route::get('/evenements', 'PagesController@Evenements');
 Route::get('/mentions', 'PagesController@Mentions');
-Route::get('/manifestations', 'PagesController@Manifestations');
 Route::get('/confidentialité', 'PagesController@Confidentialité');
 Route::get('/dashboard', 'DashboardController@index');
 
@@ -28,11 +34,13 @@ Route::resource('products', 'ProductsController');
 
 Route::resource('administrations', 'AdministrationsController');
 
-
+Route::resource('manifestations', 'ManifestationsController');
 Route::get('/add-to-cart/{id}', [
         'uses' => 'ProductsController@getAddToCart',
         'as' => 'product.addToCart'
 ]);
+Route::resource('manifestations', 'ManifestationsController');
+Route::resource('comments', 'CommentsController');
 
 Route::get('/shopping-cart', [
         'uses' => 'ProductsController@getCart',

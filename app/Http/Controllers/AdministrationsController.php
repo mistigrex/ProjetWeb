@@ -80,7 +80,7 @@ class AdministrationsController extends Controller
             'Role_id' => 'required',
             'Cesi_id' => 'required',
         ]);
-       
+
 
         // Update Post
         $administration = User::find($id);

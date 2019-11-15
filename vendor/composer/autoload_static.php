@@ -68,6 +68,7 @@ class ComposerStaticInitb186aeb3e3e0de480aef6bf6c14a9f8c
             'Symfony\\Component\\Debug\\' => 24,
             'Symfony\\Component\\CssSelector\\' => 30,
             'Symfony\\Component\\Console\\' => 26,
+            'Spatie\\CookieConsent\\' => 21,
         ),
         'R' => 
         array (
@@ -254,6 +255,10 @@ class ComposerStaticInitb186aeb3e3e0de480aef6bf6c14a9f8c
         'Symfony\\Component\\Console\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/console',
+        ),
+        'Spatie\\CookieConsent\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/spatie/laravel-cookie-consent/src',
         ),
         'Ramsey\\Uuid\\' => 
         array (
@@ -442,14 +447,17 @@ class ComposerStaticInitb186aeb3e3e0de480aef6bf6c14a9f8c
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
+        'App\\Http\\Controllers\\CommentsController' => __DIR__ . '/../..' . '/app/Http/Controllers/CommentsController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\DashboardController' => __DIR__ . '/../..' . '/app/Http/Controllers/DashboardController.php',
+        'App\\Http\\Controllers\\MailsController' => __DIR__ . '/../..' . '/app/Http/Controllers/MailsController.php',
         'App\\Http\\Controllers\\ManifestationsController' => __DIR__ . '/../..' . '/app/Http/Controllers/ManifestationsController.php',
         'App\\Http\\Controllers\\PagesController' => __DIR__ . '/../..' . '/app/Http/Controllers/PagesController.php',
         'App\\Http\\Controllers\\ProductsController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProductsController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\CheckForMaintenanceMode' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckForMaintenanceMode.php',
+        'App\\Http\\Middleware\\CheckRole' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckRole.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
@@ -1688,7 +1696,6 @@ class ComposerStaticInitb186aeb3e3e0de480aef6bf6c14a9f8c
         'Illuminate\\Container\\ContextualBindingBuilder' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Container/ContextualBindingBuilder.php',
         'Illuminate\\Container\\EntryNotFoundException' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Container/EntryNotFoundException.php',
         'Illuminate\\Container\\RewindableGenerator' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Container/RewindableGenerator.php',
-        'Illuminate\\Container\\Util' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Container/Util.php',
         'Illuminate\\Contracts\\Auth\\Access\\Authorizable' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Contracts/Auth/Access/Authorizable.php',
         'Illuminate\\Contracts\\Auth\\Access\\Gate' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Contracts/Auth/Access/Gate.php',
         'Illuminate\\Contracts\\Auth\\Authenticatable' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Contracts/Auth/Authenticatable.php',
@@ -3356,7 +3363,6 @@ class ComposerStaticInitb186aeb3e3e0de480aef6bf6c14a9f8c
         'PhpParser\\Node\\Stmt\\UseUse' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/Node/Stmt/UseUse.php',
         'PhpParser\\Node\\Stmt\\Use_' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/Node/Stmt/Use_.php',
         'PhpParser\\Node\\Stmt\\While_' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/Node/Stmt/While_.php',
-        'PhpParser\\Node\\UnionType' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/Node/UnionType.php',
         'PhpParser\\Node\\VarLikeIdentifier' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/Node/VarLikeIdentifier.php',
         'PhpParser\\Parser' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/Parser.php',
         'PhpParser\\ParserAbstract' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/ParserAbstract.php',
@@ -3769,6 +3775,8 @@ class ComposerStaticInitb186aeb3e3e0de480aef6bf6c14a9f8c
         'SebastianBergmann\\Type\\UnknownType' => __DIR__ . '/..' . '/sebastian/type/src/UnknownType.php',
         'SebastianBergmann\\Type\\VoidType' => __DIR__ . '/..' . '/sebastian/type/src/VoidType.php',
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
+        'Spatie\\CookieConsent\\CookieConsentMiddleware' => __DIR__ . '/..' . '/spatie/laravel-cookie-consent/src/CookieConsentMiddleware.php',
+        'Spatie\\CookieConsent\\CookieConsentServiceProvider' => __DIR__ . '/..' . '/spatie/laravel-cookie-consent/src/CookieConsentServiceProvider.php',
         'Symfony\\Component\\Console\\Application' => __DIR__ . '/..' . '/symfony/console/Application.php',
         'Symfony\\Component\\Console\\CommandLoader\\CommandLoaderInterface' => __DIR__ . '/..' . '/symfony/console/CommandLoader/CommandLoaderInterface.php',
         'Symfony\\Component\\Console\\CommandLoader\\ContainerCommandLoader' => __DIR__ . '/..' . '/symfony/console/CommandLoader/ContainerCommandLoader.php',

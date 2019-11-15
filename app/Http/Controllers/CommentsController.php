@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Manifestation;
-use App\User;
 use App\Comment;
+use App\User;
 
-class ManifestationsController extends Controller
+class CommentsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,7 @@ class ManifestationsController extends Controller
      */
     public function index()
     {
-        $manifestations = Manifestation::all();
-        return view('manifestations.index')->with('manifestations', $manifestations);
+
     }
 
     /**
@@ -27,7 +26,7 @@ class ManifestationsController extends Controller
      */
     public function create()
     {
-        return view('manifestations.create');
+        //
     }
 
     /**
@@ -38,41 +37,37 @@ class ManifestationsController extends Controller
      */
     public function store(Request $request)
     {
+
         $this->validate($request, [
-            'nom' => 'required',
-            'description' => 'required',
-            'date' => 'required',
-            'recurent' => 'required',
-            'prix'  => 'required',
-            'image' => 'image|nullable|max:1999'
+            'text' => 'required',
+            'comment_image|nullable|max:1999',
+            'Activity_id' => 'required',
+            'user_id' => 'required'
+
         ]);
-        //Handle File Upload
-        if ($request->hasFile('image')) {
+        if ($request->hasFile('comment_image')) {
             //Get filename with the extension
-            $filenameWithExt = $request->file('image')->getClientOriginalName();
+            $filenameWithExt = $request->file('comment_image')->getClientOriginalName();
             //get filename
             $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
             //get just extension
-            $extension = $request->file('image')->getClientOriginalExtension();
+            $extension = $request->file('comment_image')->getClientOriginalExtension();
             //filename to store
             $fileNameToStore = $filename.'_'.time().'.'.$extension;
             //Upload Image
-            $path = $request->file('image')->storeAs('public/images', $fileNameToStore);
+            $path = $request->file('comment_image')->storeAs('public/comment_image', $fileNameToStore);
         }
         else {
-            $fileNameToStore = 'noimage.jpg';
+            $fileNameToStore = null;
         }
-        //create Manifestation
-        $manifestation = new Manifestation;
-        $manifestation->nom = $request->input('nom');
-        $manifestation->description = $request->input('description');
-        $manifestation->date = $request->input('date');
-        $manifestation->recurent = $request->input('recurent');
-        $manifestation->prix = $request->input('prix');
-        $manifestation->image = $fileNameToStore;
-        $manifestation->save();
+        $comment = new Comment;
+        $comment->text = $request->input('text');
+        $comment->comment_image = $fileNameToStore;
+        $comment->user_id = $request->input('user_id');
+        $comment->Activity_id = $request->input('Activity_id');
+        $comment->save();
 
-        return redirect('/manifestations')->with('success', 'Manifestation créée');
+        return redirect('/manifestations')->with('success', 'Commentaire posté !');
     }
 
     /**
@@ -81,11 +76,9 @@ class ManifestationsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($user_id)
     {
-        $manifestation = Manifestation::find($id);
-        $comments = Comment::all();
-        return view('manifestations.show')->with('manifestation', $manifestation)->with('comments', $comments);
+    //
     }
 
     /**
@@ -96,8 +89,7 @@ class ManifestationsController extends Controller
      */
     public function edit($id)
     {
-        //$manifestation = Manifestation::findOrFail($id);
-        //return view('manifestations.edit', compact('manifestation'));
+        //
     }
 
     /**
