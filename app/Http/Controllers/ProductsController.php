@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Product;
 Use App\Basket;
+Use App\Order;
+use Auth;
 use Session;
 
 class ProductsController extends Controller
@@ -46,7 +48,6 @@ public function getAddToCart(Request $request, $id)
         return redirect()->route('products.index');
     }
 
-
     public function deleteProduct()
     {
         Session::flush(); // removes all session data
@@ -63,7 +64,23 @@ public function getCart()
         return view('pages.Boutique.shopping-cart', ['products' => $cart->items, 'totalPrice' => $cart->totalPrice ]);
 }
 
+public function postCheckout(Request $request)
+{
+        if (!Session::has('cart')){
+            return view('pages.Boutique.shopping-cart');
+        }
+        $oldCart = Session::get('cart');
+        $cart = new Basket($oldCart);
 
+        $order = new Order();
+        $order->cart = serialize($cart);
+        $order->User_id = Auth::user()->id;
+     
+        Auth::user()->orders()->save($order);
+
+        Session::forget('cart');
+        return redirect('/products')->with('success', 'Commande passée avec succès ! Merci');
+}
 
 
     /**

@@ -1,9 +1,4 @@
-{{-- @extends('layouts.app')
-
-@section('content')
-<section class="cadre"> --}}
-
-    <div class="card">
+<div class="card">
             <h3 id="dash"class="card-title">Dashboard de {{ Auth::user()->firstname }} {{ Auth::user()->name }}</h3>
         <div class="row">
           <div class="col-sm">
@@ -30,32 +25,4 @@
           </div>
         </div>
       </div>
-
-
 </div>
-
-@auth
-
-@if(Auth::user()->Role_id == 0)
-
-<div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="main-box clearfix">
-                    <div class="table-responsive">
-                        <table class="table user-list">
-                            <thead>
-                                <tr>
-                                    <th><span>Utilisateur</span></th>
-                                    <th><span>Creation</span></th>
-                                    <th class="text-center"><span>Rôle</span></th>
-                                    <th><span>Email</span></th>
-                                    <th>&nbsp;</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                              
-@endif
-
-@endauth
-
