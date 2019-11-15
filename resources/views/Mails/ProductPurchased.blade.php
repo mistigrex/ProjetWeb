@@ -1,1 +1,1 @@
-Un produit à été acheté dans la boutique
+Une commande à été passé dans la boutique par {{Auth::user()->firstname}} {{Auth::user()->name}}

@@ -13,6 +13,4 @@
         <p>Pas d'activité d'organisées</p>
     @endif
 </div>
-
-
 @endsection

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 Use Mail;
+use App\User;
 
 use Illuminate\Http\Request;
 
@@ -10,20 +11,26 @@ class MailsController extends Controller
 
     public function alertemail(Request $request)
     {
+        $admins = User::select('email')->where('Role_id', '2')->get('email');
         $title = $request->title;
         $content = $request->content;
-        $user_email = "simon.caignart@viacesi.fr";
-        $user_name = "BDE";
+        
+        foreach($admins as $admin){
+        $a = 0;
+
+        $emails[$a] = $admin->email;
+
+        $a++;
+        };
 
         try
         {
-            $data = ['email'=> $user_email,'name'=> $user_name,'subject' => $title, 'content' => $content];
-            Mail::send('Mails/AlertAdmins', $data, function($message) use($data)
+            $data = ['subject' => $title, 'content' => $content];
+            Mail::send('Mails/AlertAdmins', $data, function($message) use($data, $emails)
             {
                 $subject=$data['subject'];
-                $text=$data['content'];
                 $message->from('simon.caignart@gmail.com');
-                $message->to($data['email'], 'BDE.CESI')->subject($subject);   
+                $message->to($emails)->subject($subject);
             });
             return redirect('/administrations')->with('success', 'Mail envoyé');
         }

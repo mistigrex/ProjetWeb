@@ -11536,6 +11536,10 @@ body {
 
 #Produit {
   margin-bottom: 50px;
+  box-shadow: 0px 0px 13px -3px rgba(0, 0, 0, 0.75);
+  border-radius: 5px;
+  border-radius: 12px 12px 12px 12px;
+  border: 0px solid #000000;
 }
 
 #ProduitShow {
@@ -11587,6 +11591,10 @@ ul {
     width: 70%;
     margin-left: 10%;
   }
+}
+
+.container {
+  display: block;
 }
 
 .cadre {

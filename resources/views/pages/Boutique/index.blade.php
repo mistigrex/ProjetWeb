@@ -81,27 +81,40 @@
 
 <!-- barre de recherche produits-->
 <div class="cadre">
-  <input id="searchBar" type="text" name="Search" onkeyup="myFunction()">
+    <h3>Recherche</h3>
+  <input id="searchBar" type="text" name="Search" onkeyup="myFunction()" list="products">
+  <datalist id="products">
+  
+  @foreach($products as $product)
+  <option>
+  {{$product->name}}
+  </option>
+  @endforeach
+  </datalist>
   <div id="Produit" style="display : block"></div>
   <script>
   function myFunction(){
     var search = document.getElementById("searchBar");
-    var products = document.getElementsByClassName(" Productcontainer");
+    var products = document.getElementsByClassName(" Productaffichage");
    
-    Array.prototype.forEach.call(products, function(product){
-  
-        if(product.id.includes(search.value)){
-           product.style.display = "block";
-         }else{
-           product.style.display="none";
-         }
-         if(search.value == "")
-          
-            product.style.display ="block";
-        });
+    
+  Array.prototype.forEach.call(products, function(product){
+    
+    if(product.id.includes(search.value)){
+        product.style.display = "block";
+      }else{
+        product.style.display="none";
+      }
+      if(search.value == "")
+      
+        product.style.display ="block";
+    });
+     
   }
   </script>
+  
   </div>
+  
   <!-- End barre de recherche produits-->
 
 @if(count($products) > 0)
@@ -113,7 +126,7 @@
     <div class="col-md-8 info">
       <div class="info-wrapper">
       <h2 ><a href="/products/{{$product->id}}">{{$product->name}}</a></h2>
-      <span class="badge badge-pill-lg badge-warning" style="font-size: 14px"> Catégorie : {{$product->Category_id}}</span>
+      <span class="badge badge-pill-lg badge-success" style="font-size: 14px"> Catégorie : {{$product->Category_id}}</span>
       <p class="font-weight-normal">
           <span class="font-weight-bolder" style="font-size: 16px">Description :</span>
          {{$product->description}}

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Administration;
 use App\User;
+use App\Manifestation;
 
 class AdministrationsController extends Controller
 {
@@ -26,7 +27,8 @@ class AdministrationsController extends Controller
      */
     public function create()
     {
-        return view('pages.Admin.create');
+        $manifestations = Manifestation::select('nom')->get();
+        return view('pages.Admin.create')->with('manifestations', $manifestations);
     }
 
     /**

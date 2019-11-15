@@ -3,7 +3,7 @@
 @section('content')
 <div class = "cadre">
     @auth
-        @if (Auth::user()->Role_id == 0)
+        @if (Auth::user()->Role_id == 2 || Auth::user()->Role_id == 3)
             <a href="/manifestations/create">
                 <button class ='styleButton1' type="button">Créer une manifestation</button>
             </a>
