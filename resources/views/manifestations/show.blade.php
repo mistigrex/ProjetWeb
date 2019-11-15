@@ -15,6 +15,9 @@
 
     </div>
     <div class="cadre">
+        @auth
+        @if (Auth::user()->Role_id == 0 || Auth::user()->Role_id == 1)
+
         <div>
             {!! Form::open(['action' => 'CommentsController@store', 'method' => 'MANIFESTATION', 'enctype' => 'multipart/form-data']) !!}
             {!! Form::token() !!}
@@ -36,9 +39,11 @@
             {{ Form::submit('Commenter', ['class' => 'btn btn-dark'])}}
             {!! Form::close() !!}
         </div>
-
+        @endauth
+        @endif
         <div>
-            @foreach ($comments as $comment)
+
+                @foreach ($comments as $comment)
                 @if ($manifestation->id == $comment->Activity_id)
                 <div class = 'comment1'>
                     <p><b>Commentaire : </b>{{$comment->text}}</p>
@@ -52,7 +57,7 @@
                 </div>
 
                 @endif
-            @endforeach
+                @endforeach
         </div>
 
         <small>Créer le {{$manifestation->created_at}}</small>
