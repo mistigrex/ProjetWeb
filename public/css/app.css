@@ -11488,23 +11488,21 @@ body {
   }
 }
 
+<<<<<<< HEAD
 #top3 {
   padding: 100px 0px 0px 240px;
+=======
+.cadre {
+  padding: 6em 2em 3em 18em;
+>>>>>>> Devflo
 }
 
 @media screen and (max-width: 865px) {
-  #top3 {
-    padding: 80px 0px 0px 20px;
-  }
-
-  .presentation {
-    display: none;
+  .cadre {
+    padding: 90px 13px 10px 20px;
   }
 }
 
-.presentation {
-  margin-bottom: 30px;
-}
 
 .intro {
   margin-bottom: 45px;
@@ -11776,6 +11774,7 @@ ul {
   color: #a75d54;
 }
 
+<<<<<<< HEAD
 .titre1 {
   color: #1173ce;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -11810,3 +11809,5 @@ ul {
   margin: 30px 0px 30px 0px;
 }
 
+=======
+>>>>>>> Devflo

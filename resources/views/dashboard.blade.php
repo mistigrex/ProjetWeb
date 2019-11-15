@@ -27,6 +27,9 @@
                 <i class="far fa-clock"></i>
               <span>{{ Auth::user()->created_at }} </span>
               </div>
+              @if(Auth::user()->Role_id == 2 || Auth::user()->Role_id == 3)
+              <button type="button" class="btn btn-danger">Télécharger</button>
+              @endif
           </div>
         </div>
       </div>
