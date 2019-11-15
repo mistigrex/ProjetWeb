@@ -4,7 +4,6 @@
             <ul class="top-nav" id="myTopnav">
                 <li><a class="active" href="/">Accueil</a></li>
                 <li><a href="/evenements">Événements</a></li>
-                <li><a href="/activités">Activités</a></li>
                 <li><a href="/products">Boutique</a></li>
                 <li><a href="/contact">Contact</a></li>
 @if(!Auth::guest())

@@ -7,7 +7,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-   
+
 
 class User extends Authenticatable
 {
@@ -68,4 +68,21 @@ class User extends Authenticatable
         }
         return false;
     }
+
+    public function userId ($id)
+    {
+        $userID = $id;
+    }
+
+
+    public function eventsCreated()
+    {
+        return $this->hasMany('App\Comment');
+    }
+
+    public function orders(){
+        return $this->hasMany('App\Order');
+    }
 }
+
+

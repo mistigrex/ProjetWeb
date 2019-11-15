@@ -11,10 +11,11 @@
 |
 */
 
+use App\Http\Controllers\Manifestations\CommentsController;
 use App\Http\Controllers\PagesController;
+use Symfony\Component\HttpKernel\HttpCache\Store;
 
 Route::get('/', 'PagesController@Acceuil');
-Route::get('/activites', 'PagesController@Activites');
 Route::get('/boutique', 'PagesController@Boutique');
 Route::get('/contact', [
     'uses'=>'PagesController@Contact',
@@ -29,10 +30,11 @@ Route::get('/dashboard', 'DashboardController@index');
 
 
 Route::resource('products', 'ProductsController');
-
 Route::resource('administrations', 'AdministrationsController');
-
 Route::resource('manifestations', 'ManifestationsController');
+Route::resource('comments', 'CommentsController');
+
+
 Route::get('/add-to-cart/{id}', [
         'uses' => 'ProductsController@getAddToCart',
         'as' => 'product.addToCart'
@@ -43,7 +45,12 @@ Route::get('/shopping-cart', [
         'as' => 'product.getCart'
 ]);
 
-Route::get('/deleteProduct', [
+Route::post('/postcheckout', [
+        'uses' => 'ProductsController@postCheckout',
+        'as' => 'checkout'
+]);
+
+Route::get('/checkout', [
         'uses' => 'ProductsController@deleteProduct',
         'as' => 'product.deleteProduct'
 ]);
@@ -54,6 +61,10 @@ Route::get('/sendMail', [
 ]);
 
 Route::get('/download', 'DownloadController@transfertzip');
+Route::post('/alertemail', [
+        'uses' => 'MailsController@alertemail',
+        'as' => 'Mails.alertemail'
+]);
 
 
 Auth::routes();

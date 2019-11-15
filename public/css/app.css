@@ -1,5 +1,28 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
 
+.styleButton1 {
+  text-align: center;
+  border-radius: 20px 0 20px 0;
+  background: #467adb;
+  border: none;
+  color: #fff;
+  font: bold 30px Verdana;
+  padding: 50px 50px 50px 50px;
+  margin-top: 50px;
+}
+
+@media screen and (max-width: 865px) {
+  .styleButton1 {
+    border-radius: 10px 0 10px 0;
+    background: #467adb;
+    border: none;
+    color: #fff;
+    font: bold 30px Verdana;
+    padding: 10px 10px 10px 10px;
+    margin: 5px 5px 5px 5px;
+  }
+}
+
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
@@ -11403,6 +11426,18 @@ footer span {
   list-style: none;
 }
 
+.js-cookie-consent {
+  position: absolute;
+  bottom: 0px;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  z-index: 9999;
+  background-color: #000000;
+  border-color: #000000;
+  border: solid 1px;
+}
+
 /* Style inputs with type="text", select elements and textareas */
 
 input[type=text],
@@ -11449,7 +11484,7 @@ input[type=Envoyer]:hover {
 /* Add a background color and some padding around the form */
 
 #contactForm {
-  padding: 100px 40px 30px 280px;
+  padding: 100px 40px 197px 280px;
   border-radius: 5px;
 }
 
@@ -11473,16 +11508,23 @@ body {
   }
 }
 
-.cadre {
-  padding: 6em 2em 3em 18em;
+#top3 {
+  padding: 100px 0px 0px 240px;
 }
 
 @media screen and (max-width: 865px) {
-  .cadre {
-    padding: 90px 13px 10px 20px;
+  #top3 {
+    padding: 80px 0px 0px 20px;
+  }
+
+  .presentation {
+    display: none;
   }
 }
 
+.presentation {
+  margin-bottom: 30px;
+}
 
 .intro {
   margin-bottom: 45px;
@@ -11752,5 +11794,39 @@ ul {
 
 .table-stats .table-line-plus .status-social-icon {
   color: #a75d54;
+}
+
+.titre1 {
+  color: #1173ce;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 4em;
+  text-align: center;
+}
+
+@media screen and (max-width: 865px) {
+  .titre1 {
+    color: #1173ce;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2em;
+  }
+}
+
+.image1 {
+  display: block;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.image2 {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.comment1 {
+  border: 3px #1862eb solid;
+  box-shadow: 0px 5px 26px 0px black;
+  margin: 30px 0px 30px 0px;
 }
 
