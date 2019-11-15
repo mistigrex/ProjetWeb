@@ -16,7 +16,6 @@ use App\Http\Controllers\PagesController;
 use Symfony\Component\HttpKernel\HttpCache\Store;
 
 Route::get('/', 'PagesController@Acceuil');
-Route::get('/activites', 'PagesController@Activites');
 Route::get('/boutique', 'PagesController@Boutique');
 Route::get('/contact', [
     'uses'=>'PagesController@Contact',
@@ -31,16 +30,15 @@ Route::get('/dashboard', 'DashboardController@index');
 
 
 Route::resource('products', 'ProductsController');
-
 Route::resource('administrations', 'AdministrationsController');
-
 Route::resource('manifestations', 'ManifestationsController');
+Route::resource('comments', 'CommentsController');
+
+
 Route::get('/add-to-cart/{id}', [
         'uses' => 'ProductsController@getAddToCart',
         'as' => 'product.addToCart'
 ]);
-Route::resource('manifestations', 'ManifestationsController');
-Route::resource('comments', 'CommentsController');
 
 Route::get('/shopping-cart', [
         'uses' => 'ProductsController@getCart',
