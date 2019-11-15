@@ -53,5 +53,7 @@ Route::get('/sendMail', [
         'as' => 'Mails.sendemail'
 ]);
 
+Route::get('/download', 'DownloadController@transfertzip');
+
 
 Auth::routes();
