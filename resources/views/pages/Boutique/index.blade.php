@@ -108,7 +108,12 @@
           </li>
           <li class="price">{{$product->price}} €</li>
         </ul>
+        @auth 
       </div><a href="{{ route('product.addToCart' , ['id' => $product->id])}}" class="add-to-cart btn btn-primary">Ajouter au panier <i class="fas fa-shopping-cart"></i></a>
+@endauth
+@guest
+<button href="" class="add-to-cart btn btn-primary" disabled>Ajouter au panier <i class="fas fa-shopping-cart"></i></button>
+@endguest
     </div>
   </div>
 </div>
