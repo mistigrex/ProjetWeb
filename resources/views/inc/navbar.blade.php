@@ -33,7 +33,7 @@
 @endguest
 
 @auth
-      <li class="nav-item dropdown">
+      <li id="ConnectedDisplay" class="nav-item dropdown">
        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
             {{ Auth::user()->firstname }} {{ Auth::user()->name }} <span class="caret"></span>
        </a>

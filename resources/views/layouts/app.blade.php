@@ -14,7 +14,7 @@
 <body>
 
 @include('inc.navbar')
-
+@include('cookieConsent::index')
 @yield('content')
 
 <div class="container">

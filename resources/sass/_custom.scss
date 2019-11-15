@@ -97,7 +97,7 @@
     #aside-nav {
         flex-direction: row;
         width: 80%;
-        height: 77.6px;
+        height: 80px;
         box-shadow: 3px 3px 28px -14px rgba(0, 0, 0, 0.75);
     }
     .Social {
@@ -260,9 +260,28 @@ footer span {
     cursor: pointer;
     padding: 7px;
     transition: 0.4s;
-    background-image: url("http://www.w3.org/2000/svg")
 }
 
 #BoutonTop:hover {
     color: #ff7b00;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+#ConnectedDisplay {
+    position: relative;
+    top: 0px;
+    list-style: none;
+}
+
+.js-cookie-consent {
+    position: absolute;
+    bottom: 0px;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    z-index: 9999;
+    background-color: #000000;
+    border-color: #000000;
+    border: solid 1px;
 }

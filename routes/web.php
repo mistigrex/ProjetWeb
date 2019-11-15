@@ -47,8 +47,24 @@ Route::get('/shopping-cart', [
         'as' => 'product.getCart'
 ]);
 
-Route::get('/deleteProduct', [
+Route::post('/postcheckout', [
+        'uses' => 'ProductsController@postCheckout',
+        'as' => 'checkout'
+]);
+
+Route::get('/checkout', [
         'uses' => 'ProductsController@deleteProduct',
         'as' => 'product.deleteProduct'
 ]);
+
+Route::get('/sendMail', [
+        'uses' => 'MailsController@sendemail',
+        'as' => 'Mails.sendemail'
+]);
+
+Route::post('/alertemail', [
+        'uses' => 'MailsController@alertemail',
+        'as' => 'Mails.alertemail'
+]);
+
 Auth::routes();

@@ -11233,7 +11233,7 @@ a.text-dark:focus {
     -webkit-box-direction: normal;
             flex-direction: row;
     width: 80%;
-    height: 77.6px;
+    height: 80px;
     box-shadow: 3px 3px 28px -14px rgba(0, 0, 0, 0.75);
   }
 
@@ -11411,11 +11411,31 @@ footer span {
   padding: 7px;
   -webkit-transition: 0.4s;
   transition: 0.4s;
-  background-image: url("http://www.w3.org/2000/svg");
 }
 
 #BoutonTop:hover {
   color: #ff7b00;
+  font-weight: bold;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+#ConnectedDisplay {
+  position: relative;
+  top: 0px;
+  list-style: none;
+}
+
+.js-cookie-consent {
+  position: absolute;
+  bottom: 0px;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  z-index: 9999;
+  background-color: #000000;
+  border-color: #000000;
+  border: solid 1px;
 }
 
 /* Style inputs with type="text", select elements and textareas */
@@ -11464,7 +11484,7 @@ input[type=Envoyer]:hover {
 /* Add a background color and some padding around the form */
 
 #contactForm {
-  padding: 100px 40px 30px 280px;
+  padding: 100px 40px 197px 280px;
   border-radius: 5px;
 }
 
@@ -11488,21 +11508,23 @@ body {
   }
 }
 
-<<<<<<< HEAD
 #top3 {
   padding: 100px 0px 0px 240px;
-=======
-.cadre {
-  padding: 6em 2em 3em 18em;
->>>>>>> Devflo
 }
 
 @media screen and (max-width: 865px) {
-  .cadre {
-    padding: 90px 13px 10px 20px;
+  #top3 {
+    padding: 80px 0px 0px 20px;
+  }
+
+  .presentation {
+    display: none;
   }
 }
 
+.presentation {
+  margin-bottom: 30px;
+}
 
 .intro {
   margin-bottom: 45px;
@@ -11774,7 +11796,6 @@ ul {
   color: #a75d54;
 }
 
-<<<<<<< HEAD
 .titre1 {
   color: #1173ce;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -11809,5 +11830,3 @@ ul {
   margin: 30px 0px 30px 0px;
 }
 
-=======
->>>>>>> Devflo
