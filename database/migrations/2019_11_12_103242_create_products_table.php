@@ -18,9 +18,9 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->string('description');
             $table->float('price');
-            $table->string('image');
+            $table->string('image')->default("https://d19m59y37dris4.cloudfront.net/shirt/2-1-1/img/shirt-gray.jpg");
             //Foreign key of Categorie
-            $table->integer('Category_id')->unsigned();
+            $table->integer('Category_id')->unsigned()->default("1");
             $table->foreign('Category_id')->references('id')->on('categories')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });

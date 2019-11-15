@@ -79,6 +79,30 @@
 </section>
 <!-- End Features Section-->
 
+<!-- barre de recherche produits-->
+<div class="cadre">
+  <input id="searchBar" type="text" name="Search" onkeyup="myFunction()">
+  <div id="Produit" style="display : block"></div>
+  <script>
+  function myFunction(){
+    var search = document.getElementById("searchBar");
+    var products = document.getElementsByClassName(" Productcontainer");
+   
+    Array.prototype.forEach.call(products, function(product){
+  
+        if(product.id.includes(search.value)){
+           product.style.display = "block";
+         }else{
+           product.style.display="none";
+         }
+         if(search.value == "")
+          
+            product.style.display ="block";
+        });
+  }
+  </script>
+  </div>
+  <!-- End barre de recherche produits-->
 
 @if(count($products) > 0)
 @foreach($products as $product)
@@ -89,8 +113,10 @@
     <div class="col-md-8 info">
       <div class="info-wrapper">
       <h2 ><a href="/products/{{$product->id}}">{{$product->name}}</a></h2>
-        <p class="lead">
-          {{$product->description}}
+      <span class="badge badge-pill-lg badge-warning" style="font-size: 14px"> Catégorie : {{$product->Category_id}}</span>
+      <p class="font-weight-normal">
+          <span class="font-weight-bolder" style="font-size: 16px">Description :</span>
+         {{$product->description}}
         </p>
         <ul class="product-info list-unstyled">
           <li class="size">

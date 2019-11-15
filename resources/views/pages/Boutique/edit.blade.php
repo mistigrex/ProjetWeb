@@ -23,6 +23,11 @@
     {{Form::text('price', $product->price, ['class' => 'form-control', 'placeholder' => 'Prix du Produit'])}}
 </div>
 
+<div class="form-group">
+    {{Form::label('Category_id', 'Catégorie du produit')}}
+    {{Form::text('Category_id', $product->Category_id, ['class' => 'form-control', 'placeholder' => 'Prix du Produit'])}}
+</div>
+
 {{Form::hidden('_method', 'PUT')}}
 
 {{Form::submit('Modifier le produit', ['class' => 'btn btn-warning'])}}
