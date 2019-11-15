@@ -67,3 +67,14 @@ ul {
 .boutonAdmin {
     margin-bottom: 5px;
 }
+
+#searchBar {
+    width: 70%;
+}
+
+@media screen and (max-width: 865px) {
+    #searchBar {
+        width: 70%;
+        margin-left: 10%;
+    }
+}

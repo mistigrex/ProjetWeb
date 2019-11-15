@@ -44,14 +44,14 @@ public function getAddToCart(Request $request, $id)
         }
         $cart->add($product, $product->id);
         Session::put('cart', $cart);
-        // dd($request->session()->get('cart'));
+        
         return redirect()->route('products.index');
     }
 
     public function deleteProduct()
     {
-        Session::flush(); // removes all session data
-        return redirect()->route('products.index');
+        Session::forget('cart');
+        return redirect()->route('products.index')->with('success', 'Panier supprimé');
     }
 
 public function getCart()
@@ -104,7 +104,8 @@ public function postCheckout(Request $request)
         $this ->validate($request, [
             'name' => 'required',
             'description' => 'required',
-            'price' => 'required'
+            'price' => 'required',
+            'Category_id' => 'required'
         ]);
        
         // Create Post
@@ -112,6 +113,7 @@ public function postCheckout(Request $request)
         $product->name = $request->input('name');
         $product->description = $request->input('description');
         $product->price = $request->input('price');
+        $product->Category_id = $request->input('Category_id');
         $product->save();
 
         return redirect('/products')->with('success', 'Produit Ajouté');
@@ -153,7 +155,8 @@ public function postCheckout(Request $request)
         $this ->validate($request, [
             'name' => 'required',
             'description' => 'required',
-            'price' => 'required'
+            'price' => 'required',
+            'Category_id' => 'required'
         ]);
        
 
@@ -162,6 +165,7 @@ public function postCheckout(Request $request)
         $product->name = $request->input('name');
         $product->description = $request->input('description');
         $product->price = $request->input('price');
+        $product->Category_id = $request->input('Category_id');
         $product->save();
 
         return redirect('/products')->with('success', 'Produit Mis A Jour');
