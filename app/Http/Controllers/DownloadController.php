@@ -12,7 +12,7 @@ class DownloadController extends Controller
         $zip = new \ZipArchive();
         $zip->open($zip_file, \ZipArchive::CREATE | \ZipArchive::OVERWRITE);
 
-        $path = public_path('\images');
+        $path = storage_path('\app\public\images');
         $files = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($path));
         foreach ($files as $name => $file)
         {
@@ -21,7 +21,7 @@ class DownloadController extends Controller
                 $filePath     = $file->getRealPath();
 
                 // extracting filename with substr/strlen
-                $relativePath = 'image/' . substr($filePath, strlen($path) + 1);
+                $relativePath = 'image/' . substr($filePath, strlen($path));
 
                 $zip->addFile($filePath, $relativePath);
             }
