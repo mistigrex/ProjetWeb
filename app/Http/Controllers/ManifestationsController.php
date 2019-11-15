@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Manifestation;
+use App\User;
+use App\Comment;
 
 class ManifestationsController extends Controller
 {
@@ -82,7 +84,8 @@ class ManifestationsController extends Controller
     public function show($id)
     {
         $manifestation = Manifestation::find($id);
-        return view('manifestations.show')->with('manifestation', $manifestation);
+        $comments = Comment::all();
+        return view('manifestations.show')->with('manifestation', $manifestation)->with('comments', $comments);
     }
 
     /**

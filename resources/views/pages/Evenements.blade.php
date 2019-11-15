@@ -10,10 +10,9 @@
         @endif
 
     @endauth
-
-
-    <!---if(Auth::user()-Role_id == 0){
-    <a href="/manifestations/create"><input type="btn btn-primary" value="Créer une manifestation"></a>--->
+    <a href="/manifestations">
+        <button class ='styleButton1' type="button">Evènement du mois</button>
+    </a>
 
 </div>
 

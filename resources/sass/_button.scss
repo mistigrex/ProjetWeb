@@ -1,11 +1,13 @@
 .styleButton1 {
+    //display: block;
+    text-align: center;
 	border-radius:20px 0 20px 0;
 	background: #467adb;
 	border:none;
 	color:#fff;
-	font:bold 30px Verdana;
+    font:bold 30px Verdana;
     padding:50px 50px 50px 50px;
-    margin: 10px 10px 10px 10px;
+    margin-top: 50px;
 }
 
 @media screen and (max-width: 865px) {

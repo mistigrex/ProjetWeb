@@ -11,7 +11,9 @@
 |
 */
 
+use App\Http\Controllers\Manifestations\CommentsController;
 use App\Http\Controllers\PagesController;
+use Symfony\Component\HttpKernel\HttpCache\Store;
 
 Route::get('/', 'PagesController@Acceuil');
 Route::get('/activites', 'PagesController@Activites');
@@ -44,5 +46,4 @@ Route::get('/deleteProduct', [
         'uses' => 'ProductsController@deleteProduct',
         'as' => 'product.deleteProduct'
 ]);
-
 Auth::routes();

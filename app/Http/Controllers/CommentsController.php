@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Comment;
+use App\User;
 
 class CommentsController extends Controller
 {
@@ -36,17 +37,33 @@ class CommentsController extends Controller
      */
     public function store(Request $request)
     {
+
         $this->validate($request, [
             'text' => 'required',
-            'image',
+            'comment_image|nullable|max:1999',
             'Activity_id' => 'required',
-            'Author_id' => 'required'
+            'user_id' => 'required'
 
         ]);
-
+        if ($request->hasFile('comment_image')) {
+            //Get filename with the extension
+            $filenameWithExt = $request->file('comment_image')->getClientOriginalName();
+            //get filename
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            //get just extension
+            $extension = $request->file('comment_image')->getClientOriginalExtension();
+            //filename to store
+            $fileNameToStore = $filename.'_'.time().'.'.$extension;
+            //Upload Image
+            $path = $request->file('comment_image')->storeAs('public/comment_image', $fileNameToStore);
+        }
+        else {
+            $fileNameToStore = null;
+        }
         $comment = new Comment;
         $comment->text = $request->input('text');
-        $comment->Author_id = $request->input('Author_id');
+        $comment->comment_image = $fileNameToStore;
+        $comment->user_id = $request->input('user_id');
         $comment->Activity_id = $request->input('Activity_id');
         $comment->save();
 
@@ -59,9 +76,9 @@ class CommentsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($user_id)
     {
-        //
+    //
     }
 
     /**
