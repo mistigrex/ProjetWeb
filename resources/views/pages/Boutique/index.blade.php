@@ -121,7 +121,11 @@
 @endforeach
 {{$products->links()}}
 @else
+
+<div class="cadre">
 <h1>Aucun produits disponible</h1>
+</div>
+
 @endif
 
 </article>
