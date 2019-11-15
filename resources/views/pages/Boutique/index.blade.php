@@ -78,44 +78,38 @@
   </div>
 </section>
 <!-- End Features Section-->
+<!-- barre de recherche produits-->
+<div class="cadre">
+<input id="searchBar" type="text" name="Search" onkeyup="myFunction()">
+<div id="Produit" style="display : block"></div>
+<script>
+function myFunction(){
+  var search = document.getElementById("searchBar");
+  var products = document.getElementsByClassName(" Productcontainer");
+ 
+  Array.prototype.forEach.call(products, function(product){
 
+      if(product.id.includes(search.value)){
+         product.style.display = "block";
+       }else{
+         product.style.display="none";
+       }
+       if(search.value == "")
+        
+          product.style.display ="block";
+      });
+}
+</script>
+</div>
+
+<!-- End barre de recherche produits-->
 
 @if(count($products) > 0)
+
 @foreach($products as $product)
-<!-- Carousel produits les plus vendus-->
-<p>Nos produits les plus vendus</p>
-<div  id="myCarousel" class="carousel slide" data-ride="carousel">
 
-  <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-  </ol>
 
-  <div class="carousel-inner" role="listbox">
-    <div class="item active">
-      <img src="{{$product->image}}" alt="{{$product->name}}" width="560px" height="200px" >
-      <div class="carousel-caption">
-      </div>
-    </div>
-
-    <div class="item">
-      <img src="{{$product->image}}" alt="{{$product->name}}" width="560px" height="200px" >
-      <div class="carousel-caption">
-      </div>
-    </div>
-
-    <div class="item">
-      <img src="{{$product->image}}" alt="{{$product->name}}" width="560px" height="200px"  >
-      <div class="carousel-caption">
-      </div>
-    </div>
- 
-    </div>
-</div>
-</div>
-<!-- End Carousel produits-->
-<div class="container" id="Produit">
+<div class="container Productcontainer" id="{{$product->name}}">
   <div class="row">
     <div class="col-md-4 product"><img src="{{$product->image}}" alt="t-shirt" class="img-fluid"></div>
     <div class="col-md-8 info">
@@ -396,5 +390,5 @@
 
 
 </article>
-
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js%22%3E"> </script>
 @endsection
