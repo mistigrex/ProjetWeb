@@ -11403,6 +11403,18 @@ footer span {
   list-style: none;
 }
 
+.js-cookie-consent {
+  position: absolute;
+  bottom: 0px;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  z-index: 9999;
+  background-color: #000000;
+  border-color: #000000;
+  border: solid 1px;
+}
+
 /* Style inputs with type="text", select elements and textareas */
 
 input[type=text],
@@ -11449,7 +11461,7 @@ input[type=Envoyer]:hover {
 /* Add a background color and some padding around the form */
 
 #contactForm {
-  padding: 100px 40px 30px 280px;
+  padding: 100px 40px 197px 280px;
   border-radius: 5px;
 }
 

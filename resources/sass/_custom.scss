@@ -273,3 +273,15 @@ footer span {
     top: 0px;
     list-style: none;
 }
+
+.js-cookie-consent {
+    position: absolute;
+    bottom: 0px;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    z-index: 9999;
+    background-color: #000000;
+    border-color: #000000;
+    border: solid 1px;
+}

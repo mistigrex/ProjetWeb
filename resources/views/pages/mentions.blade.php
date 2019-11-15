@@ -25,8 +25,8 @@
 			RNA : W173004618<br>
 		<p></p>
 		<p>
-			 <b>Directeur de la publication</b> : <br>
-			 </p><p>Erwan FERRY</p>
+			 <b>Directeurs de la publication</b> : <br>
+			 </p><p>Sacha Garnier et Simon Caignart</p>
 		<p></p>
 	</section>
 	<p>Mentions légales supplémentaires</p>
@@ -38,7 +38,7 @@
 <br><p>SIREN : 837705649 La Rochelle</p>
 <br><p></p>
 <h2>Rédaction du site internet</h2>
-<br><p>Directeur de la publication : Erwan FERRY</p>
+<br><p>Directeurs de la publication : Sacha Garnier et Simon Caignart</p>
 <br><p>Contact : sacha.garnier@viacesi.fr</p>
 <br><p>&nbsp;</p>
 <h2>Hébergeur du site internet</h2>
