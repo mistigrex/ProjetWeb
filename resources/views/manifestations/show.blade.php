@@ -89,6 +89,6 @@
         <small>Créer le {{$manifestation->created_at}}</small>
         <br>
         <a href="/manifestations" class= "btn btn-primary">retour</a>
-
+</div>
 
 @endsection
