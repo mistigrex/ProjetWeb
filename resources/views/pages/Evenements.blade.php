@@ -11,7 +11,7 @@
 
     @endauth
     <a href="/manifestations">
-        <button class ='styleButton1' type="button">Evènement du mois</button>
+        <button class ='styleButton1' type="button">Événement du mois</button>
     </a>
 
 </div>

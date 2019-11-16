@@ -3,18 +3,35 @@
 
 @section('content')
 <div class = cadre>
-    <h1 class = "titre1">{{$manifestation->nom}}</h1>
-    <div>
-        <p><b>Description :</b> {{$manifestation->description}}</p>
-        <p><b>Date de l'évenement (début si renouvelable) : </b>{{$manifestation->date}}</p>
-        <p><b>Prix d'inscription :</b> {{$manifestation->prix}}€</p>
-        <p><b>Renouvellement :</b> {{$manifestation->recurent}}</p>
-        <?php $test=$manifestation->image ?>
-        <p><img class='image1' src="{{asset('storage/images/'.$test)}}" alt="pomme" ></p>
-    </div>
+<div class="container"></div>
 
-    </div>
-    <div class="cadre">
+    <h1 class = "titre1">{{$manifestation->nom}}</h1>
+   
+
+    <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><b>Description :</b> {{$manifestation->description}}</h5>
+          <p class="card-text"><b>Date de l'évenement (début si renouvelable) : </b>{{$manifestation->date}}</p>
+          <p class="card-text"><b>Prix d'inscription :</b> {{$manifestation->prix}}€</p>
+          <p class="card-text"><b>Renouvellement :</b> {{$manifestation->recurent}}</p>
+        </div>
+        <?php $test=$manifestation->image ?>
+        <p><img class='card-img-top' src="{{asset('storage/images/'.$test)}}" alt="Image de l'évenement" ></p>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <div class="container">
         @auth
         @if (Auth::user()->Role_id == 0 || Auth::user()->Role_id == 1)
 
@@ -36,25 +53,34 @@
             </div>
 
             <br>
-            {{ Form::submit('Commenter', ['class' => 'btn btn-dark'])}}
+            {{ Form::submit('Commenter', ['class' => 'btn btn-warning'])}}
             {!! Form::close() !!}
         </div>
         @endauth
         @endif
-        <div>
+     
 
                 @foreach ($comments as $comment)
                 @if ($manifestation->id == $comment->Activity_id)
-                <div class = 'comment1'>
-                    <p><b>Commentaire : </b>{{$comment->text}}</p>
-                    <?php $photo=$comment->comment_image ?>
-                    @if ($photo != null)
-                        <p><img class='image2' src="{{asset('storage/comment_image/'.$photo)}}" alt="Erreur de chargement de la photo" ></p>
-                    @endif
 
-                    <small>Modifié par {{$comment->user_id}} pour la dernière fois le {{$comment->updated_at}}</small>
-
-                </div>
+                <div class="card mb-3" style="max-width: 900px; margin-top:20px">
+                        <div class="row no-gutters">
+                          <div class="col-md-4">
+                                <?php $photo=$comment->comment_image ?>
+                                @if ($photo != null)
+                                    <a href="{{asset('storage/comment_image/'.$photo)}}" target="_blank"><img class="card-img" src="{{asset('storage/comment_image/'.$photo)}}"  title="Cliquez pour agrandir" alt="Erreur de chargement de la photo" ></a>
+                                @endif
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body">
+                              <h5 class="card-title">Commentaire :</h5>
+                              <p class="card-text">{{$comment->text}}</p>
+                              <p class="card-text"><small class="text-muted">Derniere mise a jour le {{$comment->updated_at}}</small></p>
+                              <p class="card-text"><small class="text-muted">Par {{$comment->user_id}}</small></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
 
                 @endif
                 @endforeach
@@ -63,6 +89,6 @@
         <small>Créer le {{$manifestation->created_at}}</small>
         <br>
         <a href="/manifestations" class= "btn btn-primary">retour</a>
-    </div>
+
 
 @endsection
