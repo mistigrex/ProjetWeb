@@ -29,7 +29,7 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        $products = Product::orderBy('price', 'desc')->paginate(5);
+        $products = Product::orderBy('price', 'desc')->paginate(10);
        return view('Pages.Boutique.index')->with('products', $products);
     }
 

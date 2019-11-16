@@ -120,13 +120,18 @@
 @if(count($products) > 0)
 @foreach($products as $product)
 
+
+@if($product->Category_id == 1)
+
+<?php $categorie = "T-shirt" ?>
+
 <div class="container" id="Produit">
   <div class="row">
     <div class="col-md-4 product"><img src="{{$product->image}}" alt="t-shirt" class="img-fluid"></div>
     <div class="col-md-8 info">
       <div class="info-wrapper">
       <h2 ><a href="/products/{{$product->id}}">{{$product->name}}</a></h2>
-      <span class="badge badge-pill-lg badge-success" style="font-size: 14px"> Catégorie : {{$product->Category_id}}</span>
+      <span class="badge badge-pill-lg badge-success" style="font-size: 14px"> Catégorie : {{$categorie}}</span>
       <p class="font-weight-normal">
           <span class="font-weight-bolder" style="font-size: 16px">Description :</span>
          {{$product->description}}
@@ -147,6 +152,72 @@
           </li>
           <li class="price">{{$product->price}} €</li>
         </ul>
+        @elseif($product->Category_id == 2)
+
+        <?php $categorie = "Pull" ?>
+        
+        <div class="container" id="Produit">
+          <div class="row">
+            <div class="col-md-4 product"><img src="{{$product->image}}" alt="t-shirt" class="img-fluid"></div>
+            <div class="col-md-8 info">
+              <div class="info-wrapper">
+              <h2 ><a href="/products/{{$product->id}}">{{$product->name}}</a></h2>
+              <span class="badge badge-pill-lg badge-success" style="font-size: 14px"> Catégorie : {{$categorie}}</span>
+              <p class="font-weight-normal">
+                  <span class="font-weight-bolder" style="font-size: 16px">Description :</span>
+                 {{$product->description}}
+                </p>
+                <ul class="product-info list-unstyled">
+                  <li class="size">
+                    <select title="Choisi ta taille" class="selectpicker">
+                      <option value="small">Small</option>
+                      <option value="medium">Medium</option>
+                      <option value="large">Large</option>
+                      <option value="x-large">X-Large</option>
+                    </select>
+                  </li>
+                  <li class="Taille">
+                    <div class="product-quantity">
+                      <input type="text" placeholder="T'en veux combien ?" class="quantity">
+                    </div>
+                  </li>
+                  <li class="price">{{$product->price}} €</li>
+                </ul>
+                @elseif($product->Category_id == 3)
+
+                <?php $categorie = "Goodies" ?>
+        
+                <div class="container" id="Produit">
+                  <div class="row">
+                    <div class="col-md-4 product"><img src="{{$product->image}}" alt="t-shirt" class="img-fluid"></div>
+                    <div class="col-md-8 info">
+                      <div class="info-wrapper">
+                      <h2 ><a href="/products/{{$product->id}}">{{$product->name}}</a></h2>
+                      <span class="badge badge-pill-lg badge-success" style="font-size: 14px"> Catégorie : {{$categorie}}</span>
+                      <p class="font-weight-normal">
+                          <span class="font-weight-bolder" style="font-size: 16px">Description :</span>
+                         {{$product->description}}
+                        </p>
+                        <ul class="product-info list-unstyled">
+                          <li class="size">
+                            <select title="Choisi ta taille" class="selectpicker">
+                              <option value="small">Small</option>
+                              <option value="medium">Medium</option>
+                              <option value="large">Large</option>
+                              <option value="x-large">X-Large</option>
+                            </select>
+                          </li>
+                          <li class="Taille">
+                            <div class="product-quantity">
+                              <input type="text" placeholder="T'en veux combien ?" class="quantity">
+                            </div>
+                          </li>
+                          <li class="price">{{$product->price}} €</li>
+                        </ul>
+
+                @endif
+
+
         @auth 
       </div><a href="{{ route('product.addToCart' , ['id' => $product->id])}}" class="add-to-cart btn btn-primary">Ajouter au panier <i class="fas fa-shopping-cart"></i></a>
 @endauth
