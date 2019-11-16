@@ -23,7 +23,11 @@
               <span>{{ Auth::user()->created_at }} </span>
               </div>
               @if(Auth::user()->Role_id == 2 || Auth::user()->Role_id == 3)
+              <div>
+              <a id="downloadAll" href="/download">
               <button type="button" class="btn btn-danger">Télécharger</button>
+              </a>
+              </div>
               @endif
           </div>
         </div>

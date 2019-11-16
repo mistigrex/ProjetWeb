@@ -17,10 +17,10 @@ class ProductsController extends Controller
      *
      * @return void
      */
-    // public function __construct()
-    // {
-    //     $this->middleware('auth', ['except' => ['index', 'show' ]]);
-    // }
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => ['index', 'show' ]]);
+    }
 
     /**
      * Display a listing of the resource.

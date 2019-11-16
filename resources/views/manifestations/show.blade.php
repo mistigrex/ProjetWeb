@@ -33,7 +33,7 @@
 
       <div class="container">
         @auth
-        @if (Auth::user()->Role_id == 0 || Auth::user()->Role_id == 1)
+        @if (Auth::user()->Role_id == 2 || Auth::user()->Role_id == 1)
 
         <div>
             {!! Form::open(['action' => 'CommentsController@store', 'method' => 'MANIFESTATION', 'enctype' => 'multipart/form-data']) !!}
