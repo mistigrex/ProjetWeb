@@ -11843,7 +11843,7 @@ ul {
   display: none;
 }
 
-@media screen and (max-width: 865px) {
+@media screen and (max-width: 1000px) {
   .présentation {
     position: fixed;
     top: 100px;
@@ -11863,6 +11863,7 @@ ul {
   #carrousselPetit {
     display: block;
     padding-top: 220px;
+    padding-bottom: 30%;
   }
 
   #ytvideo {

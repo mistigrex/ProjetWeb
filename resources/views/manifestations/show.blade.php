@@ -11,27 +11,16 @@
     <div class="card">
         <div class="card-body">
           <h5 class="card-title"><b>Description :</b> {{$manifestation->description}}</h5>
-          <p class="card-text"><b>Date de l'évenement (début si renouvelable) : </b>{{$manifestation->date}}</p>
+          <p class="card-text"><b>Date de l'événement (début si renouvelable) : </b>{{$manifestation->date}}</p>
           <p class="card-text"><b>Prix d'inscription :</b> {{$manifestation->prix}}€</p>
           <p class="card-text"><b>Renouvellement :</b> {{$manifestation->recurent}}</p>
         </div>
         <?php $test=$manifestation->image ?>
         <p><img class='card-img-top' src="{{asset('storage/images/'.$test)}}" alt="Image de l'évenement" ></p>
       </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+      <small>Créer le {{$manifestation->created_at}}</small>
       <div class="container">
+
         @auth
         @if (Auth::user()->Role_id == 2 || Auth::user()->Role_id == 1)
 
@@ -86,9 +75,9 @@
                 @endforeach
         </div>
 
-        <small>Créer le {{$manifestation->created_at}}</small>
+        
         <br>
-        <a href="/manifestations" class= "btn btn-primary">retour</a>
+        <a href="/manifestations" class= "btn btn-primary">Retour</a>
 </div>
 
 @endsection

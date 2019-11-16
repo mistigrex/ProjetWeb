@@ -21,7 +21,7 @@ Route::get('/contact', [
     'uses'=>'PagesController@Contact',
     'as' => 'contact',
     'middleware' => 'roles',
-    'roles' => ['BDE']
+    'roles' => ['Etudiant','BDE', 'Personnel']
 ]);
 Route::get('/evenements', 'PagesController@Evenements');
 Route::get('/mentions', 'PagesController@Mentions');

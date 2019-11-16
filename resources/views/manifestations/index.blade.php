@@ -2,7 +2,7 @@
 
 @section('content')
 <div class = cadre>
-    <h1 style="text-decoration:underline">Événement du mois :</h1>
+    <h1 style="text-decoration:underline">Événement(s) du mois :</h1>
 
     <div class="container">
 

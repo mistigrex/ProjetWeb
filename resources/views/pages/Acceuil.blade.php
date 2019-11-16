@@ -14,7 +14,7 @@
                     <img class="d-block w-100" src="{{asset('images/cesi.png')}}" alt="First slide">
                   </div>
                   <div class="carousel-item">
-                    <img class="d-block w-100" src="{{asset('images/larochelle.jpeg')}}" alt="Second slide">
+                    <img class="d-block w-100" src="{{asset('images/larochelle.jpg')}}" alt="Second slide">
                   </div>
                   <div class="carousel-item">
                     <img class="d-block w-100" src="{{asset('images/port-plaisance-la-rochelle-arriver.jpg')}}" alt="Third slide">
@@ -49,7 +49,7 @@
                 <img class="d-block w-100" src="{{asset('images/cesi.png')}}" alt="First slide">
               </div>
               <div class="carousel-item">
-                <img class="d-block w-100" src="{{asset('images/larochelle.jpeg')}}" alt="Second slide">
+                <img class="d-block w-100" src="{{asset('images/larochelle.jpg')}}" alt="Second slide">
               </div>
               <div class="carousel-item">
                 <img class="d-block w-100" src="{{asset('images/port-plaisance-la-rochelle-arriver.jpg')}}" alt="Third slide">
