@@ -14,9 +14,44 @@
     </div>
 
     </div>
+    <div class = 'cadre2'>
+
+        {!! Form::open(['action' => 'ParticipatesController@store', 'method' => 'MANIFESTATION', 'enctype' => 'multipart/form-data']) !!}
+        {!! Form::token() !!}
+
+        <?php $Activity_id = $manifestation->id ?>
+        {!! Form::hidden('Activity_id', $Activity_id) !!}
+
+        <?php $Participant_id = Auth::user()->id ?>
+        {!! Form::hidden('Participant_id', $Participant_id) !!}
+
+        <?php $Participant_firstname = Auth::user()->firstname ?>
+        {!! Form::hidden('Participant_firstname', $Participant_firstname) !!}
+
+        <?php $Participant_name = Auth::user()->name ?>
+        {!! Form::hidden('Participant_name', $Participant_name) !!}
+
+        <br>
+        <a class="btn btn-warning" href="{{ route('export') }}">Export User Data</a>
+        <?php $inscription = 0?>
+
+        @foreach ($participates as $participate)
+        @if(Auth::user()->id == $participate->Participant_id )
+            <?php $inscription = 1 ?>
+        @endif
+        @endforeach
+        @if ($inscription == 1)
+            <button class="btn btn-primary" disabled>Vous êtes inscrit</button>
+        @else
+            {{ Form::submit("M'inscrire", ['class' => 'btn btn-primary'])}}
+        @endif
+
+        {!! Form::close() !!}
+    </div>
     <div class="cadre">
         @auth
         @if (Auth::user()->Role_id == 0 || Auth::user()->Role_id == 1)
+
 
         <div>
             {!! Form::open(['action' => 'CommentsController@store', 'method' => 'MANIFESTATION', 'enctype' => 'multipart/form-data']) !!}
@@ -36,28 +71,32 @@
             </div>
 
             <br>
-            {{ Form::submit('Commenter', ['class' => 'btn btn-dark'])}}
-            {!! Form::close() !!}
+
+
         </div>
-        @endauth
+        @if ($inscription == 1)
+            {{ Form::submit('Commenter', ['class' => 'btn btn-dark'])}}
+        @else
+            <button class = "btn btn-dark" disabled> Vous devez être inscrit à cette activité pour commenter</button>
         @endif
+        {!! Form::close() !!}
+        @endif
+        @endauth
         <div>
 
-                @foreach ($comments as $comment)
-                @if ($manifestation->id == $comment->Activity_id)
-                <div class = 'comment1'>
-                    <p><b>Commentaire : </b>{{$comment->text}}</p>
-                    <?php $photo=$comment->comment_image ?>
-                    @if ($photo != null)
-                        <p><img class='image2' src="{{asset('storage/comment_image/'.$photo)}}" alt="Erreur de chargement de la photo" ></p>
-                    @endif
-
-                    <small>Modifié par {{$comment->user_id}} pour la dernière fois le {{$comment->updated_at}}</small>
-
-                </div>
-
+            @foreach ($comments as $comment)
+            @if ($manifestation->id == $comment->Activity_id)
+            <div class = 'comment1'>
+                <p><b>Commentaire : </b>{{$comment->text}}</p>
+                <?php $photo=$comment->comment_image ?>
+                @if ($photo != null)
+                    <p><img class='image2' src="{{asset('storage/comment_image/'.$photo)}}" alt="Erreur de chargement de la photo" ></p>
                 @endif
-                @endforeach
+
+                <small>Modifié par {{$comment->user_id}} pour la dernière fois le {{$comment->updated_at}}</small>
+            </div>
+            @endif
+            @endforeach
         </div>
 
         <small>Créer le {{$manifestation->created_at}}</small>

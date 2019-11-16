@@ -33,6 +33,7 @@ Route::resource('products', 'ProductsController');
 Route::resource('administrations', 'AdministrationsController');
 Route::resource('manifestations', 'ManifestationsController');
 Route::resource('comments', 'CommentsController');
+Route::resource('participates', 'ParticipatesController');
 
 
 Route::get('/add-to-cart/{id}', [
@@ -64,5 +65,8 @@ Route::post('/alertemail', [
         'uses' => 'MailsController@alertemail',
         'as' => 'Mails.alertemail'
 ]);
+
+Route::get('export', 'ParticipatesController@export')->name('export');
+Route::get('importExportView', 'ParticpatesController@importExportView');
 
 Auth::routes();

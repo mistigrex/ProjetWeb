@@ -75,7 +75,7 @@ public function postCheckout(Request $request)
         $order = new Order();
         $order->cart = serialize($cart);
         $order->User_id = Auth::user()->id;
-     
+
         Auth::user()->orders()->save($order);
 
         Session::forget('cart');
@@ -106,7 +106,7 @@ public function postCheckout(Request $request)
             'description' => 'required',
             'price' => 'required'
         ]);
-       
+
         // Create Post
         $product = new Product;
         $product->name = $request->input('name');
@@ -155,7 +155,7 @@ public function postCheckout(Request $request)
             'description' => 'required',
             'price' => 'required'
         ]);
-       
+
 
         // Update Post
         $product = Product::find($id);
