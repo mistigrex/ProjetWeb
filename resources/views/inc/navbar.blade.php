@@ -10,10 +10,11 @@
             <li><a href="/shopping-cart">Panier <i class="fas fa-shopping-cart"></i>
                 <span class="badge">{{ Session::has('cart') ? Session::get('cart')->totalQty : ''}}</span>
                 </a></li>
+                @endif
                 <a href="javascript:void(0);" class="icon" onclick="expandLinks()">
                     <i class="fa fa-bars"></i>
                 </a>
-@endif
+
             </ul>
 
             <div id="aside-nav">

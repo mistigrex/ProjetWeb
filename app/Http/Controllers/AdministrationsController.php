@@ -5,9 +5,23 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Administration;
 use App\User;
+use App\Manifestation;
 
 class AdministrationsController extends Controller
 {
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+
+        
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -26,7 +40,8 @@ class AdministrationsController extends Controller
      */
     public function create()
     {
-        return view('pages.Admin.create');
+        $manifestations = Manifestation::select('nom')->get();
+        return view('pages.Admin.create')->with('manifestations', $manifestations);
     }
 
     /**

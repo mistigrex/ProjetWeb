@@ -142,7 +142,8 @@
                     <div class="md-form form-sm mb-5">
                             <i class="fas fa-lock prefix"></i>
                             <input id="password" class="modalLRInput" placeholder="Mot de passe"  type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-    
+                            <small id="passwordHelpBlock" class="form-text text-muted">
+                                   Votre mot de passe doit contenir au minimum 6 caractères, ainsi qu'une majuscule et un chiffre</small>
                             @error('password')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -158,8 +159,8 @@
 
 
                     <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="customCheck1">
-                        <label class="custom-control-label" for="customCheck1">J'accepte les conditions d'utilisation</label>
+                        <input type="checkbox" class="custom-control-input" id="customCheck1"required>
+                        <label class="custom-control-label" for="customCheck1" >J'accepte les <a href="/mentions">Conditions générale d utilisation</a> </label>
                         </div>
                     <div class="text-center form-sm mt-2">
                         <button class="btn btn-warning" type="submit"> {{ __('Inscription') }} <i class="fas fa-sign-in"></i></button>

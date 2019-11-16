@@ -11536,6 +11536,8 @@ body {
 
 #Produit {
   margin-bottom: 50px;
+  box-shadow: 0px 0px 13px -3px rgba(0, 0, 0, 0.75);
+  border: 0px solid #000000;
 }
 
 #ProduitShow {
@@ -11576,6 +11578,17 @@ ul {
 
 .boutonAdmin {
   margin-bottom: 5px;
+}
+
+#searchBar {
+  width: 70%;
+}
+
+@media screen and (max-width: 865px) {
+  #searchBar {
+    width: 70%;
+    margin-left: 10%;
+  }
 }
 
 .cadre {
@@ -11811,23 +11824,51 @@ ul {
   }
 }
 
-.image1 {
-  display: block;
-  width: 60%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.image2 {
+.présentation {
+  position: fixed;
+  top: 200px;
+  left: 30%;
   width: 50%;
-  margin-left: auto;
-  margin-right: auto;
+  font-size: 30px;
+  text-align: center;
+  background-color: transparent;
+  color: white;
 }
 
-.comment1 {
-  border: 3px #1862eb solid;
-  box-shadow: 0px 5px 26px 0px black;
-  margin: 30px 0px 30px 0px;
+#carroussel {
+  padding: 50px 0px 0px 230px;
+}
+
+#carrousselPetit {
+  display: none;
+}
+
+@media screen and (max-width: 1000px) {
+  .présentation {
+    position: fixed;
+    top: 100px;
+    left: 0px;
+    padding-left: 0%;
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+    background-color: transparent;
+    color: black;
+  }
+
+  #carroussel {
+    display: none;
+  }
+
+  #carrousselPetit {
+    display: block;
+    padding-top: 220px;
+    padding-bottom: 30%;
+  }
+
+  #ytvideo {
+    display: none;
+  }
 }
 
 .cadre2 {
