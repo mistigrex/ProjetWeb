@@ -24,7 +24,7 @@
         </div>
       </div>
       <div class="col-lg-6">               
-        <div class="image d-none d-lg-block"><img src="https://d19m59y37dris4.cloudfront.net/shirt/2-1-1/img/hero-shirt.jpg" alt="t-shirt" class="img-fluid mx-auto d-block"></div>
+        <div class="image d-none d-lg-block"><img src="{{asset('images/biproduct.png')}}" alt="t-shirt" class="img-fluid mx-auto d-block"></div>
       </div>
     </div>
   </div>

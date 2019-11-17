@@ -52,4 +52,6 @@
     </div>
   </div>
   <div class="taille" class="col-md-4 product"><img src="{{asset('Images/guide-taille.png')}}" alt="guide des tailles"  class="img-fluid" ></div>
+</div>
+</div>
 @endsection
