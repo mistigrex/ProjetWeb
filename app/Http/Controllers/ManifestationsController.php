@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Manifestation;
 use App\User;
 use App\Comment;
+use App\Participate;
 
 class ManifestationsController extends Controller
 {
@@ -95,7 +96,8 @@ class ManifestationsController extends Controller
     {
         $manifestation = Manifestation::find($id);
         $comments = Comment::all();
-        return view('manifestations.show')->with('manifestation', $manifestation)->with('comments', $comments);
+        $participates = Participate::select('Participant_id')->get();
+        return view('manifestations.show')->with('manifestation', $manifestation)->with('comments', $comments)->with('participates', $participates);
     }
 
     /**

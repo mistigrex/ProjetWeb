@@ -3,7 +3,7 @@
 @section('content')
 <div class = "cadre">
     <h1>Créer une manifestation</h1>
-    {!! Form::open(['action' => 'ManifestationsController@store', 'method' => 'MANIFESTATION', 'enctype' => 'multipart/form-data']) !!}
+    {!! Form::open(['action' => 'ManifestationsController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
     <div class="form-group">
         {{Form::label('nom','Nom')}}
         {{Form::text('nom', '', ['class' => 'form-control', 'placeholder' => 'Nom'])}}
@@ -33,6 +33,4 @@
     {{ Form::submit('Poster', ['class' => 'btn btn-primary'])}}
     {!! Form::close() !!}
 </div>
-
-
 @endsection

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Comment;
+use App\Liked;
 use App\User;
 
 class CommentsController extends Controller
@@ -114,4 +115,10 @@ class CommentsController extends Controller
     {
         //
     }
+    /*public function view($comment_id){
+        $likeComment = Comment::find($comment_id);
+        $likeCtr = Liked::where(['comment_id' => $likeComment->id]);
+        return $likeCtr;
+        exit();
+    }*/
 }
