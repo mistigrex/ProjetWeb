@@ -19,16 +19,15 @@
             <div class="col-lg-12">
                 <div class="main-box clearfix">
                     <div class="table-responsive">
+                        <span>Barre de Recherche</span><input type="text" id="myInput" onkeyup="myFunction()" placeholder="Rechercher une personne" title="Ecrivez le nom d'une personne">
                         <table class="table user-list" id="myTable">
                             <thead>
                                 <tr>
-                                    <th ><span>Utilisateur</span><input type="text" id="myInput" onkeyup="myFunction()" placeholder="Recherche personne" title="Type in a name"></th>
+                                    <th ><span>Personne</span></th>
                                     <th><span>Date d'inscription</span></th>
                                     <th class="text-center"><span>Rôle</span></th>
                                     <th><span>Email</span></th>
-                                    <th>&nbsp;</th>
-                                   
-                                    
+                                    <th><span>Actions</span></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -107,8 +106,6 @@ function myFunction() {
     </div>
 </div>
 
-
-
 @else
 <h1>Aucun Utilisateurs dans la base de données</h1>
 @endif
@@ -119,13 +116,5 @@ function myFunction() {
 @endauth
 
 </section>
-
-<style>
-
-th {
-  cursor: pointer;
-}
-
-</style>
 @endsection
 

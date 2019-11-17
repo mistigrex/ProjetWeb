@@ -43,7 +43,7 @@
 
         <br>
         @if (Auth::user()->Role_id == 3)
-            <a class="btn btn-warning" href="{{ route('export') }}">Export User Data</a>
+            <a class="btn btn-warning" href="{{ route('export') }}">Exporter la liste des inscrits</a>
         @endif
 
         <?php $inscription = 0?>
@@ -67,14 +67,13 @@
 @endauth
     <div class="cadre">
         @auth
-        @if (Auth::user()->Role_id == 2 || Auth::user()->Role_id == 1)
-
+        @if (Auth::user()->Role_id == 2 || Auth::user()->Role_id == 1 || Auth::user()->Role_id ==3)
 
         <div>
             {!! Form::open(['action' => 'CommentsController@store', 'method' => 'MANIFESTATION', 'enctype' => 'multipart/form-data']) !!}
             {!! Form::token() !!}
 
-            {!! Form::textarea('text', '', ['class' => 'form-control', 'placeholder' => 'Votre Commentaire', 'rows' => 2, 'cols' => 50]) !!}
+            {!! Form::textarea('text', '', ['style' => 'border-radius:10px','class' => 'form-control', 'placeholder' => 'Votre Commentaire', 'rows' => 2, 'cols' => 50]) !!}
 
             <?php $Activity_id = $manifestation->id ?>
             {!! Form::hidden('Activity_id', $Activity_id) !!}
@@ -90,12 +89,11 @@
             <br>
 
 
->>>>>>> DevSacha
         </div>
         @if ($inscription == 1)
-            {{ Form::submit('Commenter', ['class' => 'btn btn-dark'])}}
+            {{ Form::submit('Commenter', ['class' => 'btn btn-info'])}}
         @else
-            <button class = "btn btn-dark" disabled> Vous devez être inscrit à cette activité pour commenter</button>
+            <button class = "btn btn-warning" disabled> Vous devez être inscrit à cette activité pour commenter</button>
         @endif
         {!! Form::close() !!}
         @endif
@@ -133,4 +131,3 @@
     </div>
 
 @endsection
- 
