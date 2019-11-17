@@ -42,7 +42,7 @@
         {!! Form::hidden('Participant_name', $Participant_name) !!}
 
         <br>
-        @if (Auth::user()->Role_id == 2)
+        @if (Auth::user()->Role_id == 3)
             <a class="btn btn-warning" href="{{ route('export') }}">Export User Data</a>
         @endif
 

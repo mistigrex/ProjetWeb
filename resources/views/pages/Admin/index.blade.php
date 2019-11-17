@@ -7,9 +7,11 @@
 @include('dashboard')
 
 @auth
+@if(Auth::user()->Role_id == 3 )
+<a href="/administrations/create" class="btn btn-success" style="margin: 10px 20px 10px 25%">Prévenir les administrateurs qu'un contenu est nuisible</a><a id="downloadAll" href="/download"class="btn btn-danger">Télécharger toutes les images du site</a>
+@endif
 @if(Auth::user()->Role_id == 2 || Auth::user()->Role_id == 3)
 
-<a href="/administrations/create" class="btn btn-success" style="margin: 10px 20px 10px 25%">Prévenir les administrateurs qu'un contenu est nuisible</a><a id="downloadAll" href="/download"class="btn btn-danger">Télécharger toutes les images du site</a>
 <div class="container">
         <div class="row">
             <div class="col-lg-12">
