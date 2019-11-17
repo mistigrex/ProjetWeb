@@ -2,6 +2,8 @@
 
 
 @section('content')
+
+
 <section class="cadre">
 
 @include('dashboard')
@@ -16,18 +18,20 @@
             <div class="col-lg-12">
                 <div class="main-box clearfix">
                     <div class="table-responsive">
-                        <table class="table user-list">
+                        <table class="table user-list" id="myTable">
                             <thead>
                                 <tr>
-                                    <th><span>Utilisateur</span><input id="searchBar" type="text" name="Search" onkeyup="myFunction()" list="Users"></th>
+                                    <th ><span>Utilisateur</span><input type="text" id="myInput" onkeyup="myFunction()" placeholder="Recherche personne" title="Type in a name"></th>
                                     <th><span>Date d'inscription</span></th>
-                                    <th class="text-center"><span>Rôle</span><input id="searchBar" type="text" name="Search" onkeyup="myFunction()" list="Users"></th>
+                                    <th class="text-center"><span>Rôle</span></th>
                                     <th><span>Email</span></th>
                                     <th>&nbsp;</th>
+                                   
+                                    
                                 </tr>
                             </thead>
                             <tbody>
-                              
+          
 @if(count($administrations) > 0)
 @foreach($administrations as $administration)
 
@@ -64,11 +68,38 @@
                 </a>
             </td>
         </tr>
-        <tr>
+  
+  
 @endforeach
-     
+
+
+
                     </tbody>
                 </table>
+                <script>
+function myFunction() {
+  // Declare variables
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>      
+      
             </div>
         </div>
       </div>
@@ -83,7 +114,17 @@
 
    
 @endif
+
 @endauth
 
 </section>
+
+<style>
+
+th {
+  cursor: pointer;
+}
+
+</style>
 @endsection
+
