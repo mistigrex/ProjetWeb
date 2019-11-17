@@ -5,19 +5,22 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Product;
+Use App\Basket;
+Use App\Order;
+use Auth;
+use Session;
 
 class ProductsController extends Controller
 {
-
  /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth', ['except' => ['index', 'show' ]]);
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth', ['except' => ['index', 'show' ]]);
+    // }
 
     /**
      * Display a listing of the resource.
@@ -29,6 +32,56 @@ class ProductsController extends Controller
         $products = Product::orderBy('price', 'desc')->paginate(5);
        return view('Pages.Boutique.index')->with('products', $products);
     }
+
+
+public function getAddToCart(Request $request, $id)
+    {
+        $product = Product::find($id);
+        $cart = Session::has('cart') ? Session::get('cart') : null;
+        if(!$cart)
+        {
+            $cart = new Basket($cart);
+        }
+        $cart->add($product, $product->id);
+        Session::put('cart', $cart);
+        // dd($request->session()->get('cart'));
+        return redirect()->route('products.index');
+    }
+
+    public function deleteProduct()
+    {
+        Session::flush(); // removes all session data
+        return redirect()->route('products.index');
+    }
+
+public function getCart()
+{
+        if (!Session::has('cart')){
+            return view('pages.Boutique.shopping-cart');
+        }
+        $oldCart = Session::get('cart');
+        $cart = new Basket($oldCart);
+        return view('pages.Boutique.shopping-cart', ['products' => $cart->items, 'totalPrice' => $cart->totalPrice ]);
+}
+
+public function postCheckout(Request $request)
+{
+        if (!Session::has('cart')){
+            return view('pages.Boutique.shopping-cart');
+        }
+        $oldCart = Session::get('cart');
+        $cart = new Basket($oldCart);
+
+        $order = new Order();
+        $order->cart = serialize($cart);
+        $order->User_id = Auth::user()->id;
+
+        Auth::user()->orders()->save($order);
+
+        Session::forget('cart');
+        return redirect('/products')->with('success', 'Commande passée avec succès ! Merci');
+}
+
 
     /**
      * Show the form for creating a new resource.
@@ -53,7 +106,7 @@ class ProductsController extends Controller
             'description' => 'required',
             'price' => 'required'
         ]);
-       
+
         // Create Post
         $product = new Product;
         $product->name = $request->input('name');
@@ -102,7 +155,7 @@ class ProductsController extends Controller
             'description' => 'required',
             'price' => 'required'
         ]);
-       
+
 
         // Update Post
         $product = Product::find($id);

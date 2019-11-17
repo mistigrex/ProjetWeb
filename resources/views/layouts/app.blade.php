@@ -14,7 +14,7 @@
 <body>
 
 @include('inc.navbar')
-
+@include('cookieConsent::index')
 @yield('content')
 
 <div class="container">
@@ -28,7 +28,7 @@
 </footer>
 
 @include('inc.logReg')
-<button onclick='window.scrollTo({top: 0, behavior: "smooth"});' id="BoutonTop" title="Retour en Haut"><img src="http://www.w3.org/2000/svg" id="top">&#8593</span> <br>Top</button>
+<button onclick='window.scrollTo({top: 0, behavior: "smooth"});' id="BoutonTop" title="Retour en Haut">&#8593<br>Top</button>
 </body>
 
 </html>

@@ -26,6 +26,8 @@
               </div>
             </li>
             <li class="price">{{$product->price}} €</li>
+            @auth
+          @if(Auth::user()->Role_id == 2 || Auth::user()->Role_id == 3)
             <li class="boutonAdmin"><div><a href="/products/{{$product->id}}/edit" class="btn btn-success">Modifier le produit <i class="far fa-edit"></i></a></div></li>
             <li class="boutonAdmin">
               <div>
@@ -35,11 +37,17 @@
                       {!!Form::close()!!}
             </div>
         </li>
+          @endif
+          @endauth
+         
           </ul>
      
-        </div><a href="#" class="add-to-cart btn btn-primary">Ajouter au panier <i class="fas fa-shopping-cart"></i></a>
-     
-
+@auth 
+        </div><a href="{{ route('product.addToCart' , ['id' => $product->id])}}" class="add-to-cart btn btn-primary">Ajouter au panier <i class="fas fa-shopping-cart"></i></a>
+@endauth
+@guest
+<button href="" class="add-to-cart btn btn-primary" disabled>Ajouter au panier <i class="fas fa-shopping-cart"></i></button>
+@endguest
 
     </div>
   </div>

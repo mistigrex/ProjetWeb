@@ -10,4 +10,11 @@ class Manifestation extends Model
     protected $table ='manifestations';
     public $primaryKey = 'id';
     public $timestamps = true;
+
+    /*public function eventCreator()
+    {
+        return $this->hasMany('App\User', 'userId');
+    }*/
+
 }
+

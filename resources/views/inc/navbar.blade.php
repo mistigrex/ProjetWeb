@@ -4,12 +4,16 @@
             <ul class="top-nav" id="myTopnav">
                 <li><a class="active" href="/">Accueil</a></li>
                 <li><a href="/evenements">Événements</a></li>
-                <li><a href="/activités">Activités</a></li>
                 <li><a href="/products">Boutique</a></li>
                 <li><a href="/contact">Contact</a></li>
+@if(!Auth::guest())
+            <li><a href="/shopping-cart">Panier <i class="fas fa-shopping-cart"></i>
+                <span class="badge">{{ Session::has('cart') ? Session::get('cart')->totalQty : ''}}</span>
+                </a></li>
                 <a href="javascript:void(0);" class="icon" onclick="expandLinks()">
                     <i class="fa fa-bars"></i>
                 </a>
+@endif
             </ul>
 
             <div id="aside-nav">
@@ -28,13 +32,13 @@
 @endguest
 
 @auth
-      <li class="nav-item dropdown">
+      <li id="ConnectedDisplay" class="nav-item dropdown">
        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
             {{ Auth::user()->firstname }} {{ Auth::user()->name }} <span class="caret"></span>
        </a>
 
        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="/dashboard">Dashboard</a>
+            <a class="dropdown-item" href="/administrations">Dashboard</a>
         <a class="dropdown-item" href="{{ route('logout') }}"
               onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">
