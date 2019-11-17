@@ -2,11 +2,17 @@
 
 namespace App\Http\Controllers;
 
+<<<<<<< HEAD
+use Illuminate\Http\Request;
+use App\Comments;
+use App\Manifestation;
+=======
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Comment;
 use App\Liked;
 use App\User;
+>>>>>>> DevSacha
 
 class CommentsController extends Controller
 {
@@ -17,7 +23,12 @@ class CommentsController extends Controller
      */
     public function index()
     {
+<<<<<<< HEAD
+        $comments = Comments::all();
+        return view('comments.index')->with('comments', $comments);
+=======
 
+>>>>>>> DevSacha
     }
 
     /**
@@ -27,7 +38,11 @@ class CommentsController extends Controller
      */
     public function create()
     {
+<<<<<<< HEAD
+        //return('manifestations.create');
+=======
         //
+>>>>>>> DevSacha
     }
 
     /**
@@ -38,6 +53,16 @@ class CommentsController extends Controller
      */
     public function store(Request $request)
     {
+<<<<<<< HEAD
+     
+       
+        $comments = new comments;
+        $comments ->text = $request->input('text');
+        //$comments ->image = $request->input('image');
+
+        return redirect('\manifestations')->with('success','commentaires ajoutes');
+
+=======
 
         $this->validate($request, [
             'text' => 'required',
@@ -69,6 +94,7 @@ class CommentsController extends Controller
         $comment->save();
 
         return redirect('/manifestations')->with('success', 'Commentaire posté !');
+>>>>>>> DevSacha
     }
 
     /**
@@ -77,9 +103,16 @@ class CommentsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+<<<<<<< HEAD
+    public function show($id)
+    {
+        //$comments = Comments::find($id);
+       // return view('manifestation.index')->with('comments', $comments);
+=======
     public function show($user_id)
     {
     //
+>>>>>>> DevSacha
     }
 
     /**
@@ -90,7 +123,11 @@ class CommentsController extends Controller
      */
     public function edit($id)
     {
+<<<<<<< HEAD
+       
+=======
         //
+>>>>>>> DevSacha
     }
 
     /**
@@ -115,10 +152,13 @@ class CommentsController extends Controller
     {
         //
     }
+<<<<<<< HEAD
+=======
     /*public function view($comment_id){
         $likeComment = Comment::find($comment_id);
         $likeCtr = Liked::where(['comment_id' => $likeComment->id]);
         return $likeCtr;
         exit();
     }*/
+>>>>>>> DevSacha
 }

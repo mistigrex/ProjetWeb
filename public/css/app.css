@@ -11581,6 +11581,7 @@ ul {
 }
 
 #searchBar {
+<<<<<<< HEAD
   width: 70%;
 }
 
@@ -11589,6 +11590,13 @@ ul {
     width: 70%;
     margin-left: 10%;
   }
+=======
+  width: 200px;
+}
+
+.container {
+  display: block;
+>>>>>>> master
 }
 
 .cadre {

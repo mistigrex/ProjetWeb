@@ -90,6 +90,7 @@
             <br>
 
 
+>>>>>>> DevSacha
         </div>
         @if ($inscription == 1)
             {{ Form::submit('Commenter', ['class' => 'btn btn-dark'])}}
@@ -132,3 +133,4 @@
     </div>
 
 @endsection
+ 
