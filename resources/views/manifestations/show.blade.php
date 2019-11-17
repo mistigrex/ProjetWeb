@@ -42,7 +42,10 @@
         {!! Form::hidden('Participant_name', $Participant_name) !!}
 
         <br>
-        <a class="btn btn-warning" href="{{ route('export') }}">Export User Data</a>
+        @if (Auth::user()->Role_id == 2)
+            <a class="btn btn-warning" href="{{ route('export') }}">Export User Data</a>
+        @endif
+
         <?php $inscription = 0?>
 
         @foreach ($participates as $participate)
