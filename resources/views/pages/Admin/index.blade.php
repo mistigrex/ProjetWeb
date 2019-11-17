@@ -19,9 +19,9 @@
                         <table class="table user-list">
                             <thead>
                                 <tr>
-                                    <th><span>Utilisateur</span></th>
+                                    <th><span>Utilisateur</span><input id="searchBar" type="text" name="Search" onkeyup="myFunction()" list="Users"></th>
                                     <th><span>Date d'inscription</span></th>
-                                    <th class="text-center"><span>Rôle</span></th>
+                                    <th class="text-center"><span>Rôle</span><input id="searchBar" type="text" name="Search" onkeyup="myFunction()" list="Users"></th>
                                     <th><span>Email</span></th>
                                     <th>&nbsp;</th>
                                 </tr>
