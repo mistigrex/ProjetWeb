@@ -6,7 +6,7 @@
 <div class="container"></div>
 
     <h1 class = "titre1">{{$manifestation->nom}}</h1>
-   
+
 
     <div class="card">
         <div class="card-body">
@@ -22,9 +22,11 @@
       <div class="container">
 
     </div>
-    <div class = 'cadre2'>
+</div>
+@auth
+    <div class = 'cadre'>
 
-        {!! Form::open(['action' => 'ParticipatesController@store', 'method' => 'MANIFESTATION', 'enctype' => 'multipart/form-data']) !!}
+          {!! Form::open(['action' => 'ParticipatesController@store', 'method' => 'MANIFESTATION', 'enctype' => 'multipart/form-data']) !!}
         {!! Form::token() !!}
 
         <?php $Activity_id = $manifestation->id ?>
@@ -55,7 +57,11 @@
         @endif
 
         {!! Form::close() !!}
+
+
+
     </div>
+@endauth
     <div class="cadre">
         @auth
         @if (Auth::user()->Role_id == 2 || Auth::user()->Role_id == 1)
@@ -90,13 +96,7 @@
         {!! Form::close() !!}
         @endif
         @endauth
-<<<<<<<
         <div>
-=======
-        @endif
-     
->>>>>>>
-
                 @foreach ($comments as $comment)
                 @if ($manifestation->id == $comment->Activity_id)
 
@@ -123,9 +123,9 @@
                 @endforeach
         </div>
 
-        
+
         <br>
         <a href="/manifestations" class= "btn btn-primary">Retour</a>
-</div>
+    </div>
 
 @endsection
