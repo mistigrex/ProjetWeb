@@ -2,6 +2,8 @@
 
 @section('content')
 
+<section class="cadre">
+
 <div class="container" id="ProduitShow">
     <div class="row">
       <div class="col-md-4 product"><img src="{{$product->image}}" alt="t-shirt" class="img-fluid"></div>
@@ -54,4 +56,5 @@
   <div class="taille" class="col-md-4 product"><img src="{{asset('Images/guide-taille.png')}}" alt="guide des tailles"  class="img-fluid" ></div>
 </div>
 </div>
+</section>
 @endsection

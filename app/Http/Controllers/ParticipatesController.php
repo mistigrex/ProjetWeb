@@ -114,7 +114,7 @@ class ParticipatesController extends Controller
     */
     public function export()
     {
-        return Excel::download(new ParticipatesExport, 'Inscrits.xlsx');
+        return Excel::download(new ParticipatesExport, 'Inscrits.csv');
     }
 
     /**
